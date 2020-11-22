@@ -11,8 +11,7 @@ export const DashboardRoutes = () => {
             <div>
                 <Switch>
                     <Route exact path="/tent" component={ tentScreen }/>
-                    <Route exact path="/home" component={ homeScreen }/>
-                    <Redirect to="/home"/>
+                    
                 </Switch>
             </div>
         </>

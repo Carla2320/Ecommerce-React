@@ -1,0 +1,31 @@
+#foto {
+  float: left;
+}
+#subcontenedor {
+  background-color: white;
+}
+h1 {
+  text-align: center;
+  padding: 35px;
+  margin: 25px;
+}
+label {
+  font-size: 20px;
+}
+#general {
+  background-color: black;
+}
+#general section {
+  float: left;
+  padding: 20px;
+}
+#boton {
+  position: fixed;
+  bottom: 25%;
+  left: 47.8%;
+  width: 10%;
+}
+
+#elegirOpe {
+    vertical-align: center;
+}
