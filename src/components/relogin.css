@@ -1,0 +1,7 @@
+.cuad{
+    padding: 20rem;
+    align-items: center;
+}
+.cuadro {
+    display: flex;
+}
