@@ -34,7 +34,7 @@ export const AppRouter = () => {
                         component={ LoginScreen }
                         isAuthenticated={ !!name }
                         />
-                        <PublicRoute 
+                    <PublicRoute 
                         exact 
                         path="/registro" 
                         component={ RegisterUser}
