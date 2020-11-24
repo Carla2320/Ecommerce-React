@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const tentScreen = () => {
+export const TentScreen = () => {
     return (
         <div>
             <h1>tentScreen</h1>

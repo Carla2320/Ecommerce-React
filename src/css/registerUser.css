@@ -1,8 +1,10 @@
-#foto {
+#foto img{
   float: left;
+  width: 35%;
 }
 #subcontenedor {
   background-color: white;
+  height: 800px;
 }
 h1 {
   text-align: center;
@@ -18,14 +20,14 @@ label {
 #general section {
   float: left;
   padding: 20px;
+  width: 30%;
 }
 #boton {
-  position: fixed;
-  bottom: 25%;
-  left: 47.8%;
-  width: 10%;
+  float: left;
+  margin-top: 100px;
+  width: 20%;
 }
 
 #elegirOpe {
-    vertical-align: center;
+  margin-left: 30px;
 }

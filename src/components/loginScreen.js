@@ -2,33 +2,71 @@ import React from 'react';
 import "../css/login.css"
 import { Link } from 'react-router-dom';
 
+import { useDispatch } from 'react-redux';
+import { startLogin } from '../actions/auth';
+import { useForm } from '../hooks/useForm';
+import './login.css';
 
-export const loginSreen = () => {
+export const LoginScreen = () => {
+    
+    const dispatch = useDispatch();
+
+    const [ formValues, handleInputChange ] = useForm({
+        cedula: '',
+        contrasenia_usuario: ''
+    } );
+
+    const { cedula, contrasenia_usuario } = formValues;
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        dispatch( startLogin(cedula, contrasenia_usuario) );
+    }
     return (
         <div className="container mt-5">
             <div className="row">
-                <form className="col">
+                <form className="col form" onSubmit={ handleSubmit }>
                 <h1>
                     Ingresos
                 </h1>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <div className="form-group">
+                        <label>Cédula</label>
+                        <input 
+                            type="text" 
+                            className="form-control"
+                            value={ cedula }
+                            name="cedula"
+                            onChange={ handleInputChange }
+                            autoComplete="off"
+                        />
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1"/>
+                    <div className="form-group">
+                        <label>Contraseña</label>
+                        <input 
+                            type="password" 
+                            className="form-control"
+                            value={ contrasenia_usuario } 
+                            name="contrasenia_usuario"
+                            onChange={ handleInputChange }
+                        />
                     </div>
                     <Link id="enlace" to="/registro"><button type="submit" class="btn btn-danger btn-lg btn-block" id="registro" href="/home">Registrate</button></Link>
-                    <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" />
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    <button type="submit" className="btn btn-danger btn-lg btn-block">Ingresar</button>
+                    <div className="form-group form-check">
+                        <div className="row">
+                            <div className="col">
+                            <input type="checkbox" className="form-check-input"/>
+                            <label className="form-check-label" >Recordarme</label>
+                            </div>
+                            <div className="col">
+                                
+                            </div>
+                            
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-danger btn-lg btn-block">Ingresar</button>
                 </form>
                 <div className="col">
-                <img src="../../assets/chaqueta.jpg" class="d-block w-100"/>
+                <img src="../../assets/chaqueta.jpg" className="d-block w-100" alt="product"/>
                 </div>
             </div>
         </div>

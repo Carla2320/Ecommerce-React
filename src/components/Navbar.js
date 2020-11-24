@@ -1,24 +1,33 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { startLogout } from '../actions/auth'
 
 export const Navbar = () => {
+
+    const dispatch = useDispatch();
+
+    const handleLogout = () => {
+        dispatch( startLogout() );
+    }
+
     return (
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Ecommerce</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <a className="navbar-brand">Ecommerce</a>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+            <div className="collapse navbar-collapse" id="navbarText">
+                <ul className="navbar-nav mr-auto">
+                <li className="nav-item active">
+                    <a className="nav-link" href="/home">Home <span className="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/tent">Shop</a>
+                <li className="nav-item">
+                    <a className="nav-link" href="/tent">Shop</a>
                 </li>
                 </ul>
-                <li class="navbar-text">
-                    <a class="nav-link" href="/login">Logout</a>
-                </li>
+                <button className="btn btn-outline-warning" onClick={ handleLogout }> 
+                    <span> Salir </span>
+                </button>
             </div>
         </nav>
         )

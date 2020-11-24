@@ -1,8 +1,8 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import { homeScreen } from '../components/homeScreen';
+import { HomeScreen } from '../components/HomeScreen';
 import { Navbar } from '../components/Navbar';
-import { tentScreen } from '../components/tentScreen';
+import { TentScreen } from '../components/TentScreen';
 
 export const DashboardRoutes = () => {
     return (
@@ -10,8 +10,9 @@ export const DashboardRoutes = () => {
             <Navbar/>
             <div>
                 <Switch>
-                    <Route exact path="/tent" component={ tentScreen }/>
-                    
+                    <Route exact path="/tent" component={ TentScreen }/>
+                    <Route exact path="/home" component={ HomeScreen }/>
+                    <Redirect to="/home"/>
                 </Switch>
             </div>
         </>
