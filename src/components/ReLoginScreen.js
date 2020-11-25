@@ -3,6 +3,7 @@ import { EcuationSquare } from './EcuationSquare';
 import { useSelector } from 'react-redux';
 import './relogin.css';
 import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 export const ReLoginScreen = () => {
 
@@ -20,10 +21,10 @@ export const ReLoginScreen = () => {
     return (
         <>
             <div className="cuadro cuad">
-                <EcuationSquare number={ envio[0] }/>
-                <EcuationSquare number={ envio[1] }/>
-                <EcuationSquare number={ envio[2] }/>
-                <EcuationSquare number={ envio[3] }/>
+                <Button variant="contained" color="primary"> <EcuationSquare number={ envio[0] }/> </Button>
+                <Button variant="contained" color="primary"> <EcuationSquare number={ envio[1] }/> </Button>
+                <Button variant="contained" color="primary"> <EcuationSquare number={ envio[2] }/></Button>
+                <Button variant="contained" color="primary"> <EcuationSquare number={ envio[3] }/></Button>
             </div>
             <Link className="btn btn-danger btn-lg btn-block" to="/home"> Verifica </Link>
         </>

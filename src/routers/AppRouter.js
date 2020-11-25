@@ -4,8 +4,8 @@ import {
     BrowserRouter as Router,
     Switch,
 } from 'react-router-dom';
-import { LoginScreen } from '../components/LoginScreen';
-import { RegisterUser } from '../components/RegisterUser';
+import { LoginScreen } from '../components/loginScreen';
+import { RegisterUser } from '../components/registerUser';
 
 import { DashboardRoutes } from './DashboardRoutes';
 import { startChecking } from '../actions/auth';
