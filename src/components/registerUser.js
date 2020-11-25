@@ -11,7 +11,7 @@ import {UserForMulOpe} from "../hooks/UseForMulOpe"
 import { Redirect } from 'react-router-dom';
 
 export const RegisterUser=()=>{
-    const operaciones=["Suma","Resta","Multiplicación","División"],
+    const operaciones=["Suma","Resta","Multiplicación","División"], 
     multiplo=[1,2,3,4,5,6,7,8,9]
     // const baseURL = 'http://localhost:3030/api/user';
     // const [valcheck,setValcheck]= useState([]);

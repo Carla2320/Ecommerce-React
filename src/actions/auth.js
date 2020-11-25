@@ -12,7 +12,8 @@ export const startLogin = ( cedula, contrasenia_usuario ) => {
             console.log('NUMBER',body.number);
             dispatch(login({
                 name: body.name,
-                lastname: body.lastname
+                lastname: body.lastname,
+                number: body.number
             }))
         }else{
             Swal.fire('Error',body.msg,'error');
