@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import "../css/registerUser.css"
 import { useForm } from '../hooks/useForm';
-import {Dropdown,DropdownItem,DropdownMenu,DropdownToggle} from "reactstrap"
 import { register} from '../actions/register';
 
 import { useDispatch } from 'react-redux';
@@ -12,7 +11,6 @@ export const RegisterUser=()=>{
     multiplo=[1,2,3,4,5,6,7,8,9]
     // const baseURL = 'http://localhost:3030/api/user';
     // const [valcheck,setValcheck]= useState([]);
-
     // const fetchApi=  async () =>{
     //     const responses =await fetch(baseURL)
     //     const responseJson=await responses.json()
@@ -66,7 +64,7 @@ export const RegisterUser=()=>{
             </h1>
             <section id="foto">
             <div className="col">
-                <img src="../../assets/chaqueta.jpg" id="imgRegister"/>
+                <img src="../../assets/chaqueta.jpg" id="imgRegister" alt="chaqueta"/>
                 </div>
             </section>
             <section id="general">
