@@ -1,8 +1,10 @@
 import React from 'react';
 import "../css/registerUser.css"
+import { Link } from 'react-router-dom';
 import { useForm } from '../hooks/useForm';
 import { register} from '../actions/register';
 
+import {validar, validarcedua, validarform, validarInput} from "../validation/validationForm"
 import { useDispatch } from 'react-redux';
 import {UserForMulOpe} from "../hooks/UseForMulOpe"
 
@@ -54,6 +56,11 @@ export const RegisterUser=()=>{
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(register(cedula,1,nombre_usuario,apellido_usuario, contrasenia_usuario,formData.operacion,formData.multiplo) );
+    }
+  
+    const validatioF=()=>{
+       validarform(nombre_usuario,apellido_usuario,cedula,formData.operacion,formData.multiplo)
+ 
     }
     return(
         <div className="container mt-5" id="contenedor">
@@ -122,7 +129,7 @@ export const RegisterUser=()=>{
             </section>
             </section>
             <section id="boton">
-                <button type="submit" class="btn btn-danger btn-lg btn-block" >Registrase</button>
+           <button type="submit" class="btn btn-danger btn-lg btn-block" onClick={validatioF} >Registrarse</button>
             </section>
             </form>
         </div>

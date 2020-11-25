@@ -12,8 +12,6 @@ export const UserForMulOpe =(cargar={})=>{
         })
 
     }
-
     return [formData,handleChange]
-
 
 }
