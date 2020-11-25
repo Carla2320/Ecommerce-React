@@ -11,6 +11,7 @@ import { DashboardRoutes } from './DashboardRoutes';
 import { startChecking } from '../actions/auth';
 import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
+import { ReLoginScreen } from '../components/ReLoginScreen';
 
 export const AppRouter = () => {
 
@@ -38,6 +39,12 @@ export const AppRouter = () => {
                         exact 
                         path="/registro" 
                         component={ RegisterUser}
+                        isAuthenticated={ !!name }
+                        />
+                    <PrivateRoute 
+                        exact 
+                        path="/relogin" 
+                        component={ ReLoginScreen }
                         isAuthenticated={ !!name }
                         />
                     <PrivateRoute
