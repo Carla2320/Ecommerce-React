@@ -2,6 +2,7 @@ import React from 'react';
 import { EcuationSquare } from './EcuationSquare';
 import { useSelector } from 'react-redux';
 import './relogin.css';
+import { Link } from 'react-router-dom';
 
 export const ReLoginScreen = () => {
 
@@ -16,11 +17,14 @@ export const ReLoginScreen = () => {
     const envio = orden.sort(()=>(Math.random()-0.5));
 
     return (
-        <div className="cuadro cuad">
-            <EcuationSquare number={ envio[0] }/>
-            <EcuationSquare number={ envio[1] }/>
-            <EcuationSquare number={ envio[2] }/>
-            <EcuationSquare number={ envio[3] }/>
-        </div>
+        <>
+            <div className="cuadro cuad">
+                <EcuationSquare number={ envio[1] }/>
+                <EcuationSquare number={ envio[2] }/>
+                <EcuationSquare number={ envio[3] }/>
+                <EcuationSquare number={ envio[4] }/>
+            </div>
+            <Link className="btn btn-danger btn-lg btn-block" to="/home"> Verifica </Link>
+        </>
         )
 }
