@@ -1,12 +1,15 @@
 import Swal from 'sweetalert2';
 
-export const validarform=(nombre,apellido,cedula,combo,check)=>{
-    if((nombre && apellido && cedula && combo && check)){
+export const validarform=(nombre,apellido,contrasenia,cedula,combo,check)=>{
+    if((nombre && apellido && contrasenia && cedula && combo && check)){
         if (/[^a-zA-Z -]/.test(nombre)) {
             Swal.fire('El valor del nombre solo puede contener caracteres y espacios en blanco');
         }
         else if (/[^a-zA-Z -]/.test(apellido)) {
             Swal.fire('El valor del apellido solo puede contener caracteres y espacios en blanco');
+        }
+        else if((contrasenia.length < 7)){
+            Swal.fire('La contraseña debe ser mayor a 6 caracteres');
         }
         else if(!(cedula.length == 10)){
             Swal.fire('La cedula debe tener 10 Digitos');
