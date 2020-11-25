@@ -58,7 +58,7 @@ export const LoginScreen = () => {
                             <label className="form-check-label" >Recordarme</label>
                             </div>
                             <div className="col">
-                                <Link id="enlace" to="/registro"><button type="submit" class="btn btn-danger btn-lg btn-block" id="registro" href="/home">Registrate</button></Link>      
+                                <Link id="enlace" to="/registro"><button type="submit" className="btn btn-danger btn-lg btn-block" id="registro" href="/home">Registrate</button></Link>      
                             </div>
                             
                         </div>

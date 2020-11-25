@@ -9,6 +9,7 @@ export const startLogin = ( cedula, contrasenia_usuario ) => {
         if (body.ok){
             localStorage.setItem('token', body.token);
             localStorage.setItem('token-init-date', new Date().getTime());
+            console.log('NUMBER',body.number);
             dispatch(login({
                 name: body.name,
                 lastname: body.lastname,

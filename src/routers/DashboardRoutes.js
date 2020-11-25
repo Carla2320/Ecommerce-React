@@ -7,7 +7,6 @@ import { TentScreen } from '../components/TentScreen';
 import RegisterProduct from '../components/registerProduct';
 
 export const DashboardRoutes = () => {
-    console.log('aqui estamos');
     return (
         <>
             <Navbar/>

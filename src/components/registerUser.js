@@ -5,6 +5,7 @@ import { register} from '../actions/register';
 
 import { useDispatch } from 'react-redux';
 import {UserForMulOpe} from "../hooks/UseForMulOpe"
+import { Redirect } from 'react-router-dom';
 
 export const RegisterUser=()=>{
     const operaciones=["Suma","Resta","Multiplicación","División"],
