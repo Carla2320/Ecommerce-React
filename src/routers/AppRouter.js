@@ -4,13 +4,14 @@ import {
     BrowserRouter as Router,
     Switch,
 } from 'react-router-dom';
-import { LoginScreen } from '../components/LoginScreen';
-import { RegisterUser } from '../components/RegisterUser';
+import { LoginScreen } from '../components/loginScreen';
+import { RegisterUser } from '../components/registerUser';
 
 import { DashboardRoutes } from './DashboardRoutes';
 import { startChecking } from '../actions/auth';
 import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
+import RegisterProduct from '../components/registerProduct';
 
 export const AppRouter = () => {
 
@@ -38,6 +39,12 @@ export const AppRouter = () => {
                         exact 
                         path="/registro" 
                         component={ RegisterUser}
+                        isAuthenticated={ !!name }
+                        />
+                    <PublicRoute 
+                        exact 
+                        path="/productos" 
+                        component={ RegisterProduct}
                         isAuthenticated={ !!name }
                         />
                     <PrivateRoute
