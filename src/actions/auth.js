@@ -12,8 +12,7 @@ export const startLogin = ( cedula, contrasenia_usuario ) => {
             console.log('NUMBER',body.number);
             dispatch(login({
                 name: body.name,
-                lastname: body.lastname,
-                number: body.number
+                lastname: body.lastname
             }))
         }else{
             Swal.fire('Error',body.msg,'error');
@@ -30,8 +29,7 @@ export const startChecking = () => {
             localStorage.setItem('token-init-date', new Date().getTime());
             dispatch(login({
                 name: body.name,
-                lastname: body.lastname,
-                number: body.number
+                lastname: body.lastname
             }))
         }else{
             Swal.fire('Error',body.msg,'error');
