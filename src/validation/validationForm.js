@@ -11,7 +11,7 @@ export const validarform=(nombre,apellido,contrasenia,cedula,combo,check)=>{
         else if((contrasenia.length < 7)){
             Swal.fire('La contraseña debe ser mayor a 6 caracteres');
         }
-        else if(!(cedula.length == 10)){
+        else if(!(cedula.length === 10)){
             Swal.fire('La cedula debe tener 10 Digitos');
         }
         else if (!combo) {
