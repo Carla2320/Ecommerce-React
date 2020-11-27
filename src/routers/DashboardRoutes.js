@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import { HomeScreen } from '../components/homeScreen';
+import { HomeScreen } from '../components/HomeScreen';
 import { Navbar } from '../components/Navbar';
 import { ReLoginScreen } from '../components/ReLoginScreen';
 import { TentScreen } from '../components/TentScreen';

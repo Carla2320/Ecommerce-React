@@ -59,6 +59,7 @@ export const RegisterUser=()=>{
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(register(cedula,1,nombre_usuario,apellido_usuario, contrasenia_usuario,formData.operacion,formData.multiplo) );
+
         // history.push("./LoginScreen.js");
         // Swal.fire('Ya puedes ingresar a tu cuenta');
     }

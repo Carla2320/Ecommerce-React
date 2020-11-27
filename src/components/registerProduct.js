@@ -23,11 +23,7 @@ const RegisterProduct = () => {
         console.log(datos.nombre+' '+datos.imagen+' '+datos.stock+' '+datos.precio+' '+datos.descripcion)
 
     }
-    const handleClick=(event)=>{
-        event.preventDefault();
-        console.log('presionando');
-    
-    }
+
 
     return ( 
         <Fragment>

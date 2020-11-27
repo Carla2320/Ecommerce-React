@@ -7,8 +7,13 @@ import { startLogin } from '../actions/auth';
 import { useForm } from '../hooks/useForm';
 import './login.css';
 
+
 export const LoginScreen = () => {
-    
+    const solonumeros=(e)=>{
+        var key = window.event ? e.which : e.keyCode;
+                        if(key < 48 || key > 57)
+                            e.preventDefault();
+    }
     const dispatch = useDispatch();
 
     const [ formValues, handleInputChange ] = useForm({
@@ -36,6 +41,7 @@ export const LoginScreen = () => {
                             className="form-control"
                             value={ cedula }
                             name="cedula"
+                            onKeyPress = {solonumeros}
                             onChange={ handleInputChange }
                             autoComplete="off"
                         />
