@@ -69,13 +69,16 @@ export const ReLoginScreen = () => {
         }
 
     }
+
+
     if(state.show){
         return  (
             <>
                 <div className="cuadro cuad" id="cuadros">
                     <section id="general">
                     <section>
-                    <Button variant="contained" color="secondary" id="btn1" onClick ={()=>{Pulsar(envio[0].prop)}}> <EcuationSquare number={ envio[0] } /> </Button>
+
+                    <Button variant="contained" color="primary" id="btn1" onClick ={()=>{Pulsar(envio[0].prop)}} value = "Submit"> <EcuationSquare number={ envio[0] } /> </Button>
                     </section>
                     <section>
                    <Button variant="contained" color="primary" id="btn2" onClick ={()=>{Pulsar(envio[1].prop)}} > <EcuationSquare number={ envio[1] }/> </Button>
