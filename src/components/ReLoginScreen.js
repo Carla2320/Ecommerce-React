@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { EcuationSquare } from './EcuationSquare';
 import { useSelector } from 'react-redux';
@@ -7,35 +7,20 @@ import { useDispatch } from 'react-redux';
 import { Link, useHistory} from 'react-router-dom';
 import "../css/ecuaciones.css"
 import { startLogout } from '../actions/auth'
-import Button from '@material-ui/core/Button';
-import { Redirect, Route, Switch } from 'react-router-dom';
-import { HomeScreen } from './HomeScreen';
 import Swal from 'sweetalert2';
+import { useForm } from '../hooks/useForm';
 
 
-export const Aplastar = (e) =>{
-    if(!e){
-        console.log(e)
-        return (
-            <>
-                <div>
-                    <Switch>
-                        <Route exact path="/home" component={ HomeScreen }/>
-                        
-                        <Redirect to="/home"/>
-                    </Switch>
-                </div>
-            </>
-            )
-    }
-
-}
 
 export const ReLoginScreen = () => {
+    let resultado
+    
     const history = useHistory()
     const state = {
         show: true
     }
+
+    
 
     const { number } = useSelector( state => state.auth);
     
@@ -53,45 +38,69 @@ export const ReLoginScreen = () => {
                 ]
   
     console.log('orden',orden);
-    const dispatch = useDispatch();
+
+    // const dispatch = useDispatch();
     const envio = orden.sort(()=>(Math.random()-0.5));
     console.log('envio',envio);
-    const Pulsar=(e)=>{
-        console.log(e)
-        if(!e){
-            Swal.fire('Error','Inicia Sesion Para Volver a Intentarlo','error');
-            dispatch( startLogout() );
-            
-        }
-        else{
-            Swal.fire('Correcto','Sesion Iniciada','success');
-            history.push('/home')
-        }
 
+    // const Pulsar=(e)=>{
+    //     if(!e){
+    //         Swal.fire('Error','Inicia Sesion Para Volver a Intentarlo','error');
+    //         dispatch( startLogout() );
+            
+    //     }
+    //     else{
+    //         Swal.fire('Correcto','Sesion Iniciada','success');
+    //         history.push('/home')
+            
+
+    //     }
+
+    // }
+
+    const Enviar=(e)=>{
+        e.preventDefault();
+        if(e.key==="Enter"){
+            console.log("aplastaste Enter")
+        }
     }
+    
+
+    const [number2,setNumber2] = useState('');
 
 
     if(state.show){
         return  (
             <>
+
+                <form onSubmit = {Enviar}>
+
+                
                 <div className="cuadro cuad" id="cuadros">
                     <section id="general">
                     <section>
 
-                    <Button variant="contained" color="primary" id="btn1" onClick ={()=>{Pulsar(envio[0].prop)}} value = "Submit"> <EcuationSquare number={ envio[0] } /> </Button>
+                    <label> <EcuationSquare number={ envio[0] } /> <input onChange={event => setNumber2(event.target.value)} /> </label>
+                    
                     </section>
                     <section>
-                   <Button variant="contained" color="primary" id="btn2" onClick ={()=>{Pulsar(envio[1].prop)}} > <EcuationSquare number={ envio[1] }/> </Button>
+                    <label> <EcuationSquare number={ envio[1] } /> <input/> </label>
+            
                     </section>
                     <section>
-                    <Button variant="contained" color="primary" id="btn3" onClick ={()=>{Pulsar(envio[2].prop)}}> <EcuationSquare id="hi" number={ envio[2] }/></Button>
+                    <label> <EcuationSquare number={ envio[2] } /> <input/> </label>
                     </section>   
                     <section>
-                    <Button variant="contained" color="primary" id="btn4" onClick ={()=>{Pulsar(envio[3].prop)}}> <EcuationSquare number={ envio[3] }/></Button>    
+                    <label> <EcuationSquare number={ envio[3] } /> <input/> </label>
+                     
                     </section>  
                     </section>
                 </div>
-                <Link className="btn btn-danger btn-lg btn-block" to="/home" id="verifica"> Verifica </Link>
+
+                
+                <button className="btn btn-danger btn-lg btn-block" id="verifica" type = "submit"> Verifica </button>
+
+                </form>
             </>
         )
     }

@@ -1,12 +1,18 @@
 import React from 'react';
 import './ecuation.css';
 import { useSelector } from 'react-redux';
-export const EcuationSquare = ( numberR ) => {
 
-    let a,b,c;
+
+
+ export const EcuationSquare = ( numberR) => {
+
+ 
+    let c;
+    let a,b,simbolo;
     const  {number}  = numberR;
     const { operacion } = useSelector( state => state.auth);
     const {numero, prop} = number;
+    
     const ecuationNumbers = [
         numero * Math.floor((Math.random() * (9 - 2 + 1)) + 2),
         numero * Math.floor((Math.random() * (4 - 2 + 1)) + 2)
@@ -16,55 +22,45 @@ export const EcuationSquare = ( numberR ) => {
         ecuationNumbers[0]%numero === 0? ecuationNumbers[0]+2: ecuationNumbers[0],
         ecuationNumbers[1]%numero === 0? ecuationNumbers[1]+1: ecuationNumbers[1],
     ]
-    if(operacion==="Suma"){
-        a =!prop?multipleVerify[0]:ecuationNumbers[0] 
-        b =!prop?multipleVerify[1]:ecuationNumbers[1] 
-        c = a + b
+    a =!prop?multipleVerify[0]:ecuationNumbers[0] 
+    b =!prop?multipleVerify[1]:ecuationNumbers[1] 
 
-        return (
-            <div className="ecuacion" >
-               
-               <p>  {a} + {b} = {c}</p>
-            </div>
-            )
+    if(operacion==="Suma"){
+
+        c = a + b
+        simbolo = "+";
+
     }
     else if(operacion==="Resta"){
-        a =!prop?multipleVerify[0]:ecuationNumbers[0] 
-        b =!prop?multipleVerify[1]:ecuationNumbers[1] 
-        c = a - b
-     
-            return (
-                <div className="ecuacion" >
 
-                    <p>  {a} - {b} = {c}</p>
-                </div>
-                )
+        c = a - b
+        simbolo = "-";
 
         
     }
     else if(operacion==="Multiplicacion"){
-        a =!prop?multipleVerify[0]:ecuationNumbers[0] 
-        b =!prop?multipleVerify[1]:ecuationNumbers[1] 
+ 
         c = a*b
-
-        return (
-            <div className="ecuacion" >
-                <p> {a} * {b} = {c}</p>
-            </div>
-            )
+        simbolo = "*";
     }
     else if(operacion==="Division"){
-        a =!prop?multipleVerify[0]:ecuationNumbers[0] 
-        b =!prop?multipleVerify[1]:ecuationNumbers[1] 
         c = a/b
- 
-        return (
-            <div className="ecuacion" >
-
-                <p> {a} / {b} = {c.toFixed(1)}</p>
-            </div>
-            )
+        simbolo = "/";
     }
+
+    return (
+        <div className="ecuacion" >
+
+            <p> {a} {simbolo} {b} = {c.toFixed(0)}</p>
+
+
+        </div>
+        )
 
     
 }
+
+
+
+
+
