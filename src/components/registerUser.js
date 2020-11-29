@@ -12,7 +12,12 @@ import { Redirect } from 'react-router-dom';
 
 export const RegisterUser=()=>{
     const operaciones=["Suma","Resta","Multiplicación","División"], 
-    multiplo=[1,2,3,4,5,6,7,8,9]
+    multiplo=[1,2,3,4,5,6,7,8,9],
+    genero=["Masculino","Femenino"],
+    provincia=["Azuay","Bolívar","Cañar","Carchi","Chimborazo","Cotopaxi","El Oro","Esmeraldas"
+,"Galápagos","Guayas","Imbabura","Loja","Los Ríos","Manabí","Morona Santiago","Napo","Orellana",
+"Pastaza","Pichincha","Santa Elena","Santo Domingo de los Tsáchilas","Sucumbíos","Tungurahua","Zamora Chinchipe"]
+
     // const baseURL = 'http://localhost:3030/api/user';
     // const [valcheck,setValcheck]= useState([]);
     // const fetchApi=  async () =>{
@@ -106,6 +111,13 @@ export const RegisterUser=()=>{
                      name="apellido_usuario"
                      onChange={ handleInputChange }
                     aria-describedby="apellido"/>
+                </div>
+                <div class="form-group" >
+                <label for="inputState">Escoge una Operación </label>
+                {genero.map((item) => {
+                         return entradas(item)
+                    })}
+                <p> gener : {formData.operacion}</p>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
