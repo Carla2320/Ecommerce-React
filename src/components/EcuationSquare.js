@@ -48,6 +48,8 @@ import { useSelector } from 'react-redux';
         simbolo = "/";
     }
 
+    localStorage.setItem("resultado",c);
+    
     return (
         <div className="ecuacion" >
 

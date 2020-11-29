@@ -1,21 +1,20 @@
-import React, { useState } from 'react';
-
+import React from 'react';
 import { EcuationSquare } from './EcuationSquare';
 import { useSelector } from 'react-redux';
 import './relogin.css';
-import { useDispatch } from 'react-redux';
-import { Link, useHistory} from 'react-router-dom';
+//import { useDispatch } from 'react-redux';
+//import {  useHistory} from 'react-router-dom';
 import "../css/ecuaciones.css"
-import { startLogout } from '../actions/auth'
-import Swal from 'sweetalert2';
-import { useForm } from '../hooks/useForm';
+import { InputNumero } from './InputNumero';
+//import { startLogout } from '../actions/auth'
+//import Swal from 'sweetalert2';
+//import { InputNumero } from './InputNumero';
 
 
 
 export const ReLoginScreen = () => {
-    let resultado
     
-    const history = useHistory()
+    //const history = useHistory()
     const state = {
         show: true
     }
@@ -39,68 +38,90 @@ export const ReLoginScreen = () => {
   
     console.log('orden',orden);
 
-    // const dispatch = useDispatch();
+    //const dispatch = useDispatch();
     const envio = orden.sort(()=>(Math.random()-0.5));
     console.log('envio',envio);
 
     // const Pulsar=(e)=>{
     //     if(!e){
-    //         Swal.fire('Error','Inicia Sesion Para Volver a Intentarlo','error');
-    //         dispatch( startLogout() );
+    //         return(
+    //             <div>
+    //             <InputNumero/>
+    //         </div>
+    //         )
+            
+    //         //Swal.fire('Error','Inicia Sesion Para Volver a Intentarlo','error');
+    //         //dispatch( startLogout() );
             
     //     }
     //     else{
-    //         Swal.fire('Correcto','Sesion Iniciada','success');
-    //         history.push('/home')
+    //         console.log("entrooo 2")
+    //         return(
+    //         <div>
+    //             <label> holaaaaaaaaa </label>
+    //         </div>
+    //         )
+    //         //Swal.fire('Correcto','Sesion Iniciada','success');
+    //         //history.push('/home')
             
 
     //     }
 
     // }
 
-    const Enviar=(e)=>{
-        e.preventDefault();
-        if(e.key==="Enter"){
-            console.log("aplastaste Enter")
-        }
-    }
-    
 
-    const [number2,setNumber2] = useState('');
+
+    // const handleInputChange= (event) =>{
+
+    //     setDatos({
+    //         ...datos,
+    //         [event.target.name]:event.target.value
+    //     })
+    // }
+
+
+
+    let resultadoF,resultadoInput;
+    const Res= (event) =>{
+        if(event){
+            resultadoInput = localStorage.getItem("UsuarioInput");
+            resultadoF = localStorage.getItem("resultado");
+            console.log(resultadoF,resultadoInput);
+
+
+
+        }
+        else console.log(event)
+    }
 
 
     if(state.show){
         return  (
             <>
-
-                <form onSubmit = {Enviar}>
-
-                
-                <div className="cuadro cuad" id="cuadros">
-                    <section id="general">
-                    <section>
-
-                    <label> <EcuationSquare number={ envio[0] } /> <input onChange={event => setNumber2(event.target.value)} /> </label>
+            <div className="cuadro cuad" id="cuadros" >
+        <section id="general">
+        <section>
+        <button variant="contained" color="secondary" id="btn1" onClick = {()=>{Res(envio[0].prop)}}> <EcuationSquare number={ envio[0] }/> </button>
+        
+        </section>
+        
+        <section>
+        <button variant="contained" color="secondary" id="btn1"onClick = {()=>{Res(envio[1].prop)}}> <EcuationSquare number={ envio[1] }/> </button>
+        </section>
+        <section>
+        <button variant="contained" color="secondary" id="btn1" onClick = {()=>{Res(envio[2].prop)}}> <EcuationSquare number={ envio[2] }/> </button>
+        </section>   
+        <section>
+        <button variant="contained" color="secondary" id="btn1" onClick = {()=>{Res(envio[3].prop)}}> <EcuationSquare number={ envio[3] }/> </button>
+        </section>  
+        <section>
+            <InputNumero/>
+        </section>
+        </section>
+ 
                     
-                    </section>
-                    <section>
-                    <label> <EcuationSquare number={ envio[1] } /> <input/> </label>
-            
-                    </section>
-                    <section>
-                    <label> <EcuationSquare number={ envio[2] } /> <input/> </label>
-                    </section>   
-                    <section>
-                    <label> <EcuationSquare number={ envio[3] } /> <input/> </label>
-                     
-                    </section>  
-                    </section>
-                </div>
+            </div>
 
-                
-                <button className="btn btn-danger btn-lg btn-block" id="verifica" type = "submit"> Verifica </button>
-
-                </form>
             </>
         )
     }
