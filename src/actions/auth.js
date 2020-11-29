@@ -2,6 +2,7 @@ import { fetchSinToken, fetchConToken } from "../helpers/fetch"
 import { types } from "../types/types";
 import Swal from 'sweetalert2';
 
+
 export const startLogin = ( cedula, contrasenia_usuario ) => {
     return async ( dispatch ) => {
         const resp = await fetchSinToken('user/login',{ cedula, contrasenia_usuario },'POST');
@@ -13,7 +14,8 @@ export const startLogin = ( cedula, contrasenia_usuario ) => {
             dispatch(login({
                 name: body.name,
                 lastname: body.lastname,
-                number: body.number
+                number: body.number,
+                operacion: body.operacion
             }))
         }else{
             Swal.fire('Error',body.msg,'error');

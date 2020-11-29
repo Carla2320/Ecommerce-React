@@ -39,16 +39,23 @@ export const ReLoginScreen = () => {
 
     const { number } = useSelector( state => state.auth);
     
+    const aleatorios = [
+        Math.floor((Math.random() * (9 - 2 + 1)) + 2),
+        Math.floor((Math.random() * (9 - 2 + 1)) + 2),
+        Math.floor((Math.random() * (9 - 2 + 1)) + 2)
+    ]
+
     const orden = [
-                    {"numero":Math.floor((Math.random()*20)+9),"prop":false},
-                    {"numero":Math.floor((Math.random()*20)+9),"prop":false},
-                    {"numero":Math.floor((Math.random()*20)+9),"prop":false},
+                    {"numero":aleatorios[0]%number===0?number+1: aleatorios[0] ,"prop":false},
+                    {"numero":aleatorios[1]%number===0?number-1: aleatorios[1] ,"prop":false},
+                    {"numero":aleatorios[2]%number===0?number+1: aleatorios[2] ,"prop":false},
                     {"numero":number,"prop":true},
                 ]
-
+  
     console.log('orden',orden);
     const dispatch = useDispatch();
     const envio = orden.sort(()=>(Math.random()-0.5));
+    console.log('envio',envio);
     const Pulsar=(e)=>{
         console.log(e)
         if(!e){
@@ -62,13 +69,16 @@ export const ReLoginScreen = () => {
         }
 
     }
+
+
     if(state.show){
         return  (
             <>
                 <div className="cuadro cuad" id="cuadros">
                     <section id="general">
                     <section>
-                    <Button variant="contained" color="secondary" id="btn1" onClick ={()=>{Pulsar(envio[0].prop)}}> <EcuationSquare number={ envio[0] }/> </Button>
+
+                    <Button variant="contained" color="primary" id="btn1" onClick ={()=>{Pulsar(envio[0].prop)}} value = "Submit"> <EcuationSquare number={ envio[0] } /> </Button>
                     </section>
                     <section>
                    <Button variant="contained" color="primary" id="btn2" onClick ={()=>{Pulsar(envio[1].prop)}} > <EcuationSquare number={ envio[1] }/> </Button>
