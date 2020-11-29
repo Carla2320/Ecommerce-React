@@ -20,12 +20,10 @@ label {
 #general section {
   float: left;
   padding: 20px;
-  width: 30%;
+  width: 20%;
 }
 #boton {
-  float: left;
-  margin-top: 100px;
-  width: 20%;
+  padding-top: 15px;
 }
 
 #elegirOpe {

@@ -4,15 +4,18 @@ import Swal from 'sweetalert2';
 import { useForm } from '../hooks/useForm';
 import { register} from '../actions/register';
 import { useHistory } from 'react-router-dom';
-
-import {validar, validarcedua, validarform, validarInput} from "../validation/validationForm"
+import {validarform} from "../validation/validationForm"
 import { useDispatch } from 'react-redux';
 import {UserForMulOpe} from "../hooks/UseForMulOpe"
-import { Redirect } from 'react-router-dom';
 
 export const RegisterUser=()=>{
     const operaciones=["Suma","Resta","Multiplicación","División"], 
-    multiplo=[1,2,3,4,5,6,7,8,9]
+    multiplo=[1,2,3,4,5,6,7,8,9],
+    genero=["Masculino","Femenino"],
+    provincia=["Azuay","Bolívar","Cañar","Carchi","Chimborazo","Cotopaxi","El Oro","Esmeraldas"
+,"Galápagos","Guayas","Imbabura","Loja","Los Ríos","Manabí","Morona Santiago","Napo","Orellana",
+"Pastaza","Pichincha","Santa Elena","Santo Domingo de los Tsáchilas","Sucumbíos","Tungurahua","Zamora Chinchipe"]
+
     // const baseURL = 'http://localhost:3030/api/user';
     // const [valcheck,setValcheck]= useState([]);
     // const fetchApi=  async () =>{
@@ -32,18 +35,27 @@ export const RegisterUser=()=>{
         nombre_usuario:'',
         apellido_usuario:'',
         contrasenia_usuario: '',
-        operacion:''
+        username:'',
+        celular_usuario:'',
+        telefono_usuario:'',
+        email_usuario:'',
+        direccion_principal:'',
+        direccion_secundaria:'',
+        codigo_postal:''
     } );
-    const { cedula,nombre_usuario,apellido_usuario, contrasenia_usuario} = formValues;
+    const { cedula,nombre_usuario,apellido_usuario, contrasenia_usuario,username,celular_usuario,telefono_usuario,email_usuario,direccion_principal,direccion_secundaria,codigo_postal} = formValues;
 
     const [formData,handleChange]=UserForMulOpe({
         operacion:"",
         multiplo:"",
+        genero:"",
+        provincia:""
     })
-    const entradas=(name)=>{
+    console.log(formData)
+    const entradas=(clase,name)=>{
         var cargar=(
             <div id="elegirOpe">
-                <input class="form-check-input" type="radio" name="operacion" value={name} onChange={handleChange} ></input>
+                <input class="form-check-input" type="radio" name={clase} value={name} onChange={handleChange} ></input>
                  <label class="form-check-label" for="exampleRadios1">{name}</label>
              </div>  
         )
@@ -55,18 +67,29 @@ export const RegisterUser=()=>{
         )
         return cargar
     }
+    const entradascombo1=(name)=>{
+        var cargar=(
+        <option  width="20px" class="form-check-input" value={name} >{name}</option>
+        )
+        return cargar
+    }
     const history = useHistory()
+    const validatioF=()=>{
+        const a=validarform(nombre_usuario,apellido_usuario,contrasenia_usuario,cedula,formData.operacion,formData.multiplo,formData.genero,username,celular_usuario,telefono_usuario,email_usuario,direccion_principal,direccion_secundaria,formData.provincia,codigo_postal)
+        if(a===true){
+            history.push("/login");
+        }else{
+            console.log("jaj",a)
+        }
+
+    }
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(register(cedula,1,nombre_usuario,apellido_usuario, contrasenia_usuario,formData.operacion,formData.multiplo) );
-
-        // history.push("./LoginScreen.js");
-        // Swal.fire('Ya puedes ingresar a tu cuenta');
+        dispatch(register(cedula,1,nombre_usuario,apellido_usuario,formData.genero,username, contrasenia_usuario,celular_usuario,telefono_usuario,email_usuario,direccion_principal,direccion_secundaria,formData.provincia,codigo_postal,formData.operacion,formData.multiplo) );
+        validatioF()
     }
 
-    const validatioF=()=>{
-       validarform(nombre_usuario,apellido_usuario,contrasenia_usuario,cedula,formData.operacion,formData.multiplo)
-    }
+    
     return(
         <div className="container mt-5" id="contenedor">
         <div className="row" id="subcontenedor">
@@ -74,11 +97,11 @@ export const RegisterUser=()=>{
             <h1>
                 Ingresa tus datos
             </h1>
-            <section id="foto">
+            {/* <section id="foto">
             <div className="col">
                 <img src="../../assets/chaqueta.jpg" id="imgRegister" alt="chaqueta"/>
                 </div>
-            </section>
+            </section> */}
             <section id="general">
             <section>
             <div class="form-group">
@@ -107,6 +130,21 @@ export const RegisterUser=()=>{
                      onChange={ handleInputChange }
                     aria-describedby="apellido"/>
                 </div>
+                <div class="form-group" >
+                <label for="inputState">Escoge tu Genero </label>
+                {genero.map((item) => {
+                         return entradas("genero",item)
+                    })}
+                <p> gener : {formData.genero  }</p>
+                </div>
+                <div class="form-group">
+                    <label for="username">Ingresa tu Username</label>
+                    <input type="text" class="form-control" id="username" 
+                     value={username}
+                     name="username"
+                     onChange={ handleInputChange }
+                    aria-describedby="username"/>
+                </div>
                 <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password"
@@ -114,27 +152,95 @@ export const RegisterUser=()=>{
                      name="contrasenia_usuario"
                      onChange={ handleInputChange } class="form-control" id="password"/>
                 </div>
+                <div class="form-group">
+                    <label for="celular_usuario">Ingresa Teléfono Celular</label>
+                    <input type="number" 
+                    class="form-control" 
+                    value={ celular_usuario }
+                    name="celular_usuario"
+                    onChange={ handleInputChange }id="celular_usuario" 
+                    aria-describedby="celular_usuario"
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="telefono_usuario">Ingresa Teléfono Convencional</label>
+                    <input type="number" 
+                    class="form-control" 
+                    value={ telefono_usuario}
+                    name="telefono_usuario"
+                    onChange={ handleInputChange }id="telefono_usuario" 
+                    aria-describedby="telefono_usuario"
+                    />
+                </div>
             </section>
             <section>
+            <div class="form-group">
+                    <label for="email_usuario">Ingresa Email</label>
+                    <input type="email" 
+                    class="form-control" 
+                    value={ email_usuario}
+                    name="email_usuario"
+                    onChange={ handleInputChange }id="email_usuario" 
+                    aria-describedby="email_usuario"
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="direccion_principal">Ingresa tu dirección principal</label>
+                    <input type="text" 
+                    class="form-control" 
+                    value={ direccion_principal}
+                    name="direccion_principal"
+                    onChange={ handleInputChange }id="direccion_principal" 
+                    aria-describedby="direccion_principal"
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="direccion_secundaria">Ingresa tu dirección secundaria</label>
+                    <input type="text" 
+                    class="form-control" 
+                    value={direccion_secundaria}
+                    name="direccion_secundaria"
+                    onChange={ handleInputChange }id="direccion_secundaria" 
+                    aria-describedby="direccion_secundaria"
+                    />
+                </div>
+                <div class="form-group">
+                <label for="provincia">Escoge tu provincia</label>
+                    <select id="provincia" class="form-control" name="provincia" onChange={handleChange}>
+                     {provincia.map((item) => {
+                         return entradascombo(item.toString())
+                    })}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="codigo_postal">Ingresa tu código postal</label>
+                    <input type="number" 
+                    class="form-control" 
+                    value={ codigo_postal }
+                    name="codigo_postal"
+                    onChange={ handleInputChange }id="codigo_postal" 
+                    aria-describedby="codigo_postal"
+                    />
+                </div>     
             <div class="form-group" >
-                <label for="inputState">Escoge una Operación </label>
+                <label for="inputState">Escoge una Operación</label>
                 {operaciones.map((item) => {
-                         return entradas(item)
+                         return entradas("operacion",item)
                     })}
                 <p> gener : {formData.operacion}</p>
             </div>
                 <div class="form-group">
                 <label for="inputState">Escoge un Multiplo</label>
-                    <select class="form-control" id="multiplo" name="multiplo" onChange={handleChange}>
+                    <select  class="form-control" id="multiplo" name="multiplo" onChange={handleChange}>
                      {multiplo.map((item) => {
                          return entradascombo(item)
                     })}
                     </select>
                 </div>
+                <div id="boton">
+                <button type="submit" class="btn btn-danger btn-lg btn-block" onClick={handleSubmit} >Registrarse</button>
+                </div>
             </section>
-            </section>
-            <section id="boton">
-           <button type="submit" class="btn btn-danger btn-lg btn-block" onClick={validatioF} >Registrarse</button>
             </section>
             </form>
         </div>
