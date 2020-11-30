@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 
 
- export const EcuationSquare = ( numberR ) => {
+ export const EcuationSquare = React.memo(( numberR ) => {
  
     let c;
     let a,b,simbolo;
@@ -43,14 +43,13 @@ import { useSelector } from 'react-redux';
     if(prop){
         localStorage.setItem("resultado",c);
     }
+    console.log("me volvi a generar :(");
     return (
         <div className="ecuacion" >
-            <p> {a} {simbolo} {b} = {c.toFixed(0)}</p>
+            <p> {a} {simbolo} {b} = {c}</p>
         </div>
     )
-
-    
-}
+})
 
 
 

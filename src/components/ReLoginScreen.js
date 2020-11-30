@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { EcuationSquare } from './EcuationSquare';
 import { useSelector } from 'react-redux';
 import './relogin.css';
-import { useDispatch } from 'react-redux';
-//import {  useHistory} from 'react-router-dom';
 import "../css/ecuaciones.css"
 import { InputNumero } from './InputNumero';
-import { verifyLogin } from '../actions/auth'
 //import Swal from 'sweetalert2';
 //import { InputNumero } from './InputNumero';
 
@@ -33,34 +30,33 @@ export const ReLoginScreen = () => {
 
     const [ enable, setEnable ] = useState(false);
 
-    const handleClick = (e) => {
+    const handleClick = useCallback(()=>{
         setEnable(!enable);
-        console.log("Lo hizo?");
-    }
+    }, [ setEnable, !envio ]);
 
         return  (
             <>
             {/* <h1> {show?<InputNumero/>:<div>vacio</div>} </h1> */}
-            <h1> <InputNumero/> </h1>
+            {/* <h1> <InputNumero/> </h1> */}
             <div className="cuadro cuad" id="cuadros" >
                 <section id="general">
                 <section>
-                    <button  disabled={ enable } onClick = { handleClick }> 
+                    <button onClick = { handleClick } > 
                     <EcuationSquare number={ envio[0] }/> 
                     </button>
                 </section>
                 <section>
-                    <button  disabled={ enable } onClick = { handleClick }> 
+                    <button onClick = { handleClick }> 
                     <EcuationSquare number={ envio[1] }/> 
                     </button>
                 </section>
                 <section>
-                    <button  disabled={ enable } onClick = { handleClick }> 
+                    <button onClick = { handleClick }> 
                     <EcuationSquare number={ envio[2] }/> 
                     </button>
                 </section>   
                 <section>
-                    <button  disabled={ enable } onClick = { handleClick }> 
+                    <button onClick = { handleClick }> 
                     <EcuationSquare number={ envio[3] }/> 
                     </button>
                 </section>  
