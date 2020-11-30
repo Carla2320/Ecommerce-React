@@ -1,26 +1,27 @@
 import './ecuation.css';
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { startLogout } from '../actions/auth';
+import { useDispatch } from 'react-redux';
 
 
  export const InputNumero = ( ) => {   
     const [datos,setDatos] = useState({
         numeroInp:'',
-        
     })
-    const handleInputChange= (event) =>{
-
-
+    const handleInputChange = (event) =>{
         setDatos({
             ...datos,
             [event.target.name]:event.target.value
         })
-
-        
     }
+
+    const history = useHistory();
+    const dispatch = useDispatch();
+
     const enviardatos =(event) =>{
         event.preventDefault();
-        localStorage.setItem("UsuarioInput",datos.numeroInp)
-
+        localStorage.getItem('resultado')===datos.numeroInp?history.push("/home"):dispatch(startLogout());
     }
   
     return(

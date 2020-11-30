@@ -4,14 +4,13 @@ import { useSelector } from 'react-redux';
 
 
 
- export const EcuationSquare = ( numberR) => {
-
+ export const EcuationSquare = ( numberR ) => {
  
     let c;
     let a,b,simbolo;
-    const  {number}  = numberR;
+    const  { number }  = numberR;
     const { operacion } = useSelector( state => state.auth);
-    const {numero, prop} = number;
+    const { numero, prop } = number;
     
     const ecuationNumbers = [
         numero * Math.floor((Math.random() * (9 - 2 + 1)) + 2),
@@ -26,20 +25,14 @@ import { useSelector } from 'react-redux';
     b =!prop?multipleVerify[1]:ecuationNumbers[1] 
 
     if(operacion==="Suma"){
-
         c = a + b
         simbolo = "+";
-
     }
     else if(operacion==="Resta"){
-
         c = a - b
         simbolo = "-";
-
-        
     }
     else if(operacion==="Multiplicacion"){
- 
         c = a*b
         simbolo = "*";
     }
@@ -47,17 +40,14 @@ import { useSelector } from 'react-redux';
         c = a/b
         simbolo = "/";
     }
-
-    localStorage.setItem("resultado",c);
-    
+    if(prop){
+        localStorage.setItem("resultado",c);
+    }
     return (
         <div className="ecuacion" >
-
             <p> {a} {simbolo} {b} = {c.toFixed(0)}</p>
-
-
         </div>
-        )
+    )
 
     
 }
