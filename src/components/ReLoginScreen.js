@@ -2,7 +2,6 @@ import React, { useCallback, useMemo, useState } from 'react';
 import { EcuationSquare } from './EcuationSquare';
 import { useSelector } from 'react-redux';
 import "../css/ecuaciones.css"
-//import Swal from 'sweetalert2';
 import { InputNumero } from './InputNumero';
 
 
@@ -42,22 +41,18 @@ export const ReLoginScreen = () => {
             <div className="cuadro cuad" id="cuadros" >
                 <section id="general">
                     <section>
-                        <button onClick = { handleClick }  className="btn btn-warning" id="1" > 
+                        <button onClick = { handleClick }  className="btn1" id="btn1" > 
                             <EcuationSquare number={ memoRandom[0] }/> 
                         </button>
-                    </section>
-                    <section>
-                        <button onClick = { handleClick }  className="btn btn-warning" id="2"> 
+                        <button onClick = { handleClick }  className="btn btn-warning" id="btn2"> 
                             <EcuationSquare number={ memoRandom[1] }/> 
                         </button>
                     </section>
                     <section>
-                        <button onClick = { handleClick }  className="btn btn-warning" id="3"> 
+                        <button onClick = { handleClick }  className="btn btn-warning" id="btn3"> 
                             <EcuationSquare number={ memoRandom[2] }/> 
                         </button>
-                    </section>   
-                    <section>
-                        <button onClick = { handleClick }  className="btn btn-warning" id="4"> 
+                        <button onClick = { handleClick }  className="btn btn-warning" id="btn4"> 
                             <EcuationSquare number={ memoRandom[3] }/> 
                         </button>
                     </section>  
