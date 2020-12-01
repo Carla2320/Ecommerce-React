@@ -65,8 +65,8 @@ export const ReLoginScreen = () => {
         return  (
             <>
                 <section id="completo">
-                <section id="general">
-                    <h1 id="titulo">
+                <section id="generalecu">
+                    <h1 id="titulos">
                         Escoga la operación que contenga el multiplo de su numero 
                     </h1>
                 <section>

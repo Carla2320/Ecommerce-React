@@ -1,14 +1,14 @@
-#general{
+#generalecu{
     background-color: red;
 }
-#general section{
+#generalecu section{
     padding: 15px;
     margin-left: 300px;
     margin-right: 100px;
     float: left;
     
 }
-#titulo{
+#titulos{
     color: white;
     font-size: 40px;
     text-align: left;

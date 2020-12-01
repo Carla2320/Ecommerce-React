@@ -104,9 +104,9 @@ export const RegisterUser=()=>{
             <h1 id="titulo">
                 Ingresa tus datos
             </h1>
-            <div class="form-group">
-                    <label for="cedula">Ingresa tu cedula</label>
+            <div class="form-group">                    
                     <input type="text" 
+                    placeholder="Ingresa tu cedula"
                     class="form-control" 
                     value={ cedula }
                     name="cedula"
