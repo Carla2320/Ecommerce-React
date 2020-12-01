@@ -97,20 +97,17 @@ export const RegisterUser=()=>{
             <h1>
                 Ingresa tus datos
             </h1>
-            {/* <section id="foto">
-            <div className="col">
-                <img src="../../assets/chaqueta.jpg" id="imgRegister" alt="chaqueta"/>
-                </div>
-            </section> */}
             <section id="general">
             <section>
             <div class="form-group">
                     <label for="cedula">Ingresa tu cedula</label>
                     <input type="number" 
+                    id="cedula"
+                    placeholder="Ingresa tu cedula"
                     class="form-control" 
                     value={ cedula }
                     name="cedula"
-                    onChange={ handleInputChange }id="cedula" 
+                    onChange={ handleInputChange }
                     aria-describedby="cedula"
                     />
                 </div>
@@ -118,6 +115,7 @@ export const RegisterUser=()=>{
                     <label for="nombre">Ingresa tu nombre</label>
                     <input type="text" class="form-control" id="nombre"
                      value={nombre_usuario}
+                     placeholder="Ingresa tu nombre"
                      name="nombre_usuario"
                      onChange={ handleInputChange }
                     aria-describedby="nombre"/>
@@ -127,6 +125,7 @@ export const RegisterUser=()=>{
                     <input type="text" class="form-control" id="apellido" 
                      value={ apellido_usuario }
                      name="apellido_usuario"
+                     placeholder="Ingresa tu apellido"
                      onChange={ handleInputChange }
                     aria-describedby="apellido"/>
                 </div>
@@ -142,12 +141,14 @@ export const RegisterUser=()=>{
                     <input type="text" class="form-control" id="username" 
                      value={username}
                      name="username"
+                     placeholder="Ingresa tu username"
                      onChange={ handleInputChange }
                     aria-describedby="username"/>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password"
+                    placeholder="Ingresa tu password"
                      value={ contrasenia_usuario } 
                      name="contrasenia_usuario"
                      onChange={ handleInputChange } class="form-control" id="password"/>
@@ -155,6 +156,7 @@ export const RegisterUser=()=>{
                 <div class="form-group">
                     <label for="celular_usuario">Ingresa Teléfono Celular</label>
                     <input type="number" 
+                    placeholder="Ingresa tu celular"
                     class="form-control" 
                     value={ celular_usuario }
                     name="celular_usuario"
@@ -166,6 +168,7 @@ export const RegisterUser=()=>{
                     <label for="telefono_usuario">Ingresa Teléfono Convencional</label>
                     <input type="number" 
                     class="form-control" 
+                    placeholder="Ingresa tu teléfono convecional"
                     value={ telefono_usuario}
                     name="telefono_usuario"
                     onChange={ handleInputChange }id="telefono_usuario" 
@@ -178,6 +181,7 @@ export const RegisterUser=()=>{
                     <label for="email_usuario">Ingresa Email</label>
                     <input type="email" 
                     class="form-control" 
+                    placeholder="Ingresa tu email"
                     value={ email_usuario}
                     name="email_usuario"
                     onChange={ handleInputChange }id="email_usuario" 
@@ -187,6 +191,7 @@ export const RegisterUser=()=>{
                 <div class="form-group">
                     <label for="direccion_principal">Ingresa tu dirección principal</label>
                     <input type="text" 
+                    placeholder="Ingresa tu dirección principal"
                     class="form-control" 
                     value={ direccion_principal}
                     name="direccion_principal"
@@ -198,6 +203,7 @@ export const RegisterUser=()=>{
                     <label for="direccion_secundaria">Ingresa tu dirección secundaria</label>
                     <input type="text" 
                     class="form-control" 
+                    placeholder="Ingresa tu  dirección secundaria"
                     value={direccion_secundaria}
                     name="direccion_secundaria"
                     onChange={ handleInputChange }id="direccion_secundaria" 
@@ -216,6 +222,7 @@ export const RegisterUser=()=>{
                     <label for="codigo_postal">Ingresa tu código postal</label>
                     <input type="number" 
                     class="form-control" 
+                    placeholder="Ingresa tu código postal"
                     value={ codigo_postal }
                     name="codigo_postal"
                     onChange={ handleInputChange }id="codigo_postal" 

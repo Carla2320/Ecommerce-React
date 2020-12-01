@@ -1,11 +1,54 @@
-#registro {
+#cedulas,#contrasenias{
+  background-color: transparent;
+  border: 2px solid;
+  border-radius: 50px 50px;
   width: 30%;
-  font-size: 15px;
-  color: black;
-  padding: 5px;
-  margin-bottom: 10px;
-  list-style: none;
+  padding: 25px;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
 }
-#enlace {
-  text-decoration: none;
+#cedulas::-webkit-input-placeholder { color: white; } 
+#contrasenias::-webkit-input-placeholder { color: white; } 
+#registro {
+  font-size: 18px;
+  background-color: #00BB30;
+  color: white;
+  padding: 10px;
+  margin-bottom: 15px;
+  margin-top: 50px;
+  margin-bottom: 400px;
+  margin-right: auto;
+  margin-left: auto;
+  text-decoration: underline;
+}
+
+#divingre{
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+#btnregister{
+  float: left;
+  right: 190px;
+}
+
+#ingreso{
+  background-color: #00BB30;
+  border: 2px solid transparent;
+  border-radius: 50px 50px;
+  width: 30%;
+  font-size: 20px;
+  color: white;
+  padding: 9px;
+  margin-left: 385px;
+}
+label{
+  margin-left: 390px;
+}
+#ingre{
+  margin-left: 370px;
+}
+body{
+  background: linear-gradient(to bottom,#708690,white);
 }

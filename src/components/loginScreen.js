@@ -1,11 +1,9 @@
 import React from 'react';
 import "../css/login.css"
 import { Link } from 'react-router-dom';
-
 import { useDispatch } from 'react-redux';
 import { startLogin } from '../actions/auth';
 import { useForm } from '../hooks/useForm';
-import './login.css';
 
 
 export const LoginScreen = () => {
@@ -32,47 +30,52 @@ export const LoginScreen = () => {
             <div className="row">
                 <form className="col form" onSubmit={ handleSubmit }>
                 <h1>
-                    Ingresos
+                    Sing in
                 </h1>
                     <div className="form-group">
-                        <label>Cédula</label>
                         <input 
                             type="text" 
+                            id="cedulas"
                             className="form-control"
                             value={ cedula }
                             name="cedula"
+                            placeholder="Ingresa tu cedula"
                             onKeyPress = {solonumeros}
                             onChange={ handleInputChange }
                             autoComplete="off"
                         />
                     </div>
                     <div className="form-group">
-                        <label>Contraseña</label>
                         <input 
                             type="password" 
+                            id="contrasenias"
+                            placeholder="Ingresa tu contraseña"
                             className="form-control"
                             value={ contrasenia_usuario } 
                             name="contrasenia_usuario"
                             onChange={ handleInputChange }
                         />
                     </div>
-                    <button type="submit" className="btn btn-danger btn-lg btn-block">Ingresar</button>
-                    <div className="form-group form-check">
+                    <div id="btnlogin">
+                    <button id="ingreso" type="submit" >Login</button>
+
+                    </div>
+                    <div className="form-group form-check" id="divingre">
                         <div className="row">
                             <div className="col">
-                            <input type="checkbox" className="form-check-input"/>
+                            <input type="checkbox" className="form-check-input" id="ingre"/>
                             <label className="form-check-label" >Recordarme</label>
                             </div>
-                            <div className="col">
-                                <Link id="enlace" to="/registro"><button type="submit" className="btn btn-danger btn-lg btn-block" id="registro" href="/home">Registrate</button></Link>      
+                            <div className="col" id="btnregister">
+                                <Link id="enlace" to="/registro"><button type="submit"  id="registro" href="/home">Registrate</button></Link>      
                             </div>
                             
                         </div>
                     </div>
                 </form>
-                <div className="col">
+                {/* <div className="col">
                 <img src="../../assets/chaqueta.jpg" className="d-block w-100" alt="product"/>
-                </div>
+                </div> */}
             </div>
         </div>
         )
