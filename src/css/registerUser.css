@@ -3,11 +3,11 @@
   background-color: transparent;
   border: 2px solid;
   border-radius: 50px 50px;
-  width: 30%;
-  padding: 25px;
+  width: 100%;
+  padding: 30px;
   color: white;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: 80px;
 }
 #cedula::-webkit-input-placeholder { color: white; } 
 #nombre::-webkit-input-placeholder { color: white; } 
@@ -20,15 +20,43 @@
 #direccion_principal::-webkit-input-placeholder { color: white; } 
 #direccion_secundaria::-webkit-input-placeholder { color: white; } 
 #codigo_postal::-webkit-input-placeholder { color: white; } 
-h1 {
+#titulo {
   text-align: center;
-  padding: 35px;
-  margin: 25px;
+  padding: 15px;
+  color: white;
 }
-label {
-  font-size: 20px;
+#provincia,#multiplo{
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 50px 50px;
+  color: black;
 }
 #boton {
-  padding-top: 15px;
+  font-size: 18px;
+  border: 2px solid transparent;
+  border-radius: 50px 50px;
+  width: 80%;
+  background-color: white;
+  color: linear-gradient(to left, #4BC0C8, #C779D0, #FEAC5E);;
+  padding: 10px;
+  margin-bottom: 15px;
+  text-decoration: none;
+  margin-top: 20px;
+  margin-right: aut;
+  margin-left: auto;
 }
-
+#genero,#operacion,#multi,#provi{
+  color: white;
+  font-weight: bold;
+  margin-left: 40px;
+}
+#subcontenedor{
+  position: relative;
+  left: 50px;
+  background-color: green;
+  width: 100%;
+  background: #FEAC5E;  
+  background: -webkit-linear-gradient(to left, #4BC0C8, #C779D0, #FEAC5E);  
+  background: linear-gradient(to left, #4BC0C8, #C779D0, #FEAC5E); 
+  border-radius: 20px 20px;
+}
