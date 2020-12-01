@@ -1,6 +1,27 @@
+<<<<<<< HEAD
+#generalecu{
+    background-color: red;
+}
+#generalecu section{
+    padding: 15px;
+    margin-left: 300px;
+    margin-right: 100px;
+    float: left;
+    
+}
+#titulos{
+    color: white;
+    font-size: 40px;
+    text-align: left;
+    background: #FEAC5E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #4BC0C8, #C779D0, #FEAC5E);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #4BC0C8, #C779D0, #FEAC5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+=======
 
     
 
+>>>>>>> 908827238b99ed818751b00946cba13af17e4fa4
 #btn1,#btn2,#btn3,#btn4{
     width: 180px;
     height: auto;
