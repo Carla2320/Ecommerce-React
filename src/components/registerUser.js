@@ -135,7 +135,7 @@ export const RegisterUser=()=>{
                 {genero.map((item) => {
                          return entradas("genero",item)
                     })}
-                <p> gener : {formData.genero  }</p>
+                {/* <p> gener : {formData.genero  }</p> */}
                 </div>
                 <div class="form-group">
                     <label for="username">Ingresa tu Username</label>
@@ -227,7 +227,7 @@ export const RegisterUser=()=>{
                 {operaciones.map((item) => {
                          return entradas("operacion",item)
                     })}
-                <p> gener : {formData.operacion}</p>
+                {/* <p> gener : {formData.operacion}</p> */}
             </div>
                 <div class="form-group">
                 <label for="inputState">Escoge un Multiplo</label>
