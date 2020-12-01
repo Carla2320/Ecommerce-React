@@ -17,9 +17,9 @@ export const ReLoginScreen = () => {
     ]
 
     const orden = [
-        {"numero":aleatorios[0]%number===0?number+1: aleatorios[0] ,"prop":false},
-        {"numero":aleatorios[1]%number===0?number-1: aleatorios[1] ,"prop":false},
-        {"numero":aleatorios[2]%number===0?number+1: aleatorios[2] ,"prop":false},
+        {"numero":aleatorios[0]%number===0?aleatorios[0]+1: aleatorios[0] ,"prop":false},
+        {"numero":aleatorios[1]%number===0?aleatorios[1]+1: aleatorios[1] ,"prop":false},
+        {"numero":aleatorios[2]%number===0?aleatorios[2]+1: aleatorios[2] ,"prop":false},
         {"numero":number,"prop":true},
     ]
 
@@ -27,9 +27,6 @@ export const ReLoginScreen = () => {
     console.log(orden);
     const [ enable, setEnable ] = useState(false);
     const prueba = true;
-    let input, resultadoF;
-    resultadoF = localStorage.getItem("resultado");
-    
     const memoRandom = useMemo(()=> envio, [prueba] )
     const handleClick = useCallback(()=>{
         setEnable(!enable);
@@ -54,7 +51,7 @@ export const ReLoginScreen = () => {
 
       
     }
-    let id,hola
+    let id;
     const funcion=(event)=>{
         id=event.currentTarget.getAttribute('data-key')
         console.log('id',id);
@@ -66,7 +63,7 @@ export const ReLoginScreen = () => {
             <>
             <section id="completo">
                 <h1 id="titulo">
-                        Escoga la operación que contenga el multiplo de su numero 
+                        Choose the option that contains a multiple numbers of your number 
                     </h1>
                 <section id="botones">
     

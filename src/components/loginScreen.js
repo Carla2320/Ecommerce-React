@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux';
 import { startLogin } from '../actions/auth';
 import { useForm } from '../hooks/useForm';
 
-
 export const LoginScreen = () => {
     const solonumeros=(e)=>{
         var key = window.event ? e.which : e.keyCode;
@@ -31,7 +30,7 @@ export const LoginScreen = () => {
                 <form className="col form" onSubmit={ handleSubmit } >
                  <section id="fondo">
                  <h1>
-                    Sing in
+                    Sign in
                 </h1>
                     <div className="form-group">
                         <input 
@@ -75,9 +74,6 @@ export const LoginScreen = () => {
                     </section>
 
                 </form>
-                {/* <div className="col">
-                <img src="../../assets/chaqueta.jpg" className="d-block w-100" alt="product"/>
-                </div> */}
             </div>
         </div>
         )
