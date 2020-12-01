@@ -24,15 +24,43 @@ export const ReLoginScreen = () => {
     ]
 
     const envio = orden.sort(()=>(Math.random()-0.5));
-
+    console.log(orden);
     const [ enable, setEnable ] = useState(false);
     const prueba = true;
+    let input, resultadoF;
+    resultadoF = localStorage.getItem("resultado");
+    
     const memoRandom = useMemo(()=> envio, [prueba] )
-
     const handleClick = useCallback(()=>{
         setEnable(!enable);
         console.log('click');
+        
     }, [ setEnable ]);
+    
+    const Res= (event) =>{
+        
+        if(event){
+            console.log('true',event)
+            localStorage.setItem("Estado",true);
+            //console.log(resultadoF,resultadoInput);
+            
+        }
+        else {
+            console.log( 'false',event)
+            localStorage.setItem("Estado",false);
+
+           
+        }
+
+      
+    }
+    let id,hola
+    const funcion=(event)=>{
+        id=event.currentTarget.getAttribute('data-key')
+        console.log('id',id);
+        handleClick()
+        Res(envio[id].prop)
+    }
 
         return  (
             <>
@@ -40,22 +68,22 @@ export const ReLoginScreen = () => {
         <main className = "main">
             <div className="cuadro cuad" id="cuadros" >
                 <section id="general">
-                    <section>
-                        <button onClick = { handleClick }  className="btn1" id="btn1" > 
-                            <EcuationSquare number={ memoRandom[0] }/> 
-                        </button>
-                        <button onClick = { handleClick }  className="btn btn-warning" id="btn2"> 
-                            <EcuationSquare number={ memoRandom[1] }/> 
-                        </button>
-                    </section>
-                    <section>
-                        <button onClick = { handleClick }  className="btn btn-warning" id="btn3"> 
-                            <EcuationSquare number={ memoRandom[2] }/> 
-                        </button>
-                        <button onClick = { handleClick }  className="btn btn-warning" id="btn4"> 
-                            <EcuationSquare number={ memoRandom[3] }/> 
-                        </button>
-                    </section>  
+                <section>
+                    <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key='0' id = "btn1" > 
+                    <EcuationSquare number={ memoRandom[0] }/> 
+                    </button>
+                    <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key="1" id = "btn2"> 
+                    <EcuationSquare number={ memoRandom[1] }/> 
+                    </button>
+                </section>
+                <section>
+                    <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key="2" id = "btn3"> 
+                    <EcuationSquare number={ memoRandom[2] }/> 
+                    </button>
+                    <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key="3"id = "btn4"> 
+                    <EcuationSquare number={ memoRandom[3] }/> 
+                    </button>
+                </section>  
                 </section>  
             </div>
 

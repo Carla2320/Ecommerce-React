@@ -68,3 +68,15 @@
     background-color: red;
     color: white;
 }
+.btn{
+    background: #ccc;
+}
+
+/** on active **/
+
+.btn:active{
+    background: rgb(0, 200, 255);
+}
+.btn:visited{
+    color: rgb(0, 200, 255);
+}
