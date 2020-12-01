@@ -1,25 +1,22 @@
-#general{
-    background-color: white;
-}
-#general section{
-    padding: 10px;
-    margin-left: 300px;
-    padding-left: px;
-    float: left;
-}
 
+    
 
 #btn1,#btn2,#btn3,#btn4{
     width: 180px;
     height: auto;
-    padding-top: 10px;
-
-    border: 2px solid rgb(32, 29, 29);
+    margin: 10px;
+    padding-top: 20px;
     border-radius: 40px;
     background-color: white;
-    color: red;
+    color : rgb(123, 94, 94);
     text-align: center;
-    font-size: 18px;
+    font-size: 25px;
+}
+
+#botones{
+    padding: 50px;
+    text-align: center;
+
 }
 
 /** on active **/
@@ -37,16 +34,22 @@
     background: rgb(0, 200, 255);
 }
 
-.main{
-
+/* .main{
     margin: 100px;
     margin-left: 400px;
     width: 50%;
     padding: 60 px 0;
-    background: #fdcfdf;
 
-     
-
+} */
+#completo{
+    border-radius: 40px;
+    margin: 100px;
+    margin-top: 200px;
+    width: 50%;
+    padding: 60 px ;
+    background: #FEAC5E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #4BC0C8, #C779D0, #FEAC5E);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #4BC0C8, #C779D0, #FEAC5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 
@@ -54,20 +57,37 @@
 
 
 #btn1:hover{
-    background-color: red;
+    background: #536976;  
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     color: white;
+    font-weight: bold;
 }
 #btn2:hover{
-    background-color: red;
+    background: #536976;  
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: white;
+    font-weight: bold;
 }
 #btn3:hover{
-    background-color: red;
+    background: #536976;  
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: white;
+    font-weight: bold;
 }
 #btn4:hover{
-    background-color: red;
+    background: #536976;  
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: white;
+    font-weight: bold;
 }
 .btn{
     background: #ccc;

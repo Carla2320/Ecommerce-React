@@ -64,34 +64,34 @@ export const ReLoginScreen = () => {
 
         return  (
             <>
-            
-        <main className = "main">
-            <div className="cuadro cuad" id="cuadros" >
-                <section id="general">
-                <section>
-                    <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key='0' id = "btn1" > 
-                    <EcuationSquare number={ memoRandom[0] }/> 
-                    </button>
-                    <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key="1" id = "btn2"> 
-                    <EcuationSquare number={ memoRandom[1] }/> 
-                    </button>
-                </section>
-                <section>
-                    <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key="2" id = "btn3"> 
-                    <EcuationSquare number={ memoRandom[2] }/> 
-                    </button>
-                    <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key="3"id = "btn4"> 
-                    <EcuationSquare number={ memoRandom[3] }/> 
-                    </button>
+            <section id="completo">
+                <h1 id="titulo">
+                        Escoga la operación que contenga el multiplo de su numero 
+                    </h1>
+                <section id="botones">
+    
+                    <section>
+                        <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key='0' id = "btn1" > 
+                        <EcuationSquare number={ memoRandom[0] }/> 
+                        </button>
+                        <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key="1" id = "btn2"> 
+                        <EcuationSquare number={ memoRandom[1] }/> 
+                        </button>
+                    </section>
+                    <section>
+                        <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key="2" id = "btn3"> 
+                        <EcuationSquare number={ memoRandom[2] }/> 
+                        </button>
+                        <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key="3"id = "btn4"> 
+                        <EcuationSquare number={ memoRandom[3] }/> 
+                        </button>
+                    </section> 
                 </section>  
-                </section>  
-            </div>
+            </section>
 
-            <div>
             <InputNumero/>
-            </div>
-        </main>
-            </>
+
+         </>
         )
 
 }
