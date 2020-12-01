@@ -3,5 +3,8 @@ export const types = {
     authChekingFinish : '[auth] Finish cheking state',
     authStartLogin : '[auth] Start Login',
     authLogin : '[auth] Login',
-    authLogout : '[auth] Logout'
+    authLogout : '[auth] Logout',
+
+
+    numberVerify: '[verify] verify number'
 }

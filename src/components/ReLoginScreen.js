@@ -1,41 +1,15 @@
-import React from 'react';
-
+import React, { useCallback, useState } from 'react';
 import { EcuationSquare } from './EcuationSquare';
 import { useSelector } from 'react-redux';
 import './relogin.css';
-import { useDispatch } from 'react-redux';
-import { Link, useHistory} from 'react-router-dom';
 import "../css/ecuaciones.css"
-import { startLogout } from '../actions/auth'
-import Button from '@material-ui/core/Button';
-import { Redirect, Route, Switch } from 'react-router-dom';
-import { HomeScreen } from './HomeScreen';
-import Swal from 'sweetalert2';
+import { InputNumero } from './InputNumero';
+//import Swal from 'sweetalert2';
+//import { InputNumero } from './InputNumero';
 
 
-export const Aplastar = (e) =>{
-    if(!e){
-        console.log(e)
-        return (
-            <>
-                <div>
-                    <Switch>
-                        <Route exact path="/home" component={ HomeScreen }/>
-                        
-                        <Redirect to="/home"/>
-                    </Switch>
-                </div>
-            </>
-            )
-    }
-
-}
 
 export const ReLoginScreen = () => {
-    const history = useHistory()
-    const state = {
-        show: true
-    }
 
     const { number } = useSelector( state => state.auth);
     
@@ -51,48 +25,45 @@ export const ReLoginScreen = () => {
                     {"numero":aleatorios[2]%number===0?number+1: aleatorios[2] ,"prop":false},
                     {"numero":number,"prop":true},
                 ]
-  
-    console.log('orden',orden);
-    const dispatch = useDispatch();
+
     const envio = orden.sort(()=>(Math.random()-0.5));
-    console.log('envio',envio);
-    const Pulsar=(e)=>{
-        console.log(e)
-        if(!e){
-            Swal.fire('Error','Inicia Sesion Para Volver a Intentarlo','error');
-            dispatch( startLogout() );
-            
-        }
-        else{
-            Swal.fire('Correcto','Sesion Iniciada','success');
-            history.push('/home')
-        }
 
-    }
+    const [ enable, setEnable ] = useState(false);
 
+    const handleClick = useCallback(()=>{
+        setEnable(!enable);
+    }, [ setEnable, !envio ]);
 
-    if(state.show){
         return  (
             <>
-                <div className="cuadro cuad" id="cuadros">
-                    <section id="general">
-                    <section>
+            {/* <h1> {show?<InputNumero/>:<div>vacio</div>} </h1> */}
+            {/* <h1> <InputNumero/> </h1> */}
+            <div className="cuadro cuad" id="cuadros" >
+                <section id="general">
+                <section>
+                    <button onClick = { handleClick } > 
+                    <EcuationSquare number={ envio[0] }/> 
+                    </button>
+                </section>
+                <section>
+                    <button onClick = { handleClick }> 
+                    <EcuationSquare number={ envio[1] }/> 
+                    </button>
+                </section>
+                <section>
+                    <button onClick = { handleClick }> 
+                    <EcuationSquare number={ envio[2] }/> 
+                    </button>
+                </section>   
+                <section>
+                    <button onClick = { handleClick }> 
+                    <EcuationSquare number={ envio[3] }/> 
+                    </button>
+                </section>  
+                </section>  
+            </div>
 
-                    <Button variant="contained" color="primary" id="btn1" onClick ={()=>{Pulsar(envio[0].prop)}} value = "Submit"> <EcuationSquare number={ envio[0] } /> </Button>
-                    </section>
-                    <section>
-                   <Button variant="contained" color="primary" id="btn2" onClick ={()=>{Pulsar(envio[1].prop)}} > <EcuationSquare number={ envio[1] }/> </Button>
-                    </section>
-                    <section>
-                    <Button variant="contained" color="primary" id="btn3" onClick ={()=>{Pulsar(envio[2].prop)}}> <EcuationSquare id="hi" number={ envio[2] }/></Button>
-                    </section>   
-                    <section>
-                    <Button variant="contained" color="primary" id="btn4" onClick ={()=>{Pulsar(envio[3].prop)}}> <EcuationSquare number={ envio[3] }/></Button>    
-                    </section>  
-                    </section>
-                </div>
-                <Link className="btn btn-danger btn-lg btn-block" to="/home" id="verifica"> Verifica </Link>
             </>
         )
-    }
+    
 }

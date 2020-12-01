@@ -21,6 +21,10 @@ export const authReducer = (state= initialState, action) => {
             return {
                 checking: false
             }
+        case types.numberVerify:
+            return {
+                ...state
+            }
         default:
            return state;
     }
