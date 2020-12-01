@@ -51,12 +51,15 @@ import { startLogout } from '../actions/auth'
     }
   
     return(
-        
-        <form onSubmit={enviardatos}>
-                    <input placeholder="Ingrese la suma" id="veri" type="text" className="form-control"name='numeroInp'onChange={handleInputChange}></input>
+        <>
+        <section id = "enviarDatos">
+  
+            <form onSubmit={enviardatos}>
+                    <input placeholder="Ingrese el resultado " id="txtVerificar" type="text" className="form-control"name='numeroInp'onChange={handleInputChange}></input>
                     <button id="verificari" type="submit" onClick={handleInputChange}>VERIFICAR</button>
-                </form>     
-    
+            </form>     
+        </section>
+        </>
     )
 }
 
