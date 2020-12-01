@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Link, useHistory} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import Swal from 'sweetalert2';
+import "../css/input.css"
 import { startLogout } from '../actions/auth'
  export const InputNumero = ( ) => {   
     const [datos,setDatos] = useState({
@@ -50,12 +51,12 @@ import { startLogout } from '../actions/auth'
     }
   
     return(
-        <div>
+        
         <form onSubmit={enviardatos}>
-                    <input placeholder="Ingrese la suma" type="text" className="form-control"name='numeroInp'onChange={handleInputChange}></input>
-                    <button  type="submit" onClick={handleInputChange}>VERIFICAR</button>
+                    <input placeholder="Ingrese la suma" id="veri" type="text" className="form-control"name='numeroInp'onChange={handleInputChange}></input>
+                    <button id="verificari" type="submit" onClick={handleInputChange}>VERIFICAR</button>
                 </form>     
-    </div>
+    
     )
 }
 

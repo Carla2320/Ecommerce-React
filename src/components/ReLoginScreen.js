@@ -64,10 +64,11 @@ export const ReLoginScreen = () => {
 
         return  (
             <>
-            
-        <main className = "main">
-            <div className="cuadro cuad" id="cuadros" >
+                <section id="completo">
                 <section id="general">
+                    <h1 id="titulo">
+                        Escoga la operación que contenga el multiplo de su numero 
+                    </h1>
                 <section>
                     <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key='0' id = "btn1" > 
                     <EcuationSquare number={ memoRandom[0] }/> 
@@ -83,14 +84,12 @@ export const ReLoginScreen = () => {
                     <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key="3"id = "btn4"> 
                     <EcuationSquare number={ memoRandom[3] }/> 
                     </button>
-                </section>  
-                </section>  
-            </div>
-
-            <div>
+                </section> 
+                <section>
             <InputNumero/>
-            </div>
-        </main>
+            </section>
+        </section>  
+        </section>
             </>
         )
 

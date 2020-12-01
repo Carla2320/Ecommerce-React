@@ -1,0 +1,17 @@
+#veri{
+    border: 2px solid transparent;
+    border-radius: 50px 50px;
+    width: 100%;
+    padding: 30px;
+    font-size: 29px;
+    margin-bottom: 22px;
+}
+#verificari{
+  background-color:#C779D0;
+  color: linear-gradient(to left, #4BC0C8, #C779D0, #FEAC5E);;
+  border: 2px solid transparent;
+  border-radius: 50px 50px;
+  width: 60%;
+  font-size: 20px;
+  padding: 9px;
+}
