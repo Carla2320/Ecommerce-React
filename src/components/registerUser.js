@@ -1,6 +1,5 @@
 import React from 'react';
 import "../css/registerUser.css"
-import Swal from 'sweetalert2';
 import { useForm } from '../hooks/useForm';
 import { register} from '../actions/register';
 import { useHistory } from 'react-router-dom';
