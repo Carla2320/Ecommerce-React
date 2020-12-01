@@ -50,11 +50,11 @@ import { startLogout } from '../actions/auth'
     }
   
     return(
-        <div>
+    <div>
         <form onSubmit={enviardatos}>
                     <input placeholder="Ingrese la suma" type="text" className="form-control"name='numeroInp'onChange={handleInputChange}></input>
                     <button  type="submit" onClick={handleInputChange}>VERIFICAR</button>
-                </form>     
+        </form>     
     </div>
     )
 }

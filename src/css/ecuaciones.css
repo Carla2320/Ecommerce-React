@@ -4,7 +4,7 @@
 #general section{
     padding: 10px;
     margin-left: 300px;
-    margin-right: 100px;
+    padding-left: px;
     float: left;
 }
 
@@ -13,6 +13,7 @@
     width: 180px;
     height: auto;
     padding-top: 10px;
+
     border: 2px solid rgb(32, 29, 29);
     border-radius: 40px;
     background-color: white;
