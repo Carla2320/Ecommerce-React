@@ -9,12 +9,6 @@
     margin-top: 50px;
 }
 
-body{
-
-    background: #fca3cc;   
-    
-    
-}
 .btn{
     background: #ccc;
 }
@@ -22,7 +16,7 @@ body{
 /** on active **/
 
 .btn:focus{
-    background: red;
+    background: rgb(0, 200, 255);
 }
 
 .main{
@@ -33,12 +27,7 @@ body{
     overflow: hidden;
     padding: 60 px 0;
     background: #fdcfdf;
-    
 
-    
-    
-    
-   
      
 
 }

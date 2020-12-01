@@ -4,10 +4,6 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { startLogin } from '../actions/auth';
 import { useForm } from '../hooks/useForm';
-<<<<<<< HEAD
-
-=======
->>>>>>> 3bd4bab0e3afebd491d2bf5af88175c234cc86d9
 
 
 export const LoginScreen = () => {

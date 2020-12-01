@@ -42,22 +42,22 @@ export const ReLoginScreen = () => {
             <div className="cuadro cuad" id="cuadros" >
                 <section id="general">
                     <section>
-                        <button onClick = { handleClick }  class="btn btn-warning" id="1" > 
+                        <button onClick = { handleClick }  className="btn btn-warning" id="1" > 
                             <EcuationSquare number={ memoRandom[0] }/> 
                         </button>
                     </section>
                     <section>
-                        <button onClick = { handleClick }  class="btn btn-warning" id="2"> 
+                        <button onClick = { handleClick }  className="btn btn-warning" id="2"> 
                             <EcuationSquare number={ memoRandom[1] }/> 
                         </button>
                     </section>
                     <section>
-                        <button onClick = { handleClick }  class="btn btn-warning" id="3"> 
+                        <button onClick = { handleClick }  className="btn btn-warning" id="3"> 
                             <EcuationSquare number={ memoRandom[2] }/> 
                         </button>
                     </section>   
                     <section>
-                        <button onClick = { handleClick }  class="btn btn-warning" id="4"> 
+                        <button onClick = { handleClick }  className="btn btn-warning" id="4"> 
                             <EcuationSquare number={ memoRandom[3] }/> 
                         </button>
                     </section>  

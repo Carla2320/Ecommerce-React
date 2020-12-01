@@ -15,11 +15,7 @@ export const RegisterUser=()=>{
     }
 
     const operaciones=["Suma","Resta","Multiplicación","División"], 
-<<<<<<< HEAD
     multiplo=[3,5,7,8,11,33],
-=======
-    multiplo=[3,5,7,8,11,15],
->>>>>>> 3bd4bab0e3afebd491d2bf5af88175c234cc86d9
     genero=["Masculino","Femenino"],
     provincia=["Azuay","Bolívar","Cañar","Carchi","Chimborazo","Cotopaxi","El Oro","Esmeraldas"
 ,"Galápagos","Guayas","Imbabura","Loja","Los Ríos","Manabí","Morona Santiago","Napo","Orellana",
@@ -109,7 +105,6 @@ export const RegisterUser=()=>{
                 Ingresa tus datos
             </h1>
             <div class="form-group">
-<<<<<<< HEAD
                     <label for="cedula">Ingresa tu cedula</label>
                     <input type="text" 
                     class="form-control" 
@@ -117,15 +112,6 @@ export const RegisterUser=()=>{
                     name="cedula"
                     onKeyPress = {solonumeros}
                     onChange={ handleInputChange }id="cedula" 
-=======
-                    <input type="number" 
-                    id="cedula"
-                    placeholder="Ingresa tu cedula"
-                    class="form-control" 
-                    value={ cedula }
-                    name="cedula"
-                    onChange={ handleInputChange }
->>>>>>> 3bd4bab0e3afebd491d2bf5af88175c234cc86d9
                     aria-describedby="cedula"
                     />
                 </div>
