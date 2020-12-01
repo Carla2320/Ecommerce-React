@@ -9,7 +9,7 @@ import {UserForMulOpe} from "../hooks/UseForMulOpe"
 
 export const RegisterUser=()=>{
     const operaciones=["Suma","Resta","Multiplicación","División"], 
-    multiplo=[1,2,3,4,5,6,7,8,9],
+    multiplo=[3,5,7,8,11,15],
     genero=["Masculino","Femenino"],
     provincia=["Azuay","Bolívar","Cañar","Carchi","Chimborazo","Cotopaxi","El Oro","Esmeraldas"
 ,"Galápagos","Guayas","Imbabura","Loja","Los Ríos","Manabí","Morona Santiago","Napo","Orellana",
@@ -62,7 +62,7 @@ export const RegisterUser=()=>{
     }
     const entradascombo=(name)=>{
         var cargar=(
-        <option  width="20px" class="form-check-input" value={name} >{name}</option>
+        <option width="20px" id="op"class="form-check-input" value={name} >{name}</option>
         )
         return cargar
     }
@@ -93,67 +93,63 @@ export const RegisterUser=()=>{
         <div className="container mt-5" id="contenedor">
         <div className="row" id="subcontenedor">
             <form className="col" onSubmit={handleSubmit}>
-            <h1>
-                Ingresa tus datos
-            </h1>
-            {/* <section id="foto">
-            <div className="col">
-                <img src="../../assets/chaqueta.jpg" id="imgRegister" alt="chaqueta"/>
-                </div>
-            </section> */}
             <section id="general">
             <section>
+            <h1 id="titulo">
+                Ingresa tus datos
+            </h1>
             <div class="form-group">
-                    <label for="cedula">Ingresa tu cedula</label>
                     <input type="number" 
+                    id="cedula"
+                    placeholder="Ingresa tu cedula"
                     class="form-control" 
                     value={ cedula }
                     name="cedula"
-                    onChange={ handleInputChange }id="cedula" 
+                    onChange={ handleInputChange }
                     aria-describedby="cedula"
                     />
                 </div>
                 <div class="form-group">
-                    <label for="nombre">Ingresa tu nombre</label>
                     <input type="text" class="form-control" id="nombre"
                      value={nombre_usuario}
+                     placeholder="Ingresa tu nombre"
                      name="nombre_usuario"
                      onChange={ handleInputChange }
                     aria-describedby="nombre"/>
                 </div>
                 <div class="form-group">
-                    <label for="apellido">Ingresa tu Apellido</label>
                     <input type="text" class="form-control" id="apellido" 
                      value={ apellido_usuario }
                      name="apellido_usuario"
+                     placeholder="Ingresa tu apellido"
                      onChange={ handleInputChange }
                     aria-describedby="apellido"/>
                 </div>
-                <div class="form-group" >
+                <div class="form-group" id="genero">
                 <label for="inputState">Escoge tu Genero </label>
                 {genero.map((item) => {
                          return entradas("genero",item)
                     })}
-                <p> gener : {formData.genero  }</p>
+                {/* <p> gener : {formData.genero  }</p> */}
                 </div>
                 <div class="form-group">
-                    <label for="username">Ingresa tu Username</label>
                     <input type="text" class="form-control" id="username" 
                      value={username}
                      name="username"
+                     placeholder="Ingresa tu username"
                      onChange={ handleInputChange }
                     aria-describedby="username"/>
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
                     <input type="password"
+                    placeholder="Ingresa tu password"
                      value={ contrasenia_usuario } 
                      name="contrasenia_usuario"
                      onChange={ handleInputChange } class="form-control" id="password"/>
                 </div>
                 <div class="form-group">
-                    <label for="celular_usuario">Ingresa Teléfono Celular</label>
                     <input type="number" 
+                    placeholder="Ingresa tu celular"
                     class="form-control" 
                     value={ celular_usuario }
                     name="celular_usuario"
@@ -162,9 +158,9 @@ export const RegisterUser=()=>{
                     />
                 </div>
                 <div class="form-group">
-                    <label for="telefono_usuario">Ingresa Teléfono Convencional</label>
                     <input type="number" 
                     class="form-control" 
+                    placeholder="Ingresa tu teléfono convecional"
                     value={ telefono_usuario}
                     name="telefono_usuario"
                     onChange={ handleInputChange }id="telefono_usuario" 
@@ -174,9 +170,9 @@ export const RegisterUser=()=>{
             </section>
             <section>
             <div class="form-group">
-                    <label for="email_usuario">Ingresa Email</label>
                     <input type="email" 
                     class="form-control" 
+                    placeholder="Ingresa tu email"
                     value={ email_usuario}
                     name="email_usuario"
                     onChange={ handleInputChange }id="email_usuario" 
@@ -184,8 +180,8 @@ export const RegisterUser=()=>{
                     />
                 </div>
                 <div class="form-group">
-                    <label for="direccion_principal">Ingresa tu dirección principal</label>
                     <input type="text" 
+                    placeholder="Ingresa tu dirección principal"
                     class="form-control" 
                     value={ direccion_principal}
                     name="direccion_principal"
@@ -194,9 +190,9 @@ export const RegisterUser=()=>{
                     />
                 </div>
                 <div class="form-group">
-                    <label for="direccion_secundaria">Ingresa tu dirección secundaria</label>
                     <input type="text" 
                     class="form-control" 
+                    placeholder="Ingresa tu  dirección secundaria"
                     value={direccion_secundaria}
                     name="direccion_secundaria"
                     onChange={ handleInputChange }id="direccion_secundaria" 
@@ -204,7 +200,7 @@ export const RegisterUser=()=>{
                     />
                 </div>
                 <div class="form-group">
-                <label for="provincia">Escoge tu provincia</label>
+                <label for="provincia" id="provi">Escoge tu provincia</label>
                     <select id="provincia" class="form-control" name="provincia" onChange={handleChange}>
                      {provincia.map((item) => {
                          return entradascombo(item.toString())
@@ -212,32 +208,32 @@ export const RegisterUser=()=>{
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="codigo_postal">Ingresa tu código postal</label>
                     <input type="number" 
                     class="form-control" 
+                    placeholder="Ingresa tu código postal"
                     value={ codigo_postal }
                     name="codigo_postal"
                     onChange={ handleInputChange }id="codigo_postal" 
                     aria-describedby="codigo_postal"
                     />
                 </div>     
-            <div class="form-group" >
-                <label for="inputState">Escoge una Operación</label>
+            <div class="form-group" id="operacion" >
+                <label for="inputState" >Escoge una Operación</label>
                 {operaciones.map((item) => {
                          return entradas("operacion",item)
                     })}
-                <p> gener : {formData.operacion}</p>
+                {/* <p> gener : {formData.operacion}</p> */}
             </div>
                 <div class="form-group">
-                <label for="inputState">Escoge un Multiplo</label>
-                    <select  class="form-control" id="multiplo" name="multiplo" onChange={handleChange}>
+                <label for="inputState" id="multi">Escoge un Multiplo</label>
+                    <select  id="multipo"class="form-control" id="multiplo" name="multiplo" onChange={handleChange}>
                      {multiplo.map((item) => {
                          return entradascombo(item)
                     })}
                     </select>
                 </div>
-                <div id="boton">
-                <button type="submit" class="btn btn-danger btn-lg btn-block" onClick={handleSubmit} >Registrarse</button>
+                <div >
+                <button  id="boton" type="submit" onClick={handleSubmit} >Registrarse</button>
                 </div>
             </section>
             </section>
