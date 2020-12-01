@@ -1,9 +1,7 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { EcuationSquare } from './EcuationSquare';
 import { useSelector } from 'react-redux';
-import './relogin.css';
 import "../css/ecuaciones.css"
-//import Swal from 'sweetalert2';
 import { InputNumero } from './InputNumero';
 
 
