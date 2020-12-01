@@ -27,9 +27,10 @@ export const LoginScreen = () => {
     }
     return (
         <div className="container mt-5">
-            <div className="row">
-                <form className="col form" onSubmit={ handleSubmit }>
-                <h1>
+            <div className="row" >
+                <form className="col form" onSubmit={ handleSubmit } >
+                 <section id="fondo">
+                 <h1>
                     Sing in
                 </h1>
                     <div className="form-group">
@@ -58,13 +59,12 @@ export const LoginScreen = () => {
                     </div>
                     <div id="btnlogin">
                     <button id="ingreso" type="submit" >Login</button>
-
                     </div>
                     <div className="form-group form-check" id="divingre">
                         <div className="row">
                             <div className="col">
                             <input type="checkbox" className="form-check-input" id="ingre"/>
-                            <label className="form-check-label" >Recordarme</label>
+                            <label className="form-check-label" id="recorda">Recordarme</label>
                             </div>
                             <div className="col" id="btnregister">
                                 <Link id="enlace" to="/registro"><button type="submit"  id="registro" href="/home">Registrate</button></Link>      
@@ -72,6 +72,8 @@ export const LoginScreen = () => {
                             
                         </div>
                     </div>
+                    </section>
+
                 </form>
                 {/* <div className="col">
                 <img src="../../assets/chaqueta.jpg" className="d-block w-100" alt="product"/>

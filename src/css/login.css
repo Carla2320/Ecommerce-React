@@ -2,7 +2,7 @@
   background-color: transparent;
   border: 2px solid;
   border-radius: 50px 50px;
-  width: 30%;
+  width: 70%;
   padding: 25px;
   color: white;
   margin-left: auto;
@@ -11,16 +11,12 @@
 #cedulas::-webkit-input-placeholder { color: white; } 
 #contrasenias::-webkit-input-placeholder { color: white; } 
 #registro {
-  font-size: 18px;
-  background-color: #00BB30;
-  color: white;
+  font-size: 15px;
   padding: 10px;
-  margin-bottom: 15px;
-  margin-top: 50px;
-  margin-bottom: 400px;
-  margin-right: auto;
-  margin-left: auto;
-  text-decoration: underline;
+  border: 2px solid transparent;
+  margin-bottom: 30px;
+  margin-top: 60px;
+  border-radius: 20px 20px;
 }
 
 #divingre{
@@ -30,25 +26,44 @@
 }
 #btnregister{
   float: left;
-  right: 190px;
+  right: 140px;
+}
+#fondo{
+  background: #FEAC5E;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #4BC0C8, #C779D0, #FEAC5E);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #4BC0C8, #C779D0, #FEAC5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin-top: 150px;
+  margin-left: 400px;
+  margin-right: 400px;
+  border-radius: 20px 20px;
 }
 
 #ingreso{
-  background-color: #00BB30;
+  background-color: white;
+  color: linear-gradient(to left, #4BC0C8, #C779D0, #FEAC5E);;
   border: 2px solid transparent;
   border-radius: 50px 50px;
-  width: 30%;
+  width: 70%;
   font-size: 20px;
-  color: white;
   padding: 9px;
-  margin-left: 385px;
+  margin-left: 50px;
 }
-label{
-  margin-left: 390px;
+#recorda{
+  margin-left: 50px;
 }
 #ingre{
-  margin-left: 370px;
+  margin-left: 35px;
+}
+h1{
+  text-align: center;
+  padding: 15px;
+  color: white;
 }
 body{
-  background: linear-gradient(to bottom,#708690,white);
+  background: #536976;  
+  background: #bdc3c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  
 }

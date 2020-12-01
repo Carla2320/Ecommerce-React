@@ -2,28 +2,56 @@
     background-color: white;
 }
 #general section{
+    padding: 10px;
+    margin-left: 300px;
+    margin-right: 100px;
     float: left;
-    padding: 20px;
-    margin-left: 50px;
-    margin-right: 50px;
 }
-#verifica{
-    width: 25%;
-    position: relative;
-    left: 40%;
-    bottom: 280px;
-}
+
+
 #btn1,#btn2,#btn3,#btn4{
-    width: 200px;
-    height: 50px;
-    padding-top: 20px;
-    border: 2px solid red;
+    width: 180px;
+    height: auto;
+    padding-top: 10px;
+    border: 2px solid rgb(32, 29, 29);
     border-radius: 40px;
     background-color: white;
     color: red;
     text-align: center;
-    font-size: 17px;
+    font-size: 18px;
 }
+
+/** on active **/
+
+#btn1:focus{
+    background: rgb(0, 200, 255);
+}
+#btn2:focus{
+    background: rgb(0, 200, 255);
+}
+#btn3:focus{
+    background: rgb(0, 200, 255);
+}
+#btn4:focus{
+    background: rgb(0, 200, 255);
+}
+
+.main{
+
+    margin: 100px;
+    margin-left: 400px;
+    width: 50%;
+    padding: 60 px 0;
+    background: #fdcfdf;
+
+     
+
+}
+
+
+
+
+
 #btn1:hover{
     background-color: red;
     color: white;
@@ -39,4 +67,16 @@
 #btn4:hover{
     background-color: red;
     color: white;
+}
+.btn{
+    background: #ccc;
+}
+
+/** on active **/
+
+.btn:active{
+    background: rgb(0, 200, 255);
+}
+.btn:visited{
+    color: rgb(0, 200, 255);
 }
