@@ -8,8 +8,14 @@ import { useDispatch } from 'react-redux';
 import {UserForMulOpe} from "../hooks/UseForMulOpe"
 
 export const RegisterUser=()=>{
+    const solonumeros=(e)=>{
+        var key = window.event ? e.which : e.keyCode;
+                        if(key < 48 || key > 57)
+                            e.preventDefault();
+    }
+
     const operaciones=["Suma","Resta","Multiplicación","División"], 
-    multiplo=[1,2,3,4,5,6,7,8,9],
+    multiplo=[3,5,7,8,11,33],
     genero=["Masculino","Femenino"],
     provincia=["Azuay","Bolívar","Cañar","Carchi","Chimborazo","Cotopaxi","El Oro","Esmeraldas"
 ,"Galápagos","Guayas","Imbabura","Loja","Los Ríos","Manabí","Morona Santiago","Napo","Orellana",
@@ -105,10 +111,11 @@ export const RegisterUser=()=>{
             <section>
             <div class="form-group">
                     <label for="cedula">Ingresa tu cedula</label>
-                    <input type="number" 
+                    <input type="text" 
                     class="form-control" 
                     value={ cedula }
                     name="cedula"
+                    onKeyPress = {solonumeros}
                     onChange={ handleInputChange }id="cedula" 
                     aria-describedby="cedula"
                     />

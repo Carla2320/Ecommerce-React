@@ -1,5 +1,4 @@
 import React from 'react';
-import './ecuation.css';
 import { useSelector } from 'react-redux';
 
 
@@ -46,7 +45,7 @@ import { useSelector } from 'react-redux';
     console.log("me volvi a generar :(");
     return (
         <div className="ecuacion" >
-            <p> {a} {simbolo} {b} = {c}</p>
+            <p> {a} {simbolo} {b} </p>
         </div>
     )
 })

@@ -3,20 +3,53 @@
 }
 #general section{
     float: left;
-    padding: 20px;
-    margin-left: 50px;
-    margin-right: 50px;
+    padding: 10px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 50px;
 }
-#verifica{
-    width: 25%;
-    position: relative;
-    left: 40%;
-    bottom: 280px;
+
+body{
+
+    background: #fca3cc;   
+    
+    
 }
+.btn{
+    background: #ccc;
+}
+
+/** on active **/
+
+.btn:focus{
+    background: red;
+}
+
+.main{
+
+    margin: 100px;
+    margin-left: 400px;
+    width: 50%;
+    overflow: hidden;
+    padding: 60 px 0;
+    background: #fdcfdf;
+    
+
+    
+    
+    
+   
+     
+
+}
+
+
+
+
 #btn1,#btn2,#btn3,#btn4{
-    width: 200px;
+    width: 400px;
     height: 50px;
-    padding-top: 20px;
+    padding-top: 10px;
     border: 2px solid red;
     border-radius: 40px;
     background-color: white;

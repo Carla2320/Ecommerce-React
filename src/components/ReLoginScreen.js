@@ -1,7 +1,6 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { EcuationSquare } from './EcuationSquare';
 import { useSelector } from 'react-redux';
-import './relogin.css';
 import "../css/ecuaciones.css"
 //import Swal from 'sweetalert2';
 import { InputNumero } from './InputNumero';
@@ -38,34 +37,38 @@ export const ReLoginScreen = () => {
 
         return  (
             <>
-            {/* <h1> {show?<InputNumero/>:<div>vacio</div>} </h1> */}
-            <h1> <InputNumero/> </h1>
+            
+        <main className = "main">
             <div className="cuadro cuad" id="cuadros" >
                 <section id="general">
-                <section>
-                    <button onClick = { handleClick } > 
-                    <EcuationSquare number={ memoRandom[0] }/> 
-                    </button>
-                </section>
-                <section>
-                    <button onClick = { handleClick }> 
-                    <EcuationSquare number={ memoRandom[1] }/> 
-                    </button>
-                </section>
-                <section>
-                    <button onClick = { handleClick }> 
-                    <EcuationSquare number={ memoRandom[2] }/> 
-                    </button>
-                </section>   
-                <section>
-                    <button onClick = { handleClick }> 
-                    <EcuationSquare number={ memoRandom[3] }/> 
-                    </button>
-                </section>  
+                    <section>
+                        <button onClick = { handleClick }  class="btn btn-warning" id="1" > 
+                            <EcuationSquare number={ memoRandom[0] }/> 
+                        </button>
+                    </section>
+                    <section>
+                        <button onClick = { handleClick }  class="btn btn-warning" id="2"> 
+                            <EcuationSquare number={ memoRandom[1] }/> 
+                        </button>
+                    </section>
+                    <section>
+                        <button onClick = { handleClick }  class="btn btn-warning" id="3"> 
+                            <EcuationSquare number={ memoRandom[2] }/> 
+                        </button>
+                    </section>   
+                    <section>
+                        <button onClick = { handleClick }  class="btn btn-warning" id="4"> 
+                            <EcuationSquare number={ memoRandom[3] }/> 
+                        </button>
+                    </section>  
                 </section>  
             </div>
 
+            <div>
+            <InputNumero/>
+            </div>
+        </main>
             </>
         )
-    
+
 }
