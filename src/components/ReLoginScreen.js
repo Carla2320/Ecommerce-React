@@ -63,23 +63,23 @@ export const ReLoginScreen = () => {
             <>
             <section id="completo">
                 <h1 id="titulo">
-                        Choose the option that contains a multiple numbers of your number 
+                        Selecciona la Operacion que Corresponda con su Multiplo
                     </h1>
                 <section id="botones">
     
                     <section>
-                        <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key='0' id = "btn1" > 
+                        <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key='0' id = "boton1" > 
                         <EcuationSquare number={ memoRandom[0] }/> 
                         </button>
-                        <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key="1" id = "btn2"> 
+                        <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key="1" id = "boton2"> 
                         <EcuationSquare number={ memoRandom[1] }/> 
                         </button>
                     </section>
                     <section>
-                        <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key="2" id = "btn3"> 
+                        <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key="2" id = "boton3"> 
                         <EcuationSquare number={ memoRandom[2] }/> 
                         </button>
-                        <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key="3"id = "btn4"> 
+                        <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key="3"id = "boton4"> 
                         <EcuationSquare number={ memoRandom[3] }/> 
                         </button>
                     </section> 

@@ -12,13 +12,13 @@ export const validarform=(nombre,apellido,contrasenia,cedula,combo,check,genero,
     else if (/[^a-zA-Z1-9]/.test(username)) {
         Swal.fire('El valor del username solo puede contener caracteres y numeros');
     }
-    else if (/[^a-zA-Z -]/.test(d_principal)) {
+    else if (/[^a-zA-Z1-9 -]/.test(d_principal)) {
         Swal.fire('El valor de la direccción principal solo puede contener caracteres y espacios en blanco');
     }
     else if (!(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/g.test(email))) {
         Swal.fire('Email incorrecto');
     }
-    else if (/[^a-zA-Z -]/.test(d_secundaria)) {
+    else if (/[^a-zA-Z1-9 -]/.test(d_secundaria)) {
         Swal.fire('El valor de la direccción secundaria solo puede contener caracteres y espacios en blanco');
     }else if((contrasenia.length < 7)){
         Swal.fire('La contraseña debe ser mayor a 6 caracteres');

@@ -21,6 +21,11 @@ import { startLogout } from '../actions/auth'
     
  
     }
+    const solonumeros=(e)=>{
+        var key = window.event ? e.which : e.keyCode;
+                        if(key < 48 || key > 57)
+                            e.preventDefault();
+    }
     const dispatch = useDispatch();
     const history = useHistory()
     const enviardatos =(event) =>{
@@ -55,7 +60,7 @@ import { startLogout } from '../actions/auth'
         <section id = "enviarDatos">
   
             <form onSubmit={enviardatos}>
-                    <input placeholder="Ingrese el resultado " id="txtVerificar" type="text" className="form-control"name='numeroInp'onChange={handleInputChange}></input>
+                    <input type="number" placeholder="Ingrese el resultado " maxLength = "4" id="txtVerificar" type="text" className="form-control"name='numeroInp'onChange={handleInputChange}></input>
                     <button id="verificari" type="submit" onClick={handleInputChange}>VERIFICAR</button>
             </form>     
         </section>
