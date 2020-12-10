@@ -4,10 +4,10 @@
   border: 2px solid;
   border-radius: 50px 50px;
   width: 100%;
-  padding: 30px;
+  padding: 32px;
   color: white;
   margin-left: auto;
-  margin-right: 80px;
+  margin-right: 90px;
 }
 #cedula::-webkit-input-placeholder { color: white; } 
 #nombre::-webkit-input-placeholder { color: white; } 
@@ -31,6 +31,11 @@
   border-radius: 50px 50px;
   color: black;
 }
+#general section{
+  float: left;
+  padding:10px;
+  margin: 40px;
+}
 #boton {
   font-size: 18px;
   border: 2px solid transparent;
@@ -52,9 +57,9 @@
 }
 #subcontenedor{
   position: relative;
-  left: 50px;
+  left: 80px;
   background-color: green;
-  width: 100%;
+  width: 85%;
   background: #FEAC5E;  
   background: -webkit-linear-gradient(to left, #4BC0C8, #C779D0, #FEAC5E);  
   background: linear-gradient(to left, #4BC0C8, #C779D0, #FEAC5E); 

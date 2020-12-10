@@ -1,44 +1,124 @@
-#general{
-    background-color: white;
+#generalecu{
+    background-color: red;
 }
-#general section{
+#generalecu section{
+    padding: 15px;
+    margin-left: 300px;
+    margin-right: 100px;
     float: left;
-    padding: 20px;
-    margin-left: 50px;
-    margin-right: 50px;
+    
 }
-#verifica{
-    width: 25%;
-    position: relative;
-    left: 40%;
-    bottom: 280px;
+#titulos{
+    color: white;
+    font-size: 40px;
+    text-align: left;
+    background: #FEAC5E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #4BC0C8, #C779D0, #FEAC5E);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #4BC0C8, #C779D0, #FEAC5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-#btn1,#btn2,#btn3,#btn4{
-    width: 200px;
-    height: 50px;
+#boton1,#boton2,#boton3,#boton4{
+    width: 180px;
+    height: auto;
+    margin: 10px;
     padding-top: 20px;
-    border: 2px solid red;
     border-radius: 40px;
-    background-color: white;
-    color: red;
+    background-color: rgb(255, 255, 255);
+    color : rgb(176, 57, 57);
     text-align: center;
-    font-size: 17px;
+    font-size: 25px;
 }
-#btn1:hover{
-    background-color: red;
-    color: white;
+
+#botones{
+    padding: 50px;
+    text-align: center;
+
 }
-#btn2:hover{
-    background-color: red;
-    color: white;
+
+/** on active **/
+
+#boton1:focus{
+    background: #536976;  
+  background: #bdc3c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+
+
 }
-#btn3:hover{
-    background-color: red;
-    color: white;
+#boton2:focus{
+    background: #536976;  
+  background: #bdc3c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
-#btn4:hover{
-    background-color: red;
+#boton3:focus{
+    background: #536976;  
+  background: #bdc3c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+#boton4:focus{
+    background: #536976;  
+  background: #bdc3c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+/* .main{
+    margin: 100px;
+    margin-left: 400px;
+    width: 50%;
+    padding: 60 px 0;
+
+} */
+#completo{
+    border-radius: 40px;
+    margin: 100px;
+    margin-top: 200px;
+    width: 50%;
+    padding: 60 px ;
+    background: #FEAC5E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #4BC0C8, #C779D0, #FEAC5E);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #4BC0C8, #C779D0, #FEAC5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+
+
+
+#boton1:hover{
+    background: #536976;  
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     color: white;
+    font-weight: bold;
+}
+#boton2:hover{
+    background: #536976;  
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+    font-weight: bold;
+}
+#boton3:hover{
+    background: #536976;  
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+    font-weight: bold;
+}
+#boton4:hover{
+    background: #536976;  
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+    font-weight: bold;
 }
 .btn{
     background: #ccc;

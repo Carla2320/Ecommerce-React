@@ -4,7 +4,7 @@ import {
     BrowserRouter as Router,
     Switch,
 } from 'react-router-dom';
-import { LoginScreen } from '../components/loginScreen';
+import { LoginScreen } from '../components/LoginScreen';
 import { RegisterUser } from '../components/registerUser';
 
 import { DashboardRoutes } from './DashboardRoutes';

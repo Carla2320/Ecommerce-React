@@ -1,5 +1,4 @@
 import React from 'react';
-import './ecuation.css';
 import { useSelector } from 'react-redux';
 
 
@@ -18,7 +17,7 @@ import { useSelector } from 'react-redux';
     ];
     
     const multipleVerify = [
-        ecuationNumbers[0]%numero === 0? ecuationNumbers[0]+2: ecuationNumbers[0],
+        ecuationNumbers[0]%numero === 0? ecuationNumbers[0]+1: ecuationNumbers[0],
         ecuationNumbers[1]%numero === 0? ecuationNumbers[1]+1: ecuationNumbers[1],
     ]
     a =!prop?multipleVerify[0]:ecuationNumbers[0] 
@@ -46,7 +45,7 @@ import { useSelector } from 'react-redux';
     console.log("me volvi a generar :(");
     return (
         <div className="ecuacion" >
-            <p> {a} {simbolo} {b} = {c}</p>
+            <p> {a} {simbolo} {b} </p>
         </div>
     )
 })
