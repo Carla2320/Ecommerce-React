@@ -2,6 +2,7 @@ import React, {Fragment,useState} from 'react';
 import { product} from '../actions/product';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import Swal from 'sweetalert2';
 const RegisterProduct = () => {
     const dispatch = useDispatch();
     const categoria=["Juguetes","Electrónicos","Belleza", "Hogar", "Videojuegos"]
@@ -48,8 +49,13 @@ const RegisterProduct = () => {
         }
         dispatch(product( "",datos.categoria,datos.nombre,1,datos.imagen,datos.stock,datos.precio,datos.descripcion))
         console.log(datos.nombre+' '+datos.categoria+' '+datos.estado+' '+datos.imagen+' '+datos.stock+' '+datos.precio+' '+datos.descripcion)
-        history.push("/visualizar");
+        Swal.fire('Datos Guardados Correctamente!',
+        '',
+        'success' );
         
+    }
+    const visualizarP =(event) =>{
+        history.push("/visualizar");
     }
     const entradascombo=(name)=>{
         var cargar=(
@@ -135,6 +141,9 @@ const RegisterProduct = () => {
 
                  <div className="form-group">
                     <button type="button"  className="btn btn-light" type="submit" onClick={handleInputChange}>Enviar</button>
+                 </div>
+                 <div className="form-group">
+                    <button type="button"  className="btn btn-light" type="submit" onClick={visualizarP}>Visualizar</button>
                  </div>
 
                  

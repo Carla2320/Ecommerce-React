@@ -7,9 +7,3 @@ export const product = (id_producto,id_categoria,nombre_producto,estado,imagen,s
        
     }
 }
-export const visualizarP = () => {
-    return async () => {
-        const resp = await consulta('user/visualizarP');
-       
-    }
-}

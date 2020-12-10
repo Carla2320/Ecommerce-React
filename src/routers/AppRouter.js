@@ -12,7 +12,7 @@ import { startChecking } from '../actions/auth';
 import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
 import { ReLoginScreen } from '../components/ReLoginScreen';
-import VisualizarProducto from '../components/visualizarProducto';
+import ProductosLista from '../containers/ProductosLista';
 
 export const AppRouter = () => {
 
@@ -44,7 +44,7 @@ export const AppRouter = () => {
                         />
                     <PrivateRoute
                         path="/visualizar" 
-                        component={ VisualizarProducto  } 
+                        component={ ProductosLista  } 
                         isAuthenticated={ !!name }
                         />
                     <PrivateRoute 
