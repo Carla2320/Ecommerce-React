@@ -12,6 +12,7 @@ import { startChecking } from '../actions/auth';
 import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
 import { ReLoginScreen } from '../components/ReLoginScreen';
+import VisualizarProducto from '../components/visualizarProducto';
 
 export const AppRouter = () => {
 
@@ -39,6 +40,11 @@ export const AppRouter = () => {
                         exact 
                         path="/registro" 
                         component={ RegisterUser}
+                        isAuthenticated={ !!name }
+                        />
+                    <PrivateRoute
+                        path="/visualizar" 
+                        component={ VisualizarProducto  } 
                         isAuthenticated={ !!name }
                         />
                     <PrivateRoute 
