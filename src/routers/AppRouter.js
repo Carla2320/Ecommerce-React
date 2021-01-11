@@ -13,6 +13,9 @@ import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
 import { ReLoginScreen } from '../components/ReLoginScreen';
 import ProductosLista from '../containers/ProductosLista';
+import Checkout from '../components/Checkout';
+import Pago from '../components/Pago';
+
 
 export const AppRouter = () => {
 
@@ -45,6 +48,16 @@ export const AppRouter = () => {
                     <PrivateRoute
                         path="/visualizar" 
                         component={ ProductosLista  } 
+                        isAuthenticated={ !!name }
+                        />
+                    <PrivateRoute
+                        path="/pago" 
+                        component={ Pago  } 
+                        isAuthenticated={ !!name }
+                    />
+                    <PrivateRoute
+                        path="/checkout" 
+                        component={Checkout} 
                         isAuthenticated={ !!name }
                         />
                     <PrivateRoute 

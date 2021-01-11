@@ -1,5 +1,6 @@
 import React ,{Component} from "react";
 import axios from "axios";
+import { visualizar } from "../helpers/fetch"
 import visualizarProducto from "../components/visualizarProducto"
 import VisualizarProducto from "../components/visualizarProducto";
 class ProductosLista extends Component{
@@ -8,16 +9,19 @@ class ProductosLista extends Component{
 
     }
     componentDidMount(){
-        axios.get('http://localhost:3030/api/user/visualizarP').then((res)=>{
+         axios.get('http://localhost:3030/api/user/visualizarP').then((res)=>{
             const datos=res.data;
-            console.log(datos);
+            //console.log(datos);
             this.setState({datos})
 
-        }).catch((error)=>{
+         }).catch((error)=>{
             console.error(error);
             
-        })
+   })
+        
+    
     }
+    
 
     render(){
         const {datos}=this.state;
@@ -27,4 +31,4 @@ class ProductosLista extends Component{
     }
     
 }
-export default ProductosLista;
+export default ProductosLista ;
