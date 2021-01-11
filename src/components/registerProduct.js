@@ -49,8 +49,8 @@ const RegisterProduct = () => {
         console.log(datos.nombre+' '+1+' '+datos.estado+' '+datos.imagen+' '+datos.stock+' '+datos.precio+' '+datos.descripcion)
         
   
-            dispatch(product( "",1,'producto',1,'imagen',50,500,'smart' ));
-            //dispatch(product( "",1,,datos.estado,datos.imagen,datos.stock,datos.precio,datos.descripcion))
+            //dispatch(product( "",1,'producto',1,'imagen',50,500,'smart' ));
+            dispatch(product( "",1,datos.nombre,datos.estado,datos.imagen,datos.stock,datos.precio,datos.descripcion))
             Swal.fire('Datos Guardados Correctamente!',
             '','success' );
     

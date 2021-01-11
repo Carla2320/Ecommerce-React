@@ -14,7 +14,6 @@ const fetchSinToken = ( endpoint, data, method = 'GET' ) => {
         });
     }
 }
-<<<<<<< HEAD
 const visualizar = ( endpoint, data, method = 'GET' ) => {
     const url = `${baseURL}/${endpoint}`;
     if ( method === 'GET' ){
@@ -32,13 +31,6 @@ const visualizar = ( endpoint, data, method = 'GET' ) => {
 const consulta =(endpoint)=>{
     const url = `${baseURL}/${endpoint}`;
     return fetch( url);
-=======
->>>>>>> fc758a5dacc7485a8daddc37557e17b9033966b8
-
-const getUser = ( endpoint, data ) => {
-    // const url = 'http://localhost:3030/api/user/getUser?id=1753788890';
-    const url = `${baseURL}/${endpoint}${data}`
-    return fetch( url ); 
 }
 
 
@@ -68,10 +60,6 @@ const fetchConToken = ( endpoint, data, method = 'GET' ) => {
 export {
     fetchConToken,
     fetchSinToken,
-<<<<<<< HEAD
     consulta,
     visualizar
-=======
-    getUser
->>>>>>> fc758a5dacc7485a8daddc37557e17b9033966b8
 }
