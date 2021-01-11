@@ -24,14 +24,12 @@ export const ReLoginScreen = () => {
     ]
 
     const envio = orden.sort(()=>(Math.random()-0.5));
-    console.log(orden);
     const [ enable, setEnable ] = useState(false);
     const prueba = true;
-    const memoRandom = useMemo(()=> envio, [prueba] )
+    const memoRandom = useMemo(()=> envio, [prueba] );
+
     const handleClick = useCallback(()=>{
         setEnable(!enable);
-        console.log('click');
-        
     }, [ setEnable ]);
     
     const Res= (event) =>{
@@ -39,14 +37,10 @@ export const ReLoginScreen = () => {
         if(event){
             console.log('true',event)
             localStorage.setItem("Estado",true);
-            //console.log(resultadoF,resultadoInput);
-            
         }
         else {
             console.log( 'false',event)
             localStorage.setItem("Estado",false);
-
-           
         }
 
       

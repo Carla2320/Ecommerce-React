@@ -10,8 +10,8 @@ import {UserForMulOpe} from "../hooks/UseForMulOpe"
 export const RegisterUser=()=>{
     const solonumeros=(e)=>{
         var key = window.event ? e.which : e.keyCode;
-                        if(key < 48 || key > 57)
-                            e.preventDefault();
+            if(key < 48 || key > 57)
+                e.preventDefault();
     }
 
     const operaciones=["Suma","Resta","Multiplicacion","Division"], 
@@ -21,19 +21,7 @@ export const RegisterUser=()=>{
 ,"Galápagos","Guayas","Imbabura","Loja","Los Ríos","Manabí","Morona Santiago","Napo","Orellana",
 "Pastaza","Pichincha","Santa Elena","Santo Domingo de los Tsáchilas","Sucumbíos","Tungurahua","Zamora Chinchipe"]
 
-    // const baseURL = 'http://localhost:3030/api/user';
-    // const [valcheck,setValcheck]= useState([]);
-    // const fetchApi=  async () =>{
-    //     const responses =await fetch(baseURL)
-    //     const responseJson=await responses.json()
-    //     setValcheck(responseJson)
-    // }
-    // useEffect(()=>{
-    //     fetchApi();
-    // },[])
-
-    // console.log("hola",valcheck[0].cedula)
-     const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     const [ formValues, handleInputChange ] = useForm({
         cedula: '',
@@ -69,12 +57,6 @@ export const RegisterUser=()=>{
     const entradascombo=(name)=>{
         var cargar=(
         <option width="20px" id="op"class="form-check-input" value={name} >{name}</option>
-        )
-        return cargar
-    }
-    const entradascombo1=(name)=>{
-        var cargar=(
-        <option  width="20px" class="form-check-input" value={name} >{name}</option>
         )
         return cargar
     }
@@ -241,7 +223,7 @@ export const RegisterUser=()=>{
                 <div class="form-group">
                 <label for="inputState" id="multi">Escoge un Multiplo</label>
                 <option hidden selected>Selecciona una Multiplo</option>
-                    <select  id="multipo"class="form-control" id="multiplo" name="multiplo" onChange={handleChange}>
+                    <select  id="multipo" class="form-control" name="multiplo" onChange={handleChange}>
                      {multiplo.map((item) => {
                          return entradascombo(item)
                     })}

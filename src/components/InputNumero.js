@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Link, useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import Swal from 'sweetalert2';
 import "../css/input.css"
@@ -20,11 +20,6 @@ import { startLogout } from '../actions/auth'
 
     
  
-    }
-    const solonumeros=(e)=>{
-        var key = window.event ? e.which : e.keyCode;
-                        if(key < 48 || key > 57)
-                            e.preventDefault();
     }
     const dispatch = useDispatch();
     const history = useHistory()
@@ -58,7 +53,6 @@ import { startLogout } from '../actions/auth'
     return(
         <>
         <section id = "enviarDatos">
-  
             <form onSubmit={enviardatos}>
                     <input type="number" placeholder="Ingrese el resultado " maxLength = "4" id="txtVerificar" type="text" className="form-control"name='numeroInp'onChange={handleInputChange}></input>
                     <button id="verificari" type="submit" onClick={handleInputChange}>VERIFICAR</button>
@@ -67,9 +61,3 @@ import { startLogout } from '../actions/auth'
         </>
     )
 }
-
-
-
-
-
-

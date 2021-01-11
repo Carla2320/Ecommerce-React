@@ -27,9 +27,9 @@ export const Navbar = () => {
                         activeClassName="active"
                         className="nav-item nav-link" 
                         exact
-                        to="/relog"
+                        to="/profile"
                     >
-                        Relog
+                        Profile
                     </NavLink>
 
                 <button className="btn btn-outline-warning" onClick={ handleLogout }> 

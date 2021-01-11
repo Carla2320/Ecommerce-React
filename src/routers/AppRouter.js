@@ -11,7 +11,7 @@ import { DashboardRoutes } from './DashboardRoutes';
 import { startChecking } from '../actions/auth';
 import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
-import { ReLoginScreen } from '../components/ReLoginScreen';
+//import { ReLoginScreen } from '../components/ReLoginScreen';
 import ProductosLista from '../containers/ProductosLista';
 import Checkout from '../components/Checkout';
 import Pago from '../components/Pago';
@@ -20,7 +20,7 @@ import Pago from '../components/Pago';
 export const AppRouter = () => {
 
     const dispatch = useDispatch();
-    const { cheking, name } = useSelector(state => state.auth);
+    const { cheking, usuario } = useSelector(state => state.auth);
     useEffect(() => {
         dispatch(startChecking());
     },[dispatch])
@@ -37,17 +37,18 @@ export const AppRouter = () => {
                         exact 
                         path="/login" 
                         component={ LoginScreen }
-                        isAuthenticated={ !!name }
+                        isAuthenticated={ !!usuario }
                         />
                     <PublicRoute 
                         exact 
                         path="/registro" 
                         component={ RegisterUser}
-                        isAuthenticated={ !!name }
+                        isAuthenticated={ !!usuario }
                         />
                     <PrivateRoute
                         path="/visualizar" 
                         component={ ProductosLista  } 
+<<<<<<< HEAD
                         isAuthenticated={ !!name }
                         />
                     <PrivateRoute
@@ -65,11 +66,14 @@ export const AppRouter = () => {
                         path="/relogin" 
                         component={ ReLoginScreen }
                         isAuthenticated={ !!name }
+=======
+                        isAuthenticated={ !!usuario }
+>>>>>>> fc758a5dacc7485a8daddc37557e17b9033966b8
                         />
                     <PrivateRoute
                         path="/" 
                         component={ DashboardRoutes } 
-                        isAuthenticated={ !!name }
+                        isAuthenticated={ !!usuario }
                         />
                 </Switch>
             </div>
