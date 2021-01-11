@@ -14,10 +14,11 @@ const fetchSinToken = ( endpoint, data, method = 'GET' ) => {
         });
     }
 }
-const consulta =(endpoint)=>{
-    const url = `${baseURL}/${endpoint}`;
-    return fetch( url);
 
+const getUser = ( endpoint, data ) => {
+    // const url = 'http://localhost:3030/api/user/getUser?id=1753788890';
+    const url = `${baseURL}/${endpoint}${data}`
+    return fetch( url ); 
 }
     
 
@@ -46,5 +47,5 @@ const fetchConToken = ( endpoint, data, method = 'GET' ) => {
 export {
     fetchConToken,
     fetchSinToken,
-    consulta
+    getUser
 }

@@ -8,8 +8,8 @@ import { useForm } from '../hooks/useForm';
 export const LoginScreen = () => {
     const solonumeros=(e)=>{
         var key = window.event ? e.which : e.keyCode;
-                        if(key < 48 || key > 57)
-                            e.preventDefault();
+        if(key < 48 || key > 57)
+            e.preventDefault();
     }
     const dispatch = useDispatch();
 
