@@ -26,32 +26,40 @@ const RegisterProduct = () => {
     const history = useHistory()
     const enviardatos =(event) =>{
         event.preventDefault();
-        if(datos.categoria==="Juguetes"){
+        if(datos.categoria==="juguetes"){
             datos.categoria=1;
             console.log(datos.categoria)
-        }else if(datos.categoria==="Electrónicos"){
-            datos.categoria=2;
-            console.log(datos.categoria)
-        }else if(datos.categoria==="Belleza"){
+        }else if(datos.categoria==="electrónicos"){
             datos.categoria=3;
             console.log(datos.categoria)
-        }else if(datos.categoria==="Hogar"){
-            datos.categoria=4;
+        }else if(datos.categoria==="carros"){
+            datos.categoria=2;
             console.log(datos.categoria)
-        }else if(datos.categoria==="Videojuegos"){
-            datos.categoria=5;
+        }else if(datos.categoria==="videojuegos"){
+            datos.categoria=4;
             console.log(datos.categoria)
         }
         if(datos.estado==="Nuevo"){
+            datos.estado=1;
 
         }else if(datos.estado==="Usado"){
+            datos.estado=0;
 
         }
-        dispatch(product( "",datos.categoria,datos.nombre,1,datos.imagen,datos.stock,datos.precio,datos.descripcion))
-        console.log(datos.nombre+' '+datos.categoria+' '+datos.estado+' '+datos.imagen+' '+datos.stock+' '+datos.precio+' '+datos.descripcion)
-        Swal.fire('Datos Guardados Correctamente!',
-        '',
-        'success' );
+        console.log(datos.nombre+' '+1+' '+datos.estado+' '+datos.imagen+' '+datos.stock+' '+datos.precio+' '+datos.descripcion)
+        
+  
+            //dispatch(product( "",1,'producto',1,'imagen',50,500,'smart' ));
+            dispatch(product( "",1,datos.nombre,datos.estado,datos.imagen,datos.stock,datos.precio,datos.descripcion))
+            Swal.fire('Datos Guardados Correctamente!',
+            '','success' );
+    
+            // Swal.fire('Datos NO Guardados ',
+            // '','error' );
+        
+        
+    
+       
         
     }
     const visualizarP =(event) =>{
@@ -69,6 +77,10 @@ const RegisterProduct = () => {
         )
         return cargar
     }
+    const carrito =() =>{
+     
+        history.push("/checkout");
+      }
 
     return ( 
         <Fragment>
@@ -144,6 +156,9 @@ const RegisterProduct = () => {
                  </div>
                  <div className="form-group">
                     <button type="button"  className="btn btn-light" type="submit" onClick={visualizarP}>Visualizar</button>
+                 </div>
+                 <div className="form-group">
+                    <button type="button"  className="btn btn-light" type="submit" onClick={carrito}>Carrito</button>
                  </div>
 
                  

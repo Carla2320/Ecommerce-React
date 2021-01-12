@@ -23,6 +23,8 @@ export const LoginScreen = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch( startLogin(cedula, contrasenia_usuario) );
+        console.log(cedula)
+        localStorage.setItem("cedula", cedula)
     }
     return (
         <div className="container mt-5">

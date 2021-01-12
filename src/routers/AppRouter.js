@@ -12,7 +12,10 @@ import { startChecking } from '../actions/auth';
 import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
 //import { ReLoginScreen } from '../components/ReLoginScreen';
-import ProductosLista from '../containers/ProductosLista';
+// import ProductosLista from '../containers/ProductosLista';
+// import Checkout from '../components/Checkout';
+// import Pago from '../components/Pago';
+
 
 export const AppRouter = () => {
 
@@ -42,11 +45,27 @@ export const AppRouter = () => {
                         component={ RegisterUser}
                         isAuthenticated={ !!usuario }
                         />
-                    <PrivateRoute
+                    {/* <PrivateRoute
                         path="/visualizar" 
                         component={ ProductosLista  } 
                         isAuthenticated={ !!usuario }
                         />
+                    <PrivateRoute
+                        path="/pago" 
+                        component={ Pago  } 
+                        isAuthenticated={ !!usuario }
+                    />
+                    <PrivateRoute
+                        path="/checkout" 
+                        component={Checkout} 
+                        isAuthenticated={ !!usuario }
+                        /> */}
+                    {/* <PrivateRoute 
+                        exact 
+                        path="/relogin" 
+                        component={ ReLoginScreen }
+                        isAuthenticated={ !!name }
+                        /> */}
                     <PrivateRoute
                         path="/" 
                         component={ DashboardRoutes } 
