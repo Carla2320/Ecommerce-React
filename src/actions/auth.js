@@ -24,6 +24,7 @@ export const startChecking = () => {
     return async (dispatch) => {
         const resp = await fetchConToken('user/renew');
         const body = await resp.json();
+        console.log(body);
         if (body.ok){
             localStorage.setItem('token', body.token);
             localStorage.setItem('token-init-date', new Date().getTime());
@@ -31,7 +32,6 @@ export const startChecking = () => {
                 usuario: body.usuario
             }))
         }else{
-            Swal.fire('Error',body.msg,'error');
             dispatch( checkinFinish() );
         }
     }
