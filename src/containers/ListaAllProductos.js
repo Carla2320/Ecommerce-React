@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import List from "../components/List"
-import  {AppBar,Typography,Toolbar} from "@material-ui/core"
  class ListaAllProductos extends Component{
     state={
         productos:[]
@@ -21,9 +20,7 @@ import  {AppBar,Typography,Toolbar} from "@material-ui/core"
         
         return(
             <>
-            
             <List AllProductos={productos}></List>
-            
             </>
         )
     }

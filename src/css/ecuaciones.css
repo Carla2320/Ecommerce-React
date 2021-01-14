@@ -16,11 +16,7 @@
     background: -webkit-linear-gradient(to left, #4BC0C8, #C779D0, #FEAC5E);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #4BC0C8, #C779D0, #FEAC5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-<<<<<<< HEAD
-#btn1,#btn2,#btn3,#btn4{
-=======
 #boton1,#boton2,#boton3,#boton4{
->>>>>>> 4a51d22fe94f0ba02b2b9ab6f3092d074c479b73
     width: 180px;
     height: auto;
     margin: 10px;

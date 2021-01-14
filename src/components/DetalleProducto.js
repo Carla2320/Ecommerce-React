@@ -7,6 +7,7 @@ function DetalleProducto({nombre}){
     console.log("kevin",{nombre})
     // const { producto} = useSelector( state =>
     //     console.log(state) );
+
     return (
         <section className="general">
             <section>
