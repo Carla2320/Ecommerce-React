@@ -7,6 +7,7 @@ import RegisterProduct from "../components/registerProduct";
 import ProductosLista from "../containers/ProductosLista";
 import Pago from "../components/Pago";
 import Checkout from "../components/Checkout";
+import DetalleProducto from "../components/DetalleProducto";
 
 export const DashboardRoutes = () => {
   return (
@@ -18,6 +19,7 @@ export const DashboardRoutes = () => {
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/product" component={RegisterProduct} />
           <Route exact path="/visualizar" component={ProductosLista} />
+          <Route exact path="/detalleproducto" component={DetalleProducto} />
           <Route exact path="/pago" component={Pago} />
           <Route exact path="/checkout" component={Checkout} />
           <Redirect to="/home" />
