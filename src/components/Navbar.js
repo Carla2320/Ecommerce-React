@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { startLogout } from "../actions/auth";
 import { useTranslation } from "react-i18next";
 export const Navbar = () => {
   const dispatch = useDispatch();
+
   const [t, i18n] = useTranslation("common");
   const cambio = (e) => {
-    const valor = e.target.value;
-    i18n.changeLanguage(valor);
     e.preventDefault();
+    const valor = e.target.value;
+    console.log(e.target.name);
+    console.log(valor);
+    i18n.changeLanguage(valor);
   };
 
   const handleLogout = () => {

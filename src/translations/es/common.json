@@ -16,5 +16,17 @@
 	"contenedor": {
 		"parrafo": "PrePresione Guardar después de editar sus traducciones. BabelEdit le pregunta dónde guardar el archivo del proyecto de traducción (.babel). Este archivo almacena la configuración y características como los indicadores aprobados y los comentarios del traductor.",
 		"descripcion": ""
+	},
+	"productos": {
+		"titulo": "Formulario del producto",
+		"nombre_producto": "Ingresar nombre del producto",
+		"categoria": "Elige una categoría",
+		"estado": "Elige el estado",
+		"imagen": "Ingresar imagen del producto",
+		"stock": "Ingresar stock del producto",
+		"precio": "Ingresar precio del producto",
+		"descripcion": "descripcion",
+		"boton": "Enviar"
+
 	}
 }
