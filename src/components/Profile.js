@@ -3,7 +3,8 @@ import { useSelector } from 'react-redux';
 //import "../css/profile.css"
 export const Profile = () => {
     
-    const { usuario } = useSelector( state => state.auth );
+    const { usuario } = useSelector( state => 
+        state.auth );
 
     return (
         <div className="card-grid">

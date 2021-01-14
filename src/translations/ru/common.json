@@ -1,0 +1,32 @@
+{
+	"welcome": {
+		"inicio": "Ingreso",
+		"usuario": "Ingrese tu Cedula",
+		"contrasenia": "Ingresa tu Password",
+		"boton_inicio": " Iniciar Sesion",
+		"boton_registrarte": "Registrarse"
+	},
+	"navbar": {
+		"ecommerce": "Ecommerce",
+		"inicio": "Inicio",
+		"shop": "Compras",
+		"perfil": "Perfil",
+		"exit": "Salir"
+	},
+	"productos": {
+		"titulo": "Formulario del producto",
+		"nombre_producto": "Ingresar nombre del producto",
+		"categoria": "Elige una categoría",
+		"estado": "Elige el estado",
+		"imagen": "Ingresar imagen del producto",
+		"stock": "Ingresar stock del producto",
+		"precio": "Ingresar precio del producto",
+		"descripcion": "descripcion",
+		"boton": "Enviar"
+
+	},
+	"carrito": {
+		"principal": "Tu carrito está vacío",
+		"cesta": "Tu cesta esá vacía"
+	}
+}

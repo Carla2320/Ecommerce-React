@@ -1,0 +1,36 @@
+{
+	"welcome": {
+		"inicio": "Sign in",
+		"usuario": "Enter your ID",
+		"contrasenia": "Enter your Password",
+		"boton_inicio": " Login",
+		"boton_registrarte": "Sign Up"
+	},
+	"navbar": {
+		"ecommerce": "Ecommerce",
+		"inicio": "Start",
+		"shop": "Shop",
+		"perfil": "Profile",
+		"exit": "Exit"
+	},
+	"contenedor": {
+		"parrafo": "Press Save after editing your translations. BabelEdit asks you where to save the translation project file (.babel). This file stores the configuration and features like the approved flags and translator comments."
+	},
+	"productos": {
+		"titulo": "Product form",
+		"nombre_producto": "Enter product name",
+		"categoria": "Choose a category",
+		"estado": "Choose the state",
+		"imagen": "Enter product image",
+		"stock": "Enter product stock",
+		"precio": "Enter product price",
+		"descripcion": "description",
+		"boton": "Send"
+
+	},
+	"carrito": {
+		"principal": "Your cart is empty",
+		"cesta": "Empty basket"
+
+	}
+}
