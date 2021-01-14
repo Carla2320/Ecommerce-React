@@ -1,0 +1,20 @@
+{
+	"welcome": {
+		"inicio": "Ingreso",
+		"usuario": "Ingrese tu Cedula",
+		"contrasenia": "Ingresa tu Password",
+		"boton_inicio": " Iniciar Sesion",
+		"boton_registrarte": "Registrarse"
+	},
+	"navbar": {
+		"ecommerce": "Ecommerce",
+		"inicio": "Inicio",
+		"shop": "Compras",
+		"perfil": "Perfil",
+		"exit": "Salir"
+	},
+	"contenedor": {
+		"parrafo": "PrePresione Guardar después de editar sus traducciones. BabelEdit le pregunta dónde guardar el archivo del proyecto de traducción (.babel). Este archivo almacena la configuración y características como los indicadores aprobados y los comentarios del traductor.",
+		"descripcion": ""
+	}
+}

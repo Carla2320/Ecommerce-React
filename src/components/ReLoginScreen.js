@@ -17,24 +17,19 @@ export const ReLoginScreen = () => {
     ]
 
     const orden = [
-        {"numero":aleatorios[0]%number===0?number+1: aleatorios[0] ,"prop":false},
-        {"numero":aleatorios[1]%number===0?number-1: aleatorios[1] ,"prop":false},
-        {"numero":aleatorios[2]%number===0?number+1: aleatorios[2] ,"prop":false},
+        {"numero":aleatorios[0]%number===0?aleatorios[0]+1: aleatorios[0] ,"prop":false},
+        {"numero":aleatorios[1]%number===0?aleatorios[1]+1: aleatorios[1] ,"prop":false},
+        {"numero":aleatorios[2]%number===0?aleatorios[2]+1: aleatorios[2] ,"prop":false},
         {"numero":number,"prop":true},
     ]
 
     const envio = orden.sort(()=>(Math.random()-0.5));
-    console.log(orden);
     const [ enable, setEnable ] = useState(false);
     const prueba = true;
-    let input, resultadoF;
-    resultadoF = localStorage.getItem("resultado");
-    
-    const memoRandom = useMemo(()=> envio, [prueba] )
+    const memoRandom = useMemo(()=> envio, [prueba] );
+
     const handleClick = useCallback(()=>{
         setEnable(!enable);
-        console.log('click');
-        
     }, [ setEnable ]);
     
     const Res= (event) =>{
@@ -42,19 +37,15 @@ export const ReLoginScreen = () => {
         if(event){
             console.log('true',event)
             localStorage.setItem("Estado",true);
-            //console.log(resultadoF,resultadoInput);
-            
         }
         else {
             console.log( 'false',event)
             localStorage.setItem("Estado",false);
-
-           
         }
 
       
     }
-    let id,hola
+    let id;
     const funcion=(event)=>{
         id=event.currentTarget.getAttribute('data-key')
         console.log('id',id);
@@ -65,24 +56,24 @@ export const ReLoginScreen = () => {
         return  (
             <>
             <section id="completo">
-                <h1 id="titulos">
-                        Escoga la operación que contenga el multiplo de su numero 
+                <h1 id="titulo">
+                        Selecciona la Operacion que Corresponda con su Multiplo
                     </h1>
                 <section id="botones">
     
                     <section>
-                        <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key='0' id = "btn1" > 
+                        <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key='0' id = "boton1" > 
                         <EcuationSquare number={ memoRandom[0] }/> 
                         </button>
-                        <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key="1" id = "btn2"> 
+                        <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key="1" id = "boton2"> 
                         <EcuationSquare number={ memoRandom[1] }/> 
                         </button>
                     </section>
                     <section>
-                        <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key="2" id = "btn3"> 
+                        <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key="2" id = "boton3"> 
                         <EcuationSquare number={ memoRandom[2] }/> 
                         </button>
-                        <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key="3"id = "btn4"> 
+                        <button className="btn btn-warning" disabled={enable} onClick = { funcion }  data-key="3"id = "boton4"> 
                         <EcuationSquare number={ memoRandom[3] }/> 
                         </button>
                     </section> 

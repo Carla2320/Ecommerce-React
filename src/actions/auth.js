@@ -7,17 +7,15 @@ export const startLogin = ( cedula, contrasenia_usuario ) => {
     return async ( dispatch ) => {
         const resp = await fetchSinToken('user/login',{ cedula, contrasenia_usuario },'POST');
         const body = await resp.json();
+        console.log('log',body);
         if (body.ok){
             localStorage.setItem('token', body.token);
             localStorage.setItem('token-init-date', new Date().getTime());
             dispatch(login({
-                name: body.name,
-                lastname: body.lastname,
-                number: body.number,
-                operacion: body.operacion
+                usuario: body.usuario
             }))
         }else{
-            Swal.fire('Error',body.msg,'error');
+            Swal.fire('Error', body.msg,'error');
         }
     }
 }
@@ -26,15 +24,14 @@ export const startChecking = () => {
     return async (dispatch) => {
         const resp = await fetchConToken('user/renew');
         const body = await resp.json();
+        console.log(body);
         if (body.ok){
             localStorage.setItem('token', body.token);
             localStorage.setItem('token-init-date', new Date().getTime());
             dispatch(login({
-                name: body.name,
-                lastname: body.lastname
+                usuario: body.usuario
             }))
         }else{
-            Swal.fire('Error',body.msg,'error');
             dispatch( checkinFinish() );
         }
     }

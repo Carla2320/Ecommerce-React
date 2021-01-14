@@ -10,30 +10,18 @@ import {UserForMulOpe} from "../hooks/UseForMulOpe"
 export const RegisterUser=()=>{
     const solonumeros=(e)=>{
         var key = window.event ? e.which : e.keyCode;
-                        if(key < 48 || key > 57)
-                            e.preventDefault();
+            if(key < 48 || key > 57)
+                e.preventDefault();
     }
 
-    const operaciones=["Suma","Resta","Multiplicación","División"], 
+    const operaciones=["Suma","Resta","Multiplicacion","Division"], 
     multiplo=[3,5,7,8,11,33],
     genero=["Masculino","Femenino"],
     provincia=["Azuay","Bolívar","Cañar","Carchi","Chimborazo","Cotopaxi","El Oro","Esmeraldas"
 ,"Galápagos","Guayas","Imbabura","Loja","Los Ríos","Manabí","Morona Santiago","Napo","Orellana",
 "Pastaza","Pichincha","Santa Elena","Santo Domingo de los Tsáchilas","Sucumbíos","Tungurahua","Zamora Chinchipe"]
 
-    // const baseURL = 'http://localhost:3030/api/user';
-    // const [valcheck,setValcheck]= useState([]);
-    // const fetchApi=  async () =>{
-    //     const responses =await fetch(baseURL)
-    //     const responseJson=await responses.json()
-    //     setValcheck(responseJson)
-    // }
-    // useEffect(()=>{
-    //     fetchApi();
-    // },[])
-
-    // console.log("hola",valcheck[0].cedula)
-     const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     const [ formValues, handleInputChange ] = useForm({
         cedula: '',
@@ -72,12 +60,6 @@ export const RegisterUser=()=>{
         )
         return cargar
     }
-    const entradascombo1=(name)=>{
-        var cargar=(
-        <option  width="20px" class="form-check-input" value={name} >{name}</option>
-        )
-        return cargar
-    }
     const history = useHistory()
     const validatioF=()=>{
         const a=validarform(nombre_usuario,apellido_usuario,contrasenia_usuario,cedula,formData.operacion,formData.multiplo,formData.genero,username,celular_usuario,telefono_usuario,email_usuario,direccion_principal,direccion_secundaria,formData.provincia,codigo_postal)
@@ -109,6 +91,7 @@ export const RegisterUser=()=>{
                     placeholder="Ingresa tu cedula"
                     class="form-control" 
                     value={ cedula }
+                    maxLength = "10"
                     name="cedula"
                     onKeyPress = {solonumeros}
                     onChange={ handleInputChange }id="cedula" 
@@ -154,20 +137,24 @@ export const RegisterUser=()=>{
                      onChange={ handleInputChange } class="form-control" id="password"/>
                 </div>
                 <div class="form-group">
-                    <input type="number" 
+                    <input type="text" 
                     placeholder="Ingresa tu celular"
                     class="form-control" 
+                    maxLength = "10"
                     value={ celular_usuario }
+                    onKeyPress = {solonumeros}
                     name="celular_usuario"
                     onChange={ handleInputChange }id="celular_usuario" 
                     aria-describedby="celular_usuario"
                     />
                 </div>
                 <div class="form-group">
-                    <input type="number" 
+                    <input type="text" 
                     class="form-control" 
                     placeholder="Ingresa tu teléfono convecional"
                     value={ telefono_usuario}
+                    onKeyPress = {solonumeros}
+                    maxLength = "7"
                     name="telefono_usuario"
                     onChange={ handleInputChange }id="telefono_usuario" 
                     aria-describedby="telefono_usuario"
@@ -208,23 +195,26 @@ export const RegisterUser=()=>{
                 <div class="form-group">
                 <label for="provincia" id="provi">Escoge tu provincia</label>
                     <select id="provincia" class="form-control" name="provincia" onChange={handleChange}>
+                    <option hidden selected>Selecciona una opción</option>
                      {provincia.map((item) => {
                          return entradascombo(item.toString())
                     })}
                     </select>
                 </div>
                 <div class="form-group">
-                    <input type="number" 
+                    <input type="text" 
                     class="form-control" 
                     placeholder="Ingresa tu código postal"
                     value={ codigo_postal }
                     name="codigo_postal"
+                    onKeyPress = {solonumeros}
                     onChange={ handleInputChange }id="codigo_postal" 
                     aria-describedby="codigo_postal"
                     />
                 </div>     
             <div class="form-group" id="operacion" >
                 <label for="inputState" >Escoge una Operación</label>
+                
                 {operaciones.map((item) => {
                          return entradas("operacion",item)
                     })}
@@ -232,7 +222,8 @@ export const RegisterUser=()=>{
             </div>
                 <div class="form-group">
                 <label for="inputState" id="multi">Escoge un Multiplo</label>
-                    <select  id="multipo"class="form-control" id="multiplo" name="multiplo" onChange={handleChange}>
+                <option hidden selected>Selecciona una Multiplo</option>
+                    <select  id="multipo" class="form-control" name="multiplo" onChange={handleChange}>
                      {multiplo.map((item) => {
                          return entradascombo(item)
                     })}

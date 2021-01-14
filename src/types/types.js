@@ -5,6 +5,7 @@ export const types = {
     authLogin : '[auth] Login',
     authLogout : '[auth] Logout',
 
-
+    userInfo: '[info] User',
+    
     numberVerify: '[verify] verify number'
 }
