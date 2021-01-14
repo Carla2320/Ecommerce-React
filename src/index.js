@@ -7,6 +7,7 @@ import { StateProvider } from "./reducers/StateProvider";
 import i18next from "i18next";
 import common_es from "./translations/es/common.json";
 import common_en from "./translations/en/common.json";
+import common_ru from "./translations/ru/common.json";
 
 i18next.init({
   interpolation: { escapeValue: false }, // React already does escaping
@@ -17,6 +18,9 @@ i18next.init({
     },
     en: {
       common: common_en,
+    },
+    ru: {
+      common: common_ru,
     },
   },
 });

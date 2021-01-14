@@ -19,7 +19,11 @@ export const DashboardRoutes = () => {
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/product" component={RegisterProduct} />
           <Route exact path="/visualizar" component={ProductosLista} />
-          <Route exact path="/detalleproducto" component={DetalleProducto} />
+          <Route
+            exact
+            path="/detalleproducto/:id"
+            component={DetalleProducto}
+          />
           <Route exact path="/pago" component={Pago} />
           <Route exact path="/checkout" component={Checkout} />
           <Redirect to="/home" />

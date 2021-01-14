@@ -1,4 +1,5 @@
-.general section{
-    background-color: red;
+.general section {
+    background-color: rgb(17, 17, 17);
     float: left;
+    color: azure;
 }

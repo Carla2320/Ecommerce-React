@@ -27,5 +27,10 @@
 		"descripcion": "description",
 		"boton": "Send"
 
+	},
+	"carrito": {
+		"principal": "Your cart is empty",
+		"cesta": "Empty basket"
+
 	}
 }
