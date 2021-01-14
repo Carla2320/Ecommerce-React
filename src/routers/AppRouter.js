@@ -45,27 +45,6 @@ export const AppRouter = () => {
                         component={ RegisterUser}
                         isAuthenticated={ !!usuario }
                         />
-                    {/* <PrivateRoute
-                        path="/visualizar" 
-                        component={ ProductosLista  } 
-                        isAuthenticated={ !!usuario }
-                        />
-                    <PrivateRoute
-                        path="/pago" 
-                        component={ Pago  } 
-                        isAuthenticated={ !!usuario }
-                    />
-                    <PrivateRoute
-                        path="/checkout" 
-                        component={Checkout} 
-                        isAuthenticated={ !!usuario }
-                        /> */}
-                    {/* <PrivateRoute 
-                        exact 
-                        path="/relogin" 
-                        component={ ReLoginScreen }
-                        isAuthenticated={ !!name }
-                        /> */}
                     <PrivateRoute
                         path="/" 
                         component={ DashboardRoutes } 

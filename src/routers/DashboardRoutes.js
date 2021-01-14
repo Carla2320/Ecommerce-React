@@ -8,7 +8,6 @@ import ProductosLista from '../containers/ProductosLista';
 import Pago from '../components/Pago';
 import Checkout from '../components/Checkout';
 
-
 export const DashboardRoutes = () => {
     return (
         <>
