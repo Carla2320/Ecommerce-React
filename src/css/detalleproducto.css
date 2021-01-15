@@ -1,4 +1,35 @@
-.general section{
-    background-color: red;
+.general{
+    margin-top: 2%;
+    margin-left: 15%;
+}
+.detalles{
+    border: 3px solid black;
+    border-radius: 5px;
+    background-color: white;
+    width: 400px;
+    height: 400px;
+}
+.detalles div{
+    margin: 25px;
+}
+.general section {
     float: left;
 }
+.count{
+    color: black;
+    text-align: center;
+    margin:1px;
+    padding: 4px;
+}
+.precio label{
+    color:#FC0067;
+}
+.botones section{
+    float: left;
+} 
+.btns{
+    height: 30px;
+}
+/* .btns button{
+    float: left;;
+} */

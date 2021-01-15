@@ -3,8 +3,9 @@ import { product } from "../actions/product";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import Swal from "sweetalert2";
-
+import { useTranslation } from "react-i18next";
 const RegisterProduct = () => {
+  const [t] = useTranslation("common");
   const dispatch = useDispatch();
   const categoria = [
     "Juguetes",
@@ -110,11 +111,11 @@ const RegisterProduct = () => {
 
   return (
     <>
-      <h1 className="titulo">Formulario del producto</h1>
+      <h1 className="titulo">{t("productos.titulo")}</h1>
       <form onSubmit={enviardatos}>
         <div className="form-group">
           <input
-            placeholder="Ingresar nombre del producto"
+            placeholder={t("productos.nombre_producto")}
             className="form-control"
             type="text"
             name="nombre"
@@ -128,7 +129,7 @@ const RegisterProduct = () => {
             onChange={handleInputChange}
           >
             <option value="" selected disabled hidden>
-              Elige una categoría
+              {t("productos.categoria")}
             </option>
             {categoria.map((item) => {
               return entradascombo(item.toString());
@@ -142,7 +143,7 @@ const RegisterProduct = () => {
             onChange={handleInputChange}
           >
             <option value="" selected disabled hidden>
-              Elige el estado
+              {t("productos.estado")}
             </option>
             {estado.map((item) => {
               return entradascombo2(item.toString());
@@ -151,7 +152,7 @@ const RegisterProduct = () => {
         </div>
         <div className="form-group">
           <input
-            placeholder="Ingresar imagen del producto"
+            placeholder={t("productos.imagen")}
             className="form-control"
             type="text"
             name="imagen"
@@ -161,7 +162,7 @@ const RegisterProduct = () => {
 
         <div className="form-group">
           <input
-            placeholder="Ingresar stock del producto"
+            placeholder={t("productos.stock")}
             className="form-control"
             type="number"
             name="stock"
@@ -170,7 +171,7 @@ const RegisterProduct = () => {
         </div>
         <div className="form-group">
           <input
-            placeholder="Ingresar precio del producto"
+            placeholder={t("productos.precio")}
             className="form-control"
             type="number"
             step="0.01"
@@ -182,7 +183,7 @@ const RegisterProduct = () => {
           <textarea
             className="form-control"
             rows="3"
-            placeholder="Descripción"
+            placeholder={t("productos.descripcion")}
             type="text"
             name="descripcion"
             onChange={handleInputChange}
@@ -197,7 +198,7 @@ const RegisterProduct = () => {
             name="enviar"
             onClick={handleInputChange}
           >
-            Enviar
+            {t("productos.boton")}
           </button>
         </div>
         <div className="form-group">

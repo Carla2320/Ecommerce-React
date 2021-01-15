@@ -35,7 +35,6 @@ export const AppRouter = () => {
           component={RegisterUser}
           isAuthenticated={!!usuario}
         />
-
         <PrivateRoute
           path="/"
           component={DashboardRoutes}

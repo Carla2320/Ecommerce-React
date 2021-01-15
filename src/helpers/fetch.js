@@ -33,8 +33,6 @@ const consulta =(endpoint)=>{
     return fetch( url);
 }
 
-
-
 const fetchConToken = ( endpoint, data, method = 'GET' ) => {
     const url = `${baseURL}/${endpoint}`;
     const token = localStorage.getItem('token') || '';

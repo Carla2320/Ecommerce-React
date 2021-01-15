@@ -2,13 +2,12 @@
     text-align: center;
     margin-left: 50px;
 }
-h3{
-    color:#FC0067;
-}
+
 .contentido{
     overflow: hidden;
     box-shadow: 0px 10px 15px;
     transition: 0.3s;
+    margin-top: 25px;
     margin-left: 10px;
     margin-bottom: 20px;
     animation: ease-in-out;
