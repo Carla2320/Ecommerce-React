@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 function Checkout() {
   const [t] = useTranslation("common");
   const [{ basket }] = useStateValue();
+  console.log({basket})
   return (
     <div className="checkout">
       <div className="checkout_left">
@@ -30,6 +31,7 @@ function Checkout() {
                 stock={item.stock}
                 precio={item.precio}
                 descripcion={item.descripcion}
+                cantidad={item.cantidad}
               />
             ))}
           </div>
