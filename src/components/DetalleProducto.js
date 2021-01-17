@@ -16,30 +16,35 @@ function DetalleProducto() {
   const [{ basket }, dispatch] = useStateValue();
   const { nombre_producto, imagen, precio, descripcion } = data;
   const addToBasket = () => {
-     dispatch({
-       type: "ADD_TO_BASKET",
-       item: {
-         id: id,
-         nombre: nombre_producto,
-         imagen: imagen,
-         precio: precio,
-         descripcion: descripcion,
-       },
-    });
+     if(cantidad<=0){
+       alert("La cantidad debe ser mayor a 0")
+     }else{
+      dispatch({
+        type: "ADD_TO_BASKET",
+        item: {
+          id: id,
+          nombre: nombre_producto,
+          imagen: imagen,
+          precio: precio*cantidad,
+          descripcion: descripcion,
+          cantidad:cantidad
+        },
+     });
+     }      
    };
    const suma =()=>{
       setCantidad(cantidad+1)
    } 
    const resta =()=>{
-     if(cantidad<=0){
-       setCantidad(0)
+     if(cantidad<=1){
+       setCantidad(1)
      }else{
       setCantidad(cantidad-1)
      }
  }
   console.log(data);
 
-  const [cantidad,setCantidad] = useState(0)
+  const [cantidad,setCantidad] = useState(1)
   return (
     <section className="productos">
   <section className="general">

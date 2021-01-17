@@ -1,8 +1,11 @@
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { startLogout } from "../actions/auth";
 import { useTranslation } from "react-i18next";
+import "../css/carrito.css"
 export const Navbar = () => {
   const dispatch = useDispatch();
 
@@ -17,6 +20,11 @@ export const Navbar = () => {
 
   const handleLogout = () => {
     dispatch(startLogout());
+  };
+  const history = useHistory();
+
+  const carrito = () => {
+    history.push("/checkout");
   };
 
   return (
@@ -48,7 +56,9 @@ export const Navbar = () => {
         >
           {t("navbar.perfil")}
         </NavLink>
-
+        <div class="iconcarrito">
+        <ShoppingCartIcon onClick={carrito}> </ShoppingCartIcon>
+        </div>
         <button className="btn btn-outline-warning" onClick={handleLogout}>
           <span> {t("navbar.exit")} </span>
         </button>
