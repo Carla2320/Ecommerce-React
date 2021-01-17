@@ -10,7 +10,6 @@ const RegisterProduct = () => {
   const categoria = [
     "Juguetes",
     "Electrónicos",
-    "Belleza",
     "Hogar",
     "Videojuegos",
   ];
@@ -35,16 +34,16 @@ const RegisterProduct = () => {
 
   const enviardatos = (event) => {
     event.preventDefault();
-    if (datos.categoria === "juguetes") {
+    if (datos.categoria === "Juguetes") {
       datos.categoria = 1;
       console.log(datos.categoria);
-    } else if (datos.categoria === "electrónicos") {
+    } else if (datos.categoria === "Electrónicos") {
       datos.categoria = 3;
       console.log(datos.categoria);
-    } else if (datos.categoria === "carros") {
+    } else if (datos.categoria === "Hogar") {
       datos.categoria = 2;
       console.log(datos.categoria);
-    } else if (datos.categoria === "videojuegos") {
+    } else if (datos.categoria === "Videojuegos") {
       datos.categoria = 4;
       console.log(datos.categoria);
     }
@@ -71,7 +70,7 @@ const RegisterProduct = () => {
     dispatch(
       product(
         "",
-        1,
+        datos.categoria,
         datos.nombre,
         datos.estado,
         datos.imagen,
@@ -101,9 +100,7 @@ const RegisterProduct = () => {
     );
     return cargar;
   };
-  const carrito = () => {
-    history.push("/checkout");
-  };
+
   const detalle= () => {
     history.push("/DetalleProducto");
   };
@@ -209,16 +206,6 @@ const RegisterProduct = () => {
             onClick={visualizarP}
           >
             Visualizar
-          </button>
-        </div>
-        <div className="form-group">
-          <button
-            type="button"
-            className="btn btn-light"
-            type="submit"
-            onClick={carrito}
-          >
-            Carrito
           </button>
         </div>
         <div className="form-group">

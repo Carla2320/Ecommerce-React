@@ -23,11 +23,13 @@
 }
 
 .productcart{
-    display: flex;
+
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 5px;
     float: left;
+    width: 350px;
+    height: 350px;
 
 }
 .productcart__image{
@@ -44,7 +46,7 @@
 }
 .productcart__info{
     padding-left: 20px;
-
+   
 }
 .productcart__info>button{
     background-color: #f0c14b;

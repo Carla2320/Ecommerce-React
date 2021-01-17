@@ -1,11 +1,15 @@
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { startLogout } from "../actions/auth";
 import { useTranslation } from "react-i18next";
+import "../css/navbar.css";
+import { useStateValue } from "../reducers/StateProvider";
 export const Navbar = () => {
-  const dispatch = useDispatch();
-
+  
+  const [{ basket }, dispatch] = useStateValue();
+  const history = useHistory();
   const [t, i18n] = useTranslation("common");
   const cambio = (e) => {
     e.preventDefault();
@@ -17,6 +21,9 @@ export const Navbar = () => {
 
   const handleLogout = () => {
     dispatch(startLogout());
+  };
+  const carrito = () => {
+    history.push("/checkout");
   };
 
   return (
@@ -62,6 +69,11 @@ export const Navbar = () => {
             ingles
           </option>
         </select>
+        
+        <button className="btn_carro" onClick={carrito}>
+            
+        </button>
+        <span>{basket?.length}</span>
       </div>
     </nav>
   );
