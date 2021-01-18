@@ -1,15 +1,16 @@
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { startLogout } from "../actions/auth";
 import { useTranslation } from "react-i18next";
 import "../css/navbar.css";
 import { useStateValue } from "../reducers/StateProvider";
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import { useDispatch } from "react-redux";
 export const Navbar = () => {
-  
-  const [{ basket }, dispatch] = useStateValue();
+  const dispatch = useDispatch();
+
+  const [{ basket }] = useStateValue();
   const history = useHistory();
   const [t, i18n] = useTranslation("common");
   const cambio = (e) => {
