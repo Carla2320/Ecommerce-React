@@ -9,7 +9,6 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { useDispatch } from "react-redux";
 export const Navbar = () => {
   const dispatch = useDispatch();
-
   const [{ basket }] = useStateValue();
   const history = useHistory();
   const [t, i18n] = useTranslation("common");
