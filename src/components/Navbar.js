@@ -8,8 +8,8 @@ import "../css/navbar.css";
 import { useStateValue } from "../reducers/StateProvider";
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 export const Navbar = () => {
-  
-  const [{ basket }, dispatch] = useStateValue();
+  const dispatch = useDispatch();
+  const [{ basket }] = useStateValue();
   const history = useHistory();
   const [t, i18n] = useTranslation("common");
   const cambio = (e) => {
