@@ -8,8 +8,20 @@ import { Card, CardMedia, CardContent, Typography } from "@material-ui/core";
 function CardProduc({ name, imagen, descripcion, precio,id}) { 
   const classes = useStyles();
   const history = useHistory();
-  const carrito = () => {
-    history.push("/checkout");
+  const [{ basket }, dispatch] = useStateValue();
+  const addToBasket = () => {
+     dispatch({
+       type: "ADD_TO_BASKET",
+       item: {
+         id: id,
+         nombre: name,
+         imagen: imagen,
+         precio: precio,
+         descripcion: descripcion,
+         cantidad:1
+       },
+    });
+     
   };
   const detalle = (e) => {
     history.push(`/DetalleProducto/${id}`);
@@ -29,7 +41,7 @@ function CardProduc({ name, imagen, descripcion, precio,id}) {
           <h3 className="precio">${precio}</h3>
         </CardContent>
         <CardActions className="btnproducto">
-          <ShoppingCartIcon onClick={carrito}> </ShoppingCartIcon>
+          <ShoppingCartIcon onClick={addToBasket}> </ShoppingCartIcon>
         </CardActions>
       </Card>
     </div>

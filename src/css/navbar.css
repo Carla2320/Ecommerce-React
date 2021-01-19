@@ -1,14 +1,8 @@
-.btn_carro {
-    background: #ffffff;;
-    background-image: url("https://cdn3.iconfinder.com/data/icons/glypho-shopping-and-ecommerce/64/cart-outline-512.png");
-    background-size: cover;
-    background-position: center;
-    display: inline-block;
-    border: none;
-    padding: 5px;
-    width: 35px;
-    height: 35px;
-    transition: all 0.5s;
-    cursor: pointer;
-   }
-   
+.iconcarrito{
+    width: 30px;
+    height: 30px;
+
+}
+.traduce{
+margin-right: 10px;
+}
