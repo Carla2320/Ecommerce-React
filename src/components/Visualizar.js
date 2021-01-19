@@ -6,6 +6,10 @@ const Visualizar = ({ id, nombre, imagen, stock, precio, descripcion }) => {
   console.log("num content", basket.length);
 
   const addToBasket = () => {
+    if (basket.empty()){
+      console.log("CARRO VACIO")
+
+    }
     dispatch({
       type: "ADD_TO_BASKET",
       item: {
