@@ -1,13 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-import { UseFetch } from "../hooks/UseFetch";
-import { useStateValue } from "../reducers/StateProvider";
-import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import CardActions from "@material-ui/core/CardActions";
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-
 import "../css/cards.css";
 import { Card, CardMedia, CardContent, Typography } from "@material-ui/core";
 function CardProduc({ name, imagen, descripcion, precio,id}) { 
