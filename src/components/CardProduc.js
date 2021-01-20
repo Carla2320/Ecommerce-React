@@ -14,6 +14,22 @@ function CardProduc({ name, imagen, descripcion, precio,id}) {
   const classes = useStyles();
   const history = useHistory();
   const [{ basket }, dispatch] = useStateValue();
+  const  vacio=()=>{
+    const bandera=null
+    if (basket.empty()){
+      bandera=true;
+      
+console.log("Carrito ",bandera)
+    
+  }else{
+     bandera=false;
+    
+  console.log("Carrito",bandera)
+  }
+
+  return  bandera;
+}
+
   const addToBasket = () => {
      dispatch({
        type: "ADD_TO_BASKET",
@@ -34,6 +50,7 @@ function CardProduc({ name, imagen, descripcion, precio,id}) {
   
   return (
     <div className="contentido">
+    
       <Card className={classes.item} >
         <div className="trasimg">
           <CardMedia className={classes.media} image={imagen} onClick={detalle}></CardMedia>

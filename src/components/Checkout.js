@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 function Checkout() {
   const [t] = useTranslation("common");
   const [{ basket }] = useStateValue();
+  const bandera=true;
   console.log({basket})
   return (
     <div className="checkout">

@@ -7,10 +7,6 @@ export const startLogin = ( cedula, contrasenia_usuario ) => {
     return async ( dispatch ) => {
         const resp = await fetchSinToken('user/login',{ cedula, contrasenia_usuario },'POST');
         const body = await resp.json();
-        let dia=new Date().getUTCHours();
-        
-        console.log('dia', dia);
-        console.log('log',body);
         if (body.ok){
             localStorage.setItem('token', body.token);
             localStorage.setItem('token-init-date', new Date().getTime());
