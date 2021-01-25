@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import CardActions from "@material-ui/core/CardActions";
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import "../css/cards.css";
@@ -8,7 +9,8 @@ import { Card, CardMedia, CardContent, Typography } from "@material-ui/core";
 function CardProduc({ name, imagen, descripcion, precio,id}) { 
   const classes = useStyles();
   const history = useHistory();
-  const [{ basket }, dispatch] = useStateValue();
+  const dispatch = useDispatch();
+  //const [{ basket }, dispatch] = useStateValue();
   const addToBasket = () => {
      dispatch({
        type: "ADD_TO_BASKET",
