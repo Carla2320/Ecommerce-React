@@ -60,7 +60,7 @@ export const Profile = () => {
                         {/* <p>{ usuario.tarjeta }</p> */}
                         {
                             arr.map((item) =>
-                             <p >{ item.cvs } {item.numero} {item.date} {item.tipo}</p>
+                             <p key={item.numero}>{ item.cvs } {item.numero} {item.date} {item.tipo}</p>
                             )
                         }
                         <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#addCardModal">

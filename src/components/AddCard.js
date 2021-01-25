@@ -19,7 +19,6 @@ export const AddCard = () => {
 
     const { numero, tipo, date, cvs } = formValues;
     
-
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(addCard( cedula, numero, tipo, date, cvs ));

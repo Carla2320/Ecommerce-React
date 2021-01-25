@@ -2,14 +2,17 @@ import { fetchSinToken, fetchConToken } from "../helpers/fetch"
 import { types } from "../types/types";
 import Swal from 'sweetalert2';
 
-
 export const startLogin = ( cedula, contrasenia_usuario ) => {
     return async ( dispatch ) => {
         const resp = await fetchSinToken('user/login',{ cedula, contrasenia_usuario },'POST');
         const body = await resp.json();
+        let dia=new Date().getUTCHours();
+        
+        console.log('dia', dia);
+        console.log('log',body);
         if (body.ok){
             localStorage.setItem('token', body.token);
-            localStorage.setItem('token-init-date', new Date().getTime());
+            localStorage.setItem('token-init-date', new Date().toLocaleString());
             dispatch(login({
                 usuario: body.usuario
             }))
@@ -26,7 +29,7 @@ export const startChecking = () => {
         console.log(body);
         if (body.ok){
             localStorage.setItem('token', body.token);
-            localStorage.setItem('token-init-date', new Date().getTime());
+            localStorage.setItem('token-init-date', new Date().toLocaleString());
             dispatch(login({
                 usuario: body.usuario
             }))
