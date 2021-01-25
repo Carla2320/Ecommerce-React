@@ -5,11 +5,13 @@ import "../css/carrito.css";
 import Subtotal from "./Subtotal";
 import { useTranslation } from "react-i18next";
 function Checkout() {
+  
   const [t] = useTranslation("common");
   const [{ basket }] = useStateValue();
   console.log({basket})
   return (
     <div className="checkout">
+      <section>
       <div className="checkout_left">
         {basket.length === 0 ? (
           <div className="vacio">
@@ -21,7 +23,7 @@ function Checkout() {
             />
           </div>
         ) : (
-          <div className="checkout">
+          <div>
             <h2 className="shoppingbaskettitle">Tus artículos</h2>
             {basket.map((item) => (
               <ProductCart
@@ -37,11 +39,15 @@ function Checkout() {
           </div>
         )}
       </div>
+      </section>
+      <section className="sectionright">
       {basket.length > 0 && (
         <div className="checkout__right">
           <Subtotal />
         </div>
       )}
+      </section>
+      
     </div>
   );
 }
