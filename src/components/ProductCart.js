@@ -7,13 +7,13 @@ import { useStateValue } from '../reducers/StateProvider';
 function ProductCart ({id, nombre, imagen, stock, precio, descripcion,cantidad}){
     const [cantidades,setCantidad] = useState(1)
     const suma =()=>{
-        setCantidad(cantidad+1)
+        setCantidad(cantidades+1)
      } 
      const resta =()=>{
        if(cantidad<=1){
          setCantidad(1)
        }else{
-        setCantidad(cantidad-1)
+        setCantidad(cantidades-1)
        }
    }
     const [{basket}, dispatch]=useStateValue();
@@ -34,7 +34,7 @@ function ProductCart ({id, nombre, imagen, stock, precio, descripcion,cantidad})
             <section>
             <p className="productcart__title">{nombre}</p>
                 <p className="productocart__descrip">{descripcion}</p>
-                <h6>Cantidad: {cantidad}</h6>
+                <h6>Cantidad: {cantidades}</h6>
             </section>
             <section>
           <ButtonGroup variant="contained" className="btns" color="primary" aria-label="contained primary button group">

@@ -25,6 +25,11 @@ export const authReducer = (state= initialState, action) => {
             return {
                 ...state
             }
+        case types.addCard:
+            return {
+                ...state,
+                ...action.payload
+            }
         default:
            return state;
     }

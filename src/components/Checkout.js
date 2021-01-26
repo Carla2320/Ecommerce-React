@@ -8,7 +8,13 @@ function Checkout() {
   
   const [t] = useTranslation("common");
   const [{ basket }] = useStateValue();
-  console.log({basket})
+  console.log("kevin",{basket})
+  if (basket.length===0) {
+    console.log("vacio");
+          
+  }else{
+    console.log("lleno")
+  }
   return (
     <div className="checkout">
       <section>
@@ -25,7 +31,10 @@ function Checkout() {
         ) : (
           <div>
             <h2 className="shoppingbaskettitle">Tus artículos</h2>
+            <div className="container">
+                <div className="row">
             {basket.map((item) => (
+              
               <ProductCart
                 id={item.id}
                 nombre={item.nombre}
@@ -36,6 +45,8 @@ function Checkout() {
                 cantidad={item.cantidad}
               />
             ))}
+             </div>
+            </div>
           </div>
         )}
       </div>
@@ -43,12 +54,14 @@ function Checkout() {
       <section className="sectionright">
       {basket.length > 0 && (
         <div className="checkout__right">
-          <Subtotal />
+         
+          <Subtotal/>
         </div>
       )}
       </section>
       
     </div>
   );
+  
 }
 export default Checkout;

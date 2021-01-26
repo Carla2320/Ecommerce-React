@@ -1,10 +1,9 @@
 import React, { Fragment } from "react";
 import CardProduc from "./CardProduc";
 import { Grid } from "@material-ui/core";
-import logo from "../img/kevin.jpg";
 function List({ AllProductos }) {
   return (
-    <Fragment>
+    <>
       <Grid container spacing={24} justify="center">
         {AllProductos.map(
           ({ precio, descripcion, nombre_producto, id_producto, imagen }) => {
@@ -22,7 +21,7 @@ function List({ AllProductos }) {
           }
         )}
       </Grid>
-    </Fragment>
+    </>
   );
 }
 export default List;

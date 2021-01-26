@@ -2,7 +2,6 @@ import { fetchSinToken, fetchConToken } from "../helpers/fetch"
 import { types } from "../types/types";
 import Swal from 'sweetalert2';
 
-
 export const startLogin = ( cedula, contrasenia_usuario ) => {
     return async ( dispatch ) => {
         const resp = await fetchSinToken('user/login',{ cedula, contrasenia_usuario },'POST');
@@ -13,7 +12,7 @@ export const startLogin = ( cedula, contrasenia_usuario ) => {
         console.log('log',body);
         if (body.ok){
             localStorage.setItem('token', body.token);
-            localStorage.setItem('token-init-date', new Date().getTime());
+            localStorage.setItem('token-init-date', new Date().toLocaleString());
             dispatch(login({
                 usuario: body.usuario
             }))
@@ -30,7 +29,7 @@ export const startChecking = () => {
         console.log(body);
         if (body.ok){
             localStorage.setItem('token', body.token);
-            localStorage.setItem('token-init-date', new Date().getTime());
+            localStorage.setItem('token-init-date', new Date().toLocaleString());
             dispatch(login({
                 usuario: body.usuario
             }))
@@ -56,15 +55,22 @@ export const startLogout = () => {
 
 const logout = () => ({ type: types.authLogout })
 
-export const verifyLogin = (value) => {
-    return (dispatch) => {
-        dispatch( cosa({
-            show: value
-        }));
+export const addCard = ( cedula, numero, tipo, date, cvs ) => {
+    return async (dispatch) => {
+        const resp = await fetchConToken('user/addCard', { cedula, numero, tipo, date, cvs }, 'POST');
+        const body = await resp.json();
+        console.log("we are on action",body);
+        if (body.ok){
+            dispatch(card({
+                usuario: body.userCard
+            }))
+        }else{
+            Swal.fire('Error', body.msg,'ocurrio un error al intentar agregar tu tarjeta');
+        }
     }
 }
 
-const cosa = ( mostrar) => ({
-    type: types.numberVerify,
-    payload: mostrar
-})
+const card = ( user ) => ({
+    type: types.addCard,
+    payload: user
+});
