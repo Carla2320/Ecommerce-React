@@ -41,8 +41,8 @@ export const LoginScreen = () => {
                 value={cedula}
                 name="cedula"
                 placeholder={t("welcome.usuario")}
-                onKeyPress={solonumeros}
-                onChange={handleInputChange}
+                onKeyPress={ solonumeros }
+                onChange={ handleInputChange }
                 autoComplete="off"
               />
             </div>

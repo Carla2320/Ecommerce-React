@@ -55,7 +55,7 @@ function Checkout() {
       {basket.length > 0 && (
         <div className="checkout__right">
          
-          <Subtotal/>
+          <Subtotal precio={basket.precio}/>
         </div>
       )}
       </section>
