@@ -32,6 +32,12 @@ function DetalleProducto() {
      });
      }      
    };
+   if (basket.length===0) {
+    console.log("vacio");
+          
+  }else{
+    console.log("lleno")
+  }
    const suma =()=>{
       setCantidad(cantidad+1)
    } 

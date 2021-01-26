@@ -4,12 +4,20 @@ import ProductCart from "./ProductCart";
 import "../css/carrito.css";
 import Subtotal from "./Subtotal";
 import { useTranslation } from "react-i18next";
+// import HorizontalNonLinearAlternativeLabelStepper from "./Step";
 function Checkout() {
   const [t] = useTranslation("common");
   const [{ basket }] = useStateValue();
   console.log({basket})
+  if (basket.length===0) {
+    console.log("vacio");
+          
+  }else{
+    console.log("lleno")
+  }
   return (
     <div className="checkout">
+      {/* <HorizontalNonLinearAlternativeLabelStepper /> */}
       <div className="checkout_left">
         {basket.length === 0 ? (
           <div className="vacio">
@@ -23,7 +31,10 @@ function Checkout() {
         ) : (
           <div className="checkout">
             <h2 className="shoppingbaskettitle">Tus artículos</h2>
+            <div className="container">
+                <div className="row">
             {basket.map((item) => (
+              
               <ProductCart
                 id={item.id}
                 nombre={item.nombre}
@@ -34,11 +45,14 @@ function Checkout() {
                 cantidad={item.cantidad}
               />
             ))}
+             </div>
+            </div>
           </div>
         )}
       </div>
       {basket.length > 0 && (
         <div className="checkout__right">
+
           <Subtotal />
         </div>
       )}

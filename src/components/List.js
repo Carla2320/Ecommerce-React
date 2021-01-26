@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import CardProduc from "./CardProduc";
 import { Grid } from "@material-ui/core";
 function List({ AllProductos }) {
@@ -7,7 +7,6 @@ function List({ AllProductos }) {
       <Grid container spacing={24} justify="center">
         {AllProductos.map(
           ({ precio, descripcion, nombre_producto, id_producto, imagen }) => {
-            //url imagen
             return (
               <CardProduc
                 key={id_producto}

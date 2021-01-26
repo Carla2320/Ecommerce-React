@@ -7,10 +7,10 @@ export const Profile = () => {
         state.auth );
 
     var arr = [];
-    Object.keys(usuario.tarjeta).forEach(function(key) {
+
+    usuario.tarjeta?Object.keys(usuario.tarjeta).forEach(function(key) {
         arr.push(usuario.tarjeta[key]);
-    });
-    console.log(arr);
+    }):arr=[];
     return (
         <div className="container">
             <div className="row">
@@ -57,10 +57,9 @@ export const Profile = () => {
                     <div className="card">
                         <div className="card-body">
                         <h5 class="card-title">Tarjetas asociadas</h5>
-                        {/* <p>{ usuario.tarjeta }</p> */}
                         {
                             arr.map((item) =>
-                             <p >{ item.cvs } {item.numero} {item.date} {item.tipo}</p>
+                             <p key={item.numero}>{ item.cvs } {item.numero} {item.date} {item.tipo}</p>
                             )
                         }
                         <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#addCardModal">
