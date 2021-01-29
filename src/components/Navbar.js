@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { startLogout } from "../actions/auth";
 import { useTranslation } from "react-i18next";
 import "../css/navbar.css";
 import { useStateValue } from "../reducers/StateProvider";
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { useDispatch } from "react-redux";
 export const Navbar = () => {
   const dispatch = useDispatch();
@@ -56,11 +56,12 @@ export const Navbar = () => {
         >
           {t("navbar.perfil")}
         </NavLink>
-        
+
         <button className="btn btn-outline-warning" onClick={handleLogout}>
           <span> {t("navbar.exit")} </span>
         </button>
       </div>
+
       <div className="traduce">
         <select onChange={cambio}>
           <option value="es" name="es">
@@ -70,13 +71,12 @@ export const Navbar = () => {
             ingles
           </option>
         </select>
-        
-       
       </div>
+
       <div class="iconcarrito">
         <ShoppingCartIcon onClick={carrito}> </ShoppingCartIcon>
-        </div>
-        <span >{basket?.length}</span>
+      </div>
+      <span>{basket?.length}</span>
     </nav>
   );
 };
