@@ -1,4 +1,4 @@
-import React ,{useState}from "react";
+import React ,{useState,Suspense,lazy}from "react";
 import { useSelector } from "react-redux";
 import logo from "../img/kevin.jpg";
 import "../css/detalleproducto.css";
@@ -8,7 +8,10 @@ import { UseFetch } from "../hooks/UseFetch";
 import {Button,Paper,Box,Container} from '@material-ui/core';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import { useStateValue } from "../reducers/StateProvider";
-import ListaAllProductos from "../containers/ListaAllProductos";
+
+console.time("tiempo de carga pagina")
+
+const ListaAll=lazy(()=>import("../containers/ListaAllProductos"))
 
 function DetalleProducto() {
   const { id } = useParams();
@@ -48,8 +51,6 @@ function DetalleProducto() {
       setCantidad(cantidad-1)
      }
  }
-  console.log(data);
-
   const [cantidad,setCantidad] = useState(1)
   return (
     <section className="productos">
@@ -92,10 +93,12 @@ function DetalleProducto() {
         </div>
       </section>
     </section>
-    <ListaAllProductos />
+    <Suspense fallback={<div>wating</div>}>
+    <ListaAll />
+    </Suspense>
     </section>
-   
-   
   );
 }
+console.timeEnd("tiempo de carga pagina")
+
 export default DetalleProducto;
