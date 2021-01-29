@@ -21,9 +21,9 @@ class ListaAllProductos extends Component {
     const { productos } = this.state;
 
     return (
-      <>
+
         <List AllProductos={productos} />
-      </>
+
     );
   }
 }

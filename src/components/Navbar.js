@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
@@ -6,7 +6,7 @@ import { startLogout } from "../actions/auth";
 import { useTranslation } from "react-i18next";
 import "../css/navbar.css";
 import { useStateValue } from "../reducers/StateProvider";
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { useDispatch } from "react-redux";
 export const Navbar = () => {
   const dispatch = useDispatch();
