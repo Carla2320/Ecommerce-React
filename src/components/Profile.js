@@ -1,16 +1,9 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { AddCard } from './AddCard';
+import { AccountInfo } from './AccountInfo';
+import { Adresses } from './Adresses';
+import { PaymentMethod } from './PaymentMethod';
 export const Profile = () => {
     
-    const { usuario } = useSelector( state => 
-        state.auth );
-
-    var arr = [];
-
-    usuario.tarjeta?Object.keys(usuario.tarjeta).forEach(function(key) {
-        arr.push(usuario.tarjeta[key]);
-    }) : arr=[];
     return (
 <div classNameName="my-account pt-80 pb-50">
     <div className="container">
@@ -101,90 +94,12 @@ export const Profile = () => {
                         </div>
                     </div>
                     <div className="tab-pane fade" id="payment-method" role="tabpanel">
-                        <div className="myaccount-content">
-                            <h3>Payment Method</h3>
-                            {
-                            arr.map((item) =>
-                             <p key={item.numero}>{ item.cvs } {item.numero} {item.date} {item.tipo}</p>
-                            )
-                            }
-                            <button type="button" className="btn btn-outline-primary" data-toggle="modal" data-target="#addCardModal">
-                            + Agregar tarjeta
-                            </button>
-                        </div>
+                        <PaymentMethod className="payment-method"/>
                     </div>
                     <div className="tab-pane fade" id="address-edit" role="tabpanel">
-                        <div className="myaccount-content">
-                            <h3>Billing Address</h3>
-                            <address>
-                                <p><strong>{ usuario.nombre_usuario }</strong></p>
-                                <p>{ usuario.direccion_principal }</p>
-                            </address>
-                            <address>
-                                <p>{ usuario.direccion_secundaria }</p>
-                            </address>
-                        </div>
+                        <Adresses />
                     </div>
-                    <div className="tab-pane fade active show" id="account-info" role="tabpanel">
-                        <div className="myaccount-content">
-                            <h3>Account Details</h3>
-                            <div className="account-details-form">
-                                <form action="#">
-                                    <div className="row">
-                                        <div className="col-lg-6 col-12 mb-30">
-                                            <input
-                                                type="text"
-                                                id="first-name"
-                                                classNameName="form-control"
-                                                value={ usuario.nombre_usuario }
-                                                name="cedula"
-                                                placeholder="First Name"
-                                                autoComplete="off"
-                                                disabled="true"
-                                            />
-                                            </div>
-                                        <div className="col-lg-6 col-12 mb-30">
-                                            <input
-                                                type="text"
-                                                id="last-name"
-                                                classNameName="form-control"
-                                                value={ usuario.apellido_usuario }
-                                                name="cedula"
-                                                placeholder="Last Name"
-                                                autoComplete="off"
-                                                disabled="true"
-                                            />
-                                        </div>
-                                        <div className="col-12 mb-30">
-                                            <input
-                                                type="text"
-                                                id="display-name"
-                                                classNameName="form-control"
-                                                value={ usuario.cedula }
-                                                name="cedula"
-                                                placeholder="CI"
-                                                autoComplete="off"
-                                                disabled="true"
-                                            />
-                                        </div>
-                                        <div className="col-12 mb-30">
-                                            <input
-                                                    type="email"
-                                                    id="email"
-                                                    classNameName="form-control"
-                                                    value={ usuario.email_usuario }
-                                                    name="cedula"
-                                                    placeholder="Email Address"
-                                                    autoComplete="off"
-                                                    disabled="true"
-                                                />
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                  <AddCard />
+                    <AccountInfo className="account-info" />
                 </div>
             </div>
         </div>

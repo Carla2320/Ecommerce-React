@@ -4,7 +4,6 @@ import ProductCart from "./ProductCart";
 import "../css/carrito.css";
 import Subtotal from "./Subtotal";
 import { useTranslation } from "react-i18next";
-// import HorizontalNonLinearAlternativeLabelStepper from "./Step";
 function Checkout() {
   const [t] = useTranslation("common");
   const [{ basket }] = useStateValue();
@@ -17,7 +16,6 @@ function Checkout() {
   }
   return (
     <div className="checkout">
-      {/* <HorizontalNonLinearAlternativeLabelStepper /> */}
       <div className="checkout_left">
         {basket.length === 0 ? (
           <div className="vacio">
