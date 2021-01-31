@@ -8,6 +8,7 @@ import { DashboardRoutes } from "./DashboardRoutes";
 import { startChecking } from "../actions/auth";
 import { PublicRoute } from "./PublicRoute";
 import { PrivateRoute } from "./PrivateRoute";
+import { Support } from "../components/Support";
 
 export const AppRouter = () => {
   const dispatch = useDispatch();
@@ -19,6 +20,13 @@ export const AppRouter = () => {
   if (cheking) {
     return <h5>Wait...</h5>;
   }
+
+  const suppModal = async () => {
+    const r = await document.getElementsByClassName('applozic-launcher');
+    console.log("Acá",r);
+  }
+
+  suppModal();
 
   return (
     <Router>
@@ -41,6 +49,7 @@ export const AppRouter = () => {
           isAuthenticated={!!usuario}
         />
       </Switch>
+      <Support />
     </Router>
   );
 };

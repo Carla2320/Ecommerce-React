@@ -1,10 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { addCard } from '../actions/auth';
-import { useForm } from '../hooks/useForm';
 import { useDispatch } from "react-redux";
 import { useStateValue } from '../reducers/StateProvider';
-import { detalle_venta } from '../actions/venta';
+import { AccountInfo } from './AccountInfo';
+import { Adresses } from './Adresses';
+import { PaymentMethod } from './PaymentMethod';
+
 function Pago(){
     const [{ basket }] = useStateValue();
     console.log(basket[0])
@@ -28,12 +29,6 @@ function Pago(){
 
     const dispatch = useDispatch();
 
-    const [formValues, handleInputChange] = useForm({
-        numero: "",
-        tipo: "",
-        date: "",
-        cvs: ""
-    });
 
     const { numero, tipo, date, cvs } = formValues;
     
@@ -61,80 +56,106 @@ function Pago(){
 
       }
 
-    const tipos = [
-        "Visa",
-        "Mastercard",
-        "American Express",
-        "Discover",
-        "Diners Club"
-    ]
-
     return (
        
-        <div className="modal-dialog modal-dialog-centered">
-          
-            <div className="modal-content">
-            <h2>Escoje una tarjeta </h2>
-            <table className="table-active">
-  <thead>
-    <tr>
-      <th scope="col">Numero de tarjeta</th>
-      <th scope="col">Tipo de tarjeta</th>
-      <th scope="col">Fecha de vencimiento</th>
-      <th scope="col">Código de seguridad</th>
-      <th scope="col"> </th>
-    </tr>
-  </thead>
-  <tbody>
-  {
-        tarjetas.map((item) =>
-         <tr>
-         <td > {item.numero}</td>
-          <td>{item.tipo}</td>
-          <td >{item.date} </td>
-          <td> { item.cvs } </td>
-          <td > <button type="button" onClick={submit.bind(this,item)}class="btn btn-success">Pagar</button></td>
-          </tr>
-         )
-                            
-        }
-  </tbody>
-</table>
-            <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">Asociar tarjeta</h5>
-                
-            </div>
-            <div className="modal-body">
-                <form>
-                <div className="form-group">
-                    <label for="recipient-name" className="col-form-label">Número de tarjeta</label>
-                    <input type="text" className="form-control" id="recipient-name"
-                            name="numero" value={ numero } onChange={ handleInputChange } />
-                    <label for="recipient-name" className="col-form-label">Tipo</label>
-                    <select className="form-control" name="tipo" value={tipo} onChange={handleInputChange}>
-                        <option hidden selected>Seleccione su tipo de tarjeta</option>
-                        {
-                            tipos.map((item) =>
-                             <option className="form-check-input" value={ item }>{ item }</option>
-                            )
-                        }
-                    </select>
-                    <label for="recipient-name" className="col-form-label">Fecha de vencimiento</label>
-                    <input type="text" className="form-control" id="recipient-name" placeholder="mm/aa"
-                            name="date" value={ date } onChange={ handleInputChange }/>
-                    <label for="recipient-name" className="col-form-label">Código de seguridad</label>
-                    <input type="text" className="form-control" id="recipient-name" 
-                            placeholder="Código de tres digitos de tu tarjeta" 
-                            name="cvs" value={ cvs } onChange={ handleInputChange }/>
+<div>
+<section class="check-out-section pt-80 pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mb-30">
+                <div id="accordion">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                    aria-expanded="false" aria-controls="collapseOne">
+                                    1 Personal Information
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordion">
+                                <AccountInfo />
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                                    aria-expanded="false" aria-controls="collapseTwo">
+                                    2 Addresses
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
+                                <Adresses />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingFour">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse"
+                                    data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <span>3</span> Payment
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                            <PaymentMethod />
+                        </div>
+                    </div>
                 </div>
-                <button type="button" className="btn btn-primary btn-lg btn-block" onClick={handleSubmit} data-dismiss="modal"> Pagar Ahora</button>
-                </form>
             </div>
-  
+            <div class="col-lg-4 mb-30">
+                <ul class="list-group cart-summary rounded-0">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <ul class="items">
+                            <li>1 item</li>
+                            <li>Shipping</li>
+                        </ul>
+                        <ul class="amount">
+                            <li>$11.90</li>
+                            <li>$7.00</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <ul class="items">
+                            <li>Total (tax excl.)</li>
+                            <li>Taxes</li>
+                        </ul>
+                        <ul class="amount">
+                            <li>$18.90</li>
+                            <li>$0</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item text-center">
+                        <button class="btn theme-btn--dark1 btn--md">Proceed to checkout</button>
+                    </li>
+                </ul>
+
+                <div class="delivery-info mt-20">
+                    <ul>
+                        <li>
+                            <img src="assets/img/icon/10.png" alt="icon"/> Security policy (edit with Customer
+                            reassurance module)
+                        </li>
+                        <li>
+                            <img src="assets/img/icon/11.png" alt="icon"/> Delivery policy (edit with Customer
+                            reassurance module)
+                        </li>
+                        <li class="mb-0">
+                            <img src="assets/img/icon/12.png" alt="icon"/> Return policy (edit with Customer
+                            reassurance module)
+                        </li>
+                    </ul>
+                </div>
             </div>
-            
         </div>
-        
+    </div>
+</section>
+</div>       
         
     )
 }

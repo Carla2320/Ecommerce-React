@@ -8,6 +8,7 @@ import ProductosLista from "../containers/ProductosLista";
 import Pago from "../components/Pago";
 import Checkout from "../components/Checkout";
 import DetalleProducto from "../components/DetalleProducto";
+import HorizontalLabelPositionBelowStepper from "../components/Step";
 
 export const DashboardRoutes = () => {
   return (
@@ -26,6 +27,7 @@ export const DashboardRoutes = () => {
           />
           <Route exact path="/pago" component={Pago} />
           <Route exact path="/checkout" component={Checkout} />
+          <Route exact path="/step" component={ HorizontalLabelPositionBelowStepper }/>
           <Redirect to="/home" />
         </Switch>
       </div>
