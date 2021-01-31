@@ -1,7 +1,7 @@
 import { fetchSinToken, fetchConToken } from "../helpers/fetch"
 import { types } from "../types/types";
 import Swal from 'sweetalert2';
-
+import { sesion } from '../actions/sesion';
 export const startLogin = ( cedula, contrasenia_usuario ) => {
     return async ( dispatch ) => {
         const resp = await fetchSinToken('user/login',{ cedula, contrasenia_usuario },'POST');
@@ -11,8 +11,16 @@ export const startLogin = ( cedula, contrasenia_usuario ) => {
         console.log('dia', dia);
         console.log('log',body);
         if (body.ok){
+            
+            const fecha_final=new Date().toLocaleString();
+            //const token=localStorage.getItem('token');
+           
+            localStorage.setItem("cedula", cedula);
+            console.log(cedula);
             localStorage.setItem('token', body.token);
             localStorage.setItem('token-init-date', new Date().toLocaleString());
+            const fecha_incial=localStorage.getItem('token-init-date');
+            dispatch(sesion(body.token,cedula,fecha_incial,null,null,10));
             dispatch(login({
                 usuario: body.usuario
             }))

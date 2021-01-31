@@ -7,7 +7,9 @@ import "../css/navbar.css";
 import { useStateValue } from "../reducers/StateProvider";
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { useDispatch } from "react-redux";
+import { sesion } from '../actions/sesion';
 export const Navbar = () => {
+  var dateFormat = require("dateformat");
   const dispatch = useDispatch();
   const [{ basket }] = useStateValue();
   const history = useHistory();
@@ -19,9 +21,27 @@ export const Navbar = () => {
     console.log(valor);
     i18n.changeLanguage(valor);
   };
+  const cedula=localStorage.getItem('cedula');
+  const fecha_incial=localStorage.getItem('token-init-date');
+  const fecha_final=new Date().toLocaleString();
+  const token=localStorage.getItem('token');
+  
+  var Currentdate=dateFormat(new Date(), "yyyy-mm-dd HH:MM:ss");
+console.log("Currentdate");  //2020-05-07 22:58:11
+  console.log(fecha_incial);
 
   const handleLogout = () => {
     dispatch(startLogout());
+    if (basket.length===0) {
+      const transaccion=null;
+      console.log("vacio");
+      dispatch(sesion(token,cedula,Currentdate,Currentdate,transaccion,10));
+            
+    }else{
+      console.log("lleno");
+      const transaccion=0;
+      dispatch(sesion(token,cedula,Currentdate,Currentdate,transaccion,10));
+    }
   };
   const carrito = () => {
     history.push("/checkout");

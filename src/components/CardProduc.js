@@ -10,12 +10,6 @@ function CardProduc({ name, imagen, descripcion, precio,id}) {
   const classes = useStyles();
   const history = useHistory();
   const [{ basket }, dispatch] = useStateValue();
-  if (basket.length===0) {
-    console.log("vacio");
-          
-  }else{
-    console.log("lleno")
-  }
   const addToBasket = () => {
      dispatch({
        type: "ADD_TO_BASKET",

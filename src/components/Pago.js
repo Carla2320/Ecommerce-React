@@ -41,6 +41,7 @@ function Pago(){
         e.preventDefault();
         dispatch(addCard( cedula, numero, tipo, date, cvs ));
         for (var i =0;i<basket.length; i++){
+            const transaccion=1;
             //dispatch(detalle_venta("",basket[i].cantidad,basket[i].precio,basket[i].id))
 
         }
@@ -49,6 +50,7 @@ function Pago(){
       const submit = (e) => {
         console.log("tarjeta escogida",e.numero);
         for (var i =0;i<basket.length; i++){
+            const transaccion=1;
             //dispatch(detalle_venta("",basket[i].cantidad,basket[i].precio,basket[i].id))
 
         }

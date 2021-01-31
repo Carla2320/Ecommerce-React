@@ -8,12 +8,6 @@ function Checkout() {
   const [t] = useTranslation("common");
   const [{ basket }] = useStateValue();
   console.log({basket})
-  if (basket.length===0) {
-    console.log("vacio");
-          
-  }else{
-    console.log("lleno")
-  }
   return (
     <div className="checkout">
       <div className="checkout_left">
