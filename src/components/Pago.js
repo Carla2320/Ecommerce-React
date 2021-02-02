@@ -6,10 +6,11 @@ import { AccountInfo } from './AccountInfo';
 import { Adresses } from './Adresses';
 import { PaymentMethod } from './PaymentMethod';
 import{detalle_venta} from '../actions/venta'
-import { updateDate, sesion } from '../actions/sesion';
+import { sesion } from '../actions/sesion';
 
 
-function Pago(props){
+
+function Pago(){
     const [{ basket }] = useStateValue();
     const sumaprecio=basket?.reduce((acum,item)=>{
         return parseFloat(item.precio)+acum;
@@ -42,12 +43,13 @@ function Pago(props){
       const submit = (e) => {
         const date=parseInt(new Date().getTime());
         for (var i =0;i<basket.length; i++){
-            dispatch(detalle_venta("",basket[i].cantidad,basket[i].precio,basket[i].id))
+            // dispatch(detalle_venta("",basket[i].cantidad,basket[i].precio,basket[i].id))
         }
         const cedula=localStorage.getItem('cedula');
         const token=localStorage.getItem('token');    
         const inicio=localStorage.getItem('token-init-date');  
         dispatch(sesion(token,cedula,inicio,date,1,10));
+
         localStorage.setItem('pago', suma);
       }
 
@@ -126,7 +128,7 @@ function Pago(props){
                         </ul>
                     </li>
                     <li class="list-group-item text-center">
-                        <button class="btn theme-btn--dark1 btn--md" onClick={submit}>Proceed to checkout</button>
+                        <button class="btn theme-btn--dark1 btn--md" onClick={submit}>Confirmar compra</button>
                     </li>
                 </ul>
 

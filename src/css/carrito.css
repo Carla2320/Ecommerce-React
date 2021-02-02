@@ -26,7 +26,6 @@ th, td {
 }
 
 .productcart{
-
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 5px;
@@ -37,9 +36,8 @@ th, td {
 }
 .productcart__image{
     object-fit: contain;
-    height: 160px;
-    border: 1px solid #ccc;
-    width: 18rem;
+    height: 180px;
+    width: 10rem;
 
 }
 .productcart__title{
@@ -58,12 +56,27 @@ th, td {
     border-color: #a88734 #9c7e31 #846a29;
 
 }
+.checkout section{
+  float: left;
+  width: 88%;
+}
 .checkout__right{
-    
-    margin-top: 90px;
-    float: left;
     border:white 5px solid ;
     border-radius: 20px;
     padding: 50px;
     background-color: white;
+    width: 30%;
+
+}
+.sectionright{
+    margin-left: 45%;
+}
+.generalsec section{
+    float: left;
+    margin: 10px;
+    padding: 10px;
+    width: 180px
+}
+.checkout{
+    margin: 30px;
 }

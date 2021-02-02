@@ -2,7 +2,7 @@ import React from 'react'
 import CurrencyFormat from 'react-currency-format';
 import { useStateValue } from '../reducers/StateProvider';
 import { useHistory } from 'react-router-dom';
-function Subtotal(precio){
+function Subtotal({precio}){
     
     const [{basket}, dispatch]= useStateValue();
     const history = useHistory();

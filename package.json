@@ -27,6 +27,7 @@
     "reactstrap": "^8.7.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "simple-react-validator": "^1.6.0",
     "sweetalert2": "^10.10.1",
     "validator": "^13.5.2",
     "web-vitals": "^0.2.4"
