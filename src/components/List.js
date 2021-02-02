@@ -3,24 +3,28 @@ import CardProduc from "./CardProduc";
 import { Grid } from "@material-ui/core";
 function List({ AllProductos }) {
   return (
-    <>
-      <Grid container spacing={24} justify="center">
-        {AllProductos.map(
-          ({ precio, descripcion, nombre_producto, id_producto, imagen }) => {
-            return (
-              <CardProduc
-                key={id_producto}
-                precio={precio}
-                descripcion={descripcion}
-                name={nombre_producto}
-                imagen={imagen}
-                id={id_producto}
-              />
-            );
-          }
-        )}
-      </Grid>
-    </>
+    <section class="product-tab bg-white pt-30 pb-80">
+      <div class="container">
+        <div class="row">
+          {AllProductos.map(
+            ({ precio, descripcion, nombre_producto, id_producto, imagen }) => {
+              return (
+                <div class="col-sm-6 col-lg-4 col-xl-3 mb-30">
+                <CardProduc
+                  key={id_producto}
+                  precio={precio}
+                  descripcion={descripcion}
+                  name={nombre_producto}
+                  imagen={imagen}
+                  id={id_producto}
+                />
+                </div>
+              );
+            }
+          )}
+        </div>
+      </div>
+    </section>
   );
 }
 export default List;

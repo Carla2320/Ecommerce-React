@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useState }from 'react';
 import { useSelector } from 'react-redux';
 import { addCard } from '../actions/auth';
 import { useForm } from '../hooks/useForm';
@@ -28,7 +28,10 @@ function Pago(){
     const { cedula } = useSelector( state => state.auth.usuario);
 
     const dispatch = useDispatch();
-
+    const [cantidad,setCantidad] = useState(1)
+    const suma =()=>{
+        setCantidad(cantidad+1)
+     } 
     const [formValues, handleInputChange] = useForm({
         numero: "",
         tipo: "",
@@ -48,10 +51,14 @@ function Pago(){
     }
 
       const submit = (e) => {
+        suma()
+        localStorage.getItem('myData');
+        localStorage.setItem('myData', cantidad);
+
+        console.log("kevin",e)
         console.log("tarjeta escogida",e.numero);
         for (var i =0;i<basket.length; i++){
             //dispatch(detalle_venta("",basket[i].cantidad,basket[i].precio,basket[i].id))
-
         }
         const sumaprecio=basket?.reduce((acum,item)=>{
         return parseFloat(item.precio)+acum;}, 0);
