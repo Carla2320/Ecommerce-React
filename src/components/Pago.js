@@ -1,14 +1,21 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from "react-redux";
 import { useStateValue } from '../reducers/StateProvider';
 import { AccountInfo } from './AccountInfo';
 import { Adresses } from './Adresses';
 import { PaymentMethod } from './PaymentMethod';
-
+import{detalle_venta} from '../actions/venta'
+import { sesion } from '../actions/sesion';
+import { UserContext } from "../hooks/UseContext";
+import "../css/carrito.css"
 function Pago(){
     const [{ basket }] = useStateValue();
-    console.log(basket[0])
+    const sumaprecio=basket?.reduce((acum,item)=>{
+        return parseFloat(item.precio)+acum;
+    }, 0);
+    const num_basket=basket.length;
+    const suma=sumaprecio+7;
     const num=basket.map((item)=>
         item.id
     );
@@ -16,34 +23,32 @@ function Pago(){
     for (var i =0;i<basket.length; i++){
         console.log(basket[i])
     }
+    
 
     const { usuario } = useSelector( state => 
         state.auth );
 
     var arr = [];
 
-    var tarjetas = [];
     usuario.tarjeta?Object.keys(usuario.tarjeta).forEach(function(key) {
         arr.push(usuario.tarjeta[key]);
     }) : arr=[];
-    
-    const { cedula } = useSelector( state => state.auth.usuario);
 
     const dispatch = useDispatch();
 
-
+    const {pago, setPago}=useContext(UserContext);
 
       const submit = (e) => {
-        console.log("tarjeta escogida",e.numero);
+        const date=parseInt(new Date().getTime());
         for (var i =0;i<basket.length; i++){
-            //dispatch(detalle_venta("",basket[i].cantidad,basket[i].precio,basket[i].id))
-
+            // dispatch(detalle_venta("",basket[i].cantidad,basket[i].precio,basket[i].id))
         }
-        const sumaprecio=basket?.reduce((acum,item)=>{
-        return parseFloat(item.precio)+acum;}, 0);
-        console.log(sumaprecio)
-        
-
+        const cedula=localStorage.getItem('cedula');
+        const token=localStorage.getItem('token');    
+        const inicio=localStorage.getItem('token-init-date');  
+        dispatch(sesion(token,cedula,inicio,date,1,10));
+        setPago(suma);
+        localStorage.setItem('pago', suma);
       }
 
     return (
@@ -63,7 +68,7 @@ function Pago(){
                                 </button>
                             </h5>
                         </div>
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
                             data-parent="#accordion">
                                 <AccountInfo />
                         </div>
@@ -102,11 +107,11 @@ function Pago(){
                 <ul class="list-group cart-summary rounded-0">
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         <ul class="items">
-                            <li>1 item</li>
+                            <li>{num_basket} item</li>
                             <li>Shipping</li>
                         </ul>
                         <ul class="amount">
-                            <li>$11.90</li>
+    <li>${sumaprecio}</li>
                             <li>$7.00</li>
                         </ul>
                     </li>
@@ -116,18 +121,18 @@ function Pago(){
                             <li>Taxes</li>
                         </ul>
                         <ul class="amount">
-                            <li>$18.90</li>
+                        <li>${suma}</li>
                             <li>$0</li>
                         </ul>
                     </li>
                     <li class="list-group-item text-center">
-                        <button class="btn theme-btn--dark1 btn--md">Proceed to checkout</button>
-                        <button type="button" class="btn btn-dark" data-toggle="button" aria-pressed="false" autocomplete="off">
-                        Single toggle
+                    <button type="button" class="btn btn-dark" data-toggle="button" aria-pressed="false" autocomplete="off" onClick={submit}>
+                        Confirmar compra {pago}
                         </button>
                     </li>
+                    
                 </ul>
-
+                
                 <div class="delivery-info mt-20">
                     <ul>
                         <li>

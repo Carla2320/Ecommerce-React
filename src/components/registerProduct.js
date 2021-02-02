@@ -1,10 +1,14 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useContext, useState } from "react";
 import { product } from "../actions/product";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import Swal from "sweetalert2";
 import { useTranslation } from "react-i18next";
+import { UserContext } from "../hooks/UseContext";
+import "../css/prueba.css"
 const RegisterProduct = () => {
+  const { color,setColor } = useContext(UserContext);
+
   const [t] = useTranslation("common");
   const dispatch = useDispatch();
   const categoria = [
@@ -107,7 +111,7 @@ const RegisterProduct = () => {
 
 
   return (
-    <>
+    <div className = {`${color?"valor":"product-tab bg-red pt-30 pb-80"}`}>
       <h1 className="titulo">{t("productos.titulo")}</h1>
       <form onSubmit={enviardatos}>
         <div className="form-group">
@@ -219,7 +223,7 @@ const RegisterProduct = () => {
           </button>
         </div>
       </form>
-    </>
+    </div>
   );
 };
 export default RegisterProduct;

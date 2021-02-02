@@ -22,15 +22,27 @@ export const AddCard = () => {
 
     const { numero, tipo, date, cvs } = formValues;
     const ndate = '01/'+ date;
-
+    let errores=0;
+    const veri =()=>{
+        if(!(isFormValid())){
+            errores=errores+1;
+            localStorage.setItem('errores', errores);
+        }
+    }
     const handleSubmit = (e) => {
         e.preventDefault();
+        
         if (isFormValid()){
             dispatch(addCard( cedula, numero, tipo, date, cvs ));
         }else{
             Swal.fire('No se asocio la tarjeta, hay un error en el formulario', msg,'error');
+            
+
         }
+
     }
+
+
     const tipos = [
         "Visa",
         "Mastercard",
@@ -38,7 +50,6 @@ export const AddCard = () => {
         "Discover",
         "Diners Club"
     ]
-
     const isFormValid = () => {
         if ( !validator.isCreditCard(numero) ){
             setMsg("Tarjeta no válida");

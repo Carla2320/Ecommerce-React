@@ -38,19 +38,17 @@ function DetalleProducto() {
   } else {
     console.log("lleno");
   }
-  const suma = () => {
-    setCantidad(cantidad + 1);
-  };
-  const resta = () => {
-    if (cantidad <= 1) {
-      setCantidad(1);
-    } else {
-      setCantidad(cantidad - 1);
-    }
-  };
-  console.log(data);
-
-  const [cantidad, setCantidad] = useState(1);
+   const suma =()=>{
+      setCantidad(cantidad+1)
+   } 
+   const resta =()=>{
+     if(cantidad<=1){
+       setCantidad(1)
+     }else{
+      setCantidad(cantidad-1)
+     }
+ }
+  const [cantidad,setCantidad] = useState(1)
   return (
     <section class="product-single theme3 bg-white pt-60">
       <div class="container">
@@ -130,4 +128,6 @@ function DetalleProducto() {
     </section>
   );
 }
+console.timeEnd("tiempo de carga pagina")
+
 export default DetalleProducto;

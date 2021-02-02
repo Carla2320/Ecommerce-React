@@ -19,6 +19,7 @@ const reducer = (state, action) => {
       } else {
         console.log("Error al eliminar el producto");
       }
+
       return { ...state, basket: newcart };
   }
 };

@@ -26,7 +26,10 @@ function CardProduc({ name, imagen, descripcion, precio, id }) {
     });
   };
   const detalle = (e) => {
+    var t0 = performance.now();
     history.push(`/DetalleProducto/${id}`);
+    var t1 = performance.now();
+    console.log("Tiempo para cargar la pagina detalle " + (t1 - t0) + " millisegundos.")
   };
 
   return (
