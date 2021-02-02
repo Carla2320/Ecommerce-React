@@ -1,5 +1,4 @@
 import React from "react";
-import "../css/login.css";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { startLogin } from "../actions/auth";
@@ -82,7 +81,7 @@ export const LoginScreen = () => {
                     </div>
                     <div className="form-group row text-center mb-0">
                         <div className="col-12">
-                            <Link  className="border-top no-account" id="enlace" to="/registro">
+                            <Link className="border-top no-account" id="enlace" to="/registro">
                                 {t("welcome.boton_registrarte")}
                             </Link>
                         </div>

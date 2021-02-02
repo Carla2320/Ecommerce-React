@@ -25,7 +25,7 @@ export const Navbar = () => {
     dispatch(startLogout());
   };
   const carrito = () => {
-    history.push("/checkout");
+    history.push("/step");
   };
 
   return (
@@ -43,7 +43,7 @@ export const Navbar = () => {
                     <nav className="navbar-top pb-2 pb-md-0 position-relative">
                         <ul className="d-flex justify-content-center justify-content-md-end align-items-center">
                             <li>
-                                <a href="#" id="dropdown1" data-toggle="dropdown" aria-haspopup="true"
+                                <a id="dropdown1" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">Setting <i className="ion ion-ios-arrow-down"></i></a>
                                 <ul className="topnav-submenu dropdown-menu" aria-label="dropdown1">
                                     <li>My account</li>
@@ -52,7 +52,7 @@ export const Navbar = () => {
                                 </ul>
                             </li>
                             <li>
-                                <a href="#" id="dropdown2" data-toggle="dropdown" aria-haspopup="true"
+                                <a id="dropdown2" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">USD $ <i className="ion ion-ios-arrow-down"></i> </a>
                                 <ul className="topnav-submenu dropdown-menu" aria-labelledby="dropdown2">
                                     <li className="active"><a href="#">EUR €</a></li>
@@ -60,18 +60,18 @@ export const Navbar = () => {
                                 </ul>
                             </li>
                             <li className="english">
-                                <a href="#" id="dropdown3" className="pr-0" data-toggle="dropdown" aria-haspopup="true"
+                                <a id="dropdown3" className="pr-0" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">
                                     <img src="assets/img/logo/us-flag.jpg" alt="us flag"/> English
                                     <i className="ion ion-ios-arrow-down"></i>
                                 </a>
                                 <ul className="topnav-submenu dropdown-menu" aria-labelledby="dropdown3">
                                     <li className="active">
-                                        <a href="#"><img src="assets/img/logo/us-flag.jpg" alt="us flag"/>
+                                        <a><img src="assets/img/logo/us-flag.jpg" alt="us flag"/>
                                             English</a>
                                     </li>
                                     <li>
-                                        <a href="#"><img src="assets/img/logo/france.jpg" alt="france flag"/>
+                                        <a><img src="assets/img/logo/france.jpg" alt="france flag"/>
                                             Français</a>
                                     </li>
                                 </ul>

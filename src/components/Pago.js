@@ -64,7 +64,6 @@ function Pago(){
         return parseFloat(item.precio)+acum;}, 0);
         console.log(sumaprecio)
         
-
       }
 
     const tipos = [
