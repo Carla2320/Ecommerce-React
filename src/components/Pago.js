@@ -20,10 +20,12 @@ function Pago(){
     const { usuario } = useSelector( state => 
         state.auth );
 
+    var arr = [];
+
     var tarjetas = [];
-    Object.keys(usuario.tarjeta).forEach(function(key) {
-        tarjetas.push(usuario.tarjeta[key]);
-    });
+    usuario.tarjeta?Object.keys(usuario.tarjeta).forEach(function(key) {
+        arr.push(usuario.tarjeta[key]);
+    }) : arr=[];
     
     const { cedula } = useSelector( state => state.auth.usuario);
 
@@ -120,6 +122,9 @@ function Pago(){
                     </li>
                     <li class="list-group-item text-center">
                         <button class="btn theme-btn--dark1 btn--md">Proceed to checkout</button>
+                        <button type="button" class="btn btn-dark" data-toggle="button" aria-pressed="false" autocomplete="off">
+                        Single toggle
+                        </button>
                     </li>
                 </ul>
 
