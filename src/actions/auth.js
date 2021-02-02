@@ -18,7 +18,7 @@ export const startLogin = ( cedula, contrasenia_usuario ) => {
             localStorage.setItem("cedula", cedula);
             console.log(cedula);
             localStorage.setItem('token', body.token);
-            localStorage.setItem('token-init-date', new Date().toLocaleString());
+            localStorage.setItem('token-init-date', new Date().getTime());
             const fecha_incial=localStorage.getItem('token-init-date');
             dispatch(sesion(body.token,cedula,fecha_incial,null,null,10));
             dispatch(login({
@@ -37,7 +37,7 @@ export const startChecking = () => {
         console.log(body);
         if (body.ok){
             localStorage.setItem('token', body.token);
-            localStorage.setItem('token-init-date', new Date().toLocaleString());
+            localStorage.setItem('token-init-date', new Date().getTime());
             dispatch(login({
                 usuario: body.usuario
             }))

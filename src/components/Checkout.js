@@ -9,8 +9,10 @@ function Checkout() {
   const [{ basket }] = useStateValue();
   console.log({basket})
   return (
-    <div className="checkout">
-      <div className="checkout_left">
+    <div className="container">
+       <div class="row">
+          <div class="col-20">
+      <div>
         {basket.length === 0 ? (
           <div className="vacio">
             <h2 className="checkout_title">{t("carrito.principal")}</h2>
@@ -21,13 +23,18 @@ function Checkout() {
             />
           </div>
         ) : (
-          <div className="checkout">
-            <h2 className="shoppingbaskettitle">Tus artículos</h2>
-            <div className="container">
-                <div className="row">
+         
+              <div class="table-responsive">
+                  <table class="table">
+                      <thead class="thead-light">
+                      <h3 class="title mb-30 pb-25 text-capitalize">Your cart items</h3>
+                      </thead>
+                     </table>
+              
             {basket.map((item) => (
               
               <ProductCart
+              
                 id={item.id}
                 nombre={item.nombre}
                 imagen={item.imagen}
@@ -37,17 +44,13 @@ function Checkout() {
                 cantidad={item.cantidad}
               />
             ))}
+             
              </div>
-            </div>
-          </div>
+          
         )}
       </div>
-      {basket.length > 0 && (
-        <div className="checkout__right">
-
-          <Subtotal />
-        </div>
-      )}
+  </div>
+          </div>
     </div>
   );
 }

@@ -1,11 +1,14 @@
-.checkout_left{
+
+th, td {
+    width: 100px;
+    word-wrap: break-word;
+}
+.imagen{
     
-    float: left;
-    padding: 30px;
-    width: 800px;
+    width: 250px;
+    height: 250px;
 
 }
-
 .vacio{
     margin-top: 50px !important ;
     margin-left: 50px !important;

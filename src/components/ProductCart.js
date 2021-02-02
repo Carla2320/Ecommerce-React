@@ -21,20 +21,53 @@ function ProductCart({
     });
   };
   return (
-    <div className="col-sm-6">
-      <div className="card mb-3">
-        <img src={imagen} className="card-img-top " alt="..." />
-        <div className="card-body">
-          <h5 className="card-title">{nombre}</h5>
-          <p className="card-text">{descripcion}</p>
-          <p className="card-text">Cantidad: {cantidad}</p>
-          <p className="card-text">${precio}</p>
-          <button className="btn btn-primary" onClick={removeItem}>
-            Eliminar del carrito
-          </button>
+    
+    <div class="row">
+        <div class="col-20">
+            <div class="table-responsive">
+                <table class="table">
+                <thead class="thead-light">
+                            <tr>
+                                <th class="text-center" scope="col">Product Image</th>
+                                <th class="text-center" scope="col">Product Name</th>
+                                <th class="text-center" scope="col">Product descripcion</th>
+                                <th class="text-center" scope="col">Price</th>
+                                <th class="text-center" scope="col">action</th>
+                                <th class="text-center" scope="col">Checkout</th>
+                            </tr>
+                        </thead>
+                    <tbody>
+                    <tr>
+                                <th class="text-center" scope="row">
+                                    <img className="imagen"src={imagen} alt="img"/>
+                                </th>
+                                <td class="text-center">
+                                <span class="whish-title">{nombre}</span>
+                                </td>
+                                <td class="text-center">
+                                <span class="whish-title">{descripcion}</span>
+                                
+                                </td>
+
+
+                                <td class="text-center" >
+                                    <span class="whish-list-price">
+                                        ${precio}
+                                    </span></td>
+
+                                <td class="text-center">
+                                    <a href="#"> <span class="trash"><i class="fas fa-trash-alt" onClick={removeItem}></i> </span></a>
+                                </td>
+                                <td class="text-center">
+                                    <a href="#" class="btn theme-btn--dark1 btn--lg">buy now</a>
+                                </td>
+                      </tr>
+                    </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
+   
   );
 }
 export default ProductCart;

@@ -33,6 +33,7 @@ function getStepContent(stepIndex) {
     case 1:
       return <Pago/>;
     case 2:
+
       return <Ticket />;
     default:
       return 'Unknown stepIndex';

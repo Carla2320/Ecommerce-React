@@ -8,13 +8,16 @@ import "../css/navbar.css";
 import { useStateValue } from "../reducers/StateProvider";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { useDispatch } from "react-redux";
-import { sesion } from '../actions/sesion';
+import { sesion, updateDate } from '../actions/sesion';
 export const Navbar = () => {
-  var dateFormat = require("dateformat");
   const dispatch = useDispatch();
-  const [{ basket }] = useStateValue();
+  var [{ basket }] = useStateValue();
   const history = useHistory();
   const [t, i18n] = useTranslation("common");
+  var dateFormat = require("dateformat");
+  const sumaprecio=basket?.reduce((acum,item)=>{
+      return parseFloat(item.precio)+acum;
+  }, 0);
   const cambio = (e) => {
     e.preventDefault();
     const valor = e.target.value;
@@ -22,27 +25,30 @@ export const Navbar = () => {
     console.log(valor);
     i18n.changeLanguage(valor);
   };
-  const cedula=localStorage.getItem('cedula');
-  const fecha_incial=localStorage.getItem('token-init-date');
-  const fecha_final=new Date().toLocaleString();
-  const token=localStorage.getItem('token');
-  
-  var Currentdate=dateFormat(new Date(), "yyyy-mm-dd HH:MM:ss");
-console.log("Currentdate");  //2020-05-07 22:58:11
-  console.log(fecha_incial);
 
   const handleLogout = () => {
-    dispatch(startLogout());
+    const cedula=localStorage.getItem('cedula');
+    const token=localStorage.getItem('token');
+    const inicio=localStorage.getItem('token-init-date');  
+    const date=parseInt(new Date().getTime());
+    //var Currentdate=dateFormat(new Date().getTime(), "yyyy-mm-dd HH:MM:ss");
     if (basket.length===0) {
-      const transaccion=null;
-      console.log("vacio");
-      dispatch(sesion(token,cedula,Currentdate,Currentdate,transaccion,10));
-            
-    }else{
-      console.log("lleno");
-      const transaccion=0;
-      dispatch(sesion(token,cedula,Currentdate,Currentdate,transaccion,10));
-    }
+        const transaccion=null;
+        console.log("vacio");
+        dispatch(sesion(token,cedula,inicio,date,transaccion,10));
+      }else{
+        console.log("lleno");
+        const transaccion=0;
+        dispatch(sesion(token,cedula,inicio,date,transaccion,10));
+      }
+    dispatch(updateDate(token,date));
+      //vaciar basket
+      while(basket.length > 0)
+        basket.pop(); 
+     console.log("canasta",basket);
+
+    dispatch(startLogout());
+
   };
   const carrito = () => {
     history.push("/step");
@@ -162,7 +168,7 @@ console.log("Currentdate");  //2020-05-07 22:58:11
                                         <i className="icon-bag"></i>
                                         <span className="badge cbdg1">{basket?.length}</span>
                                     </span>
-                                    <span className="cart-total position-relative">$90.00</span>
+  <span className="cart-total position-relative">${sumaprecio}</span>
                                 </Link>
                             </li>
                         </ul>
