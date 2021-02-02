@@ -1,32 +1,32 @@
 {
 	"welcome": {
-		"inicio": "Ingreso",
-		"usuario": "Ingrese tu Cedula",
-		"contrasenia": "Ingresa tu Password",
-		"boton_inicio": " Iniciar Sesion",
-		"boton_registrarte": "Registrarse"
+		"inicio": "Вход",
+		"usuario": "Введите ваш ID",
+		"contrasenia": "Введите свой пароль",
+		"boton_inicio": " Авторизоваться",
+		"boton_registrarte": "Регистрироваться"
 	},
 	"navbar": {
-		"ecommerce": "Ecommerce",
-		"inicio": "Inicio",
-		"shop": "Compras",
-		"perfil": "Perfil",
-		"exit": "Salir"
+		"ecommerce": "Электронная торговля",
+		"inicio": "Начните",
+		"shop": "покупка товаров",
+		"perfil": "профиль",
+		"exit": "выйди"
 	},
 	"productos": {
-		"titulo": "Formulario del producto",
-		"nombre_producto": "Ingresar nombre del producto",
-		"categoria": "Elige una categoría",
-		"estado": "Elige el estado",
-		"imagen": "Ingresar imagen del producto",
-		"stock": "Ingresar stock del producto",
-		"precio": "Ingresar precio del producto",
-		"descripcion": "descripcion",
-		"boton": "Enviar"
+		"titulo": "Форма продукта",
+		"nombre_producto": "Введите название продукта",
+		"categoria": "Выберите категорию",
+		"estado": "Выберите состояние",
+		"imagen": "Введите изображение продукта",
+		"stock": "Введите товарный запас",
+		"precio": "Введите цену товара",
+		"descripcion": "описание",
+		"boton": "послать"
 
 	},
 	"carrito": {
-		"principal": "Tu carrito está vacío",
-		"cesta": "Tu cesta esá vacía"
+		"principal": "Ваша корзина пуста",
+		"cesta": "Ваша корзина пуста"
 	}
 }

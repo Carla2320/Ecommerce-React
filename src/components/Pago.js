@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from "react-redux";
 import { useStateValue } from '../reducers/StateProvider';
@@ -7,9 +7,8 @@ import { Adresses } from './Adresses';
 import { PaymentMethod } from './PaymentMethod';
 import{detalle_venta} from '../actions/venta'
 import { sesion } from '../actions/sesion';
-
-
-
+import { UserContext } from "../hooks/UseContext";
+import "../css/carrito.css"
 function Pago(){
     const [{ basket }] = useStateValue();
     const sumaprecio=basket?.reduce((acum,item)=>{
@@ -24,6 +23,7 @@ function Pago(){
     for (var i =0;i<basket.length; i++){
         console.log(basket[i])
     }
+    
 
     const { usuario } = useSelector( state => 
         state.auth );
@@ -38,7 +38,7 @@ function Pago(){
 
     const dispatch = useDispatch();
 
-
+    const {pago, setPago}=useContext(UserContext);
 
       const submit = (e) => {
         const date=parseInt(new Date().getTime());
@@ -49,7 +49,7 @@ function Pago(){
         const token=localStorage.getItem('token');    
         const inicio=localStorage.getItem('token-init-date');  
         dispatch(sesion(token,cedula,inicio,date,1,10));
-
+        setPago(suma);
         localStorage.setItem('pago', suma);
       }
 
@@ -128,10 +128,13 @@ function Pago(){
                         </ul>
                     </li>
                     <li class="list-group-item text-center">
-                        <button class="btn theme-btn--dark1 btn--md" onClick={submit}>Confirmar compra</button>
+                    <button type="button" class="btn btn-dark" data-toggle="button" aria-pressed="false" autocomplete="off" onClick={submit}>
+                        Confirmar compra {pago}
+                        </button>
                     </li>
+                    
                 </ul>
-
+                
                 <div class="delivery-info mt-20">
                     <ul>
                         <li>
